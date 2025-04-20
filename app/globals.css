@@ -1,22 +1,33 @@
-@import 'tailwindcss';
-
 :root {
   color-scheme: light dark;
 
   /* Spacing Variables */
-  --spacing-01: 0.125rem; /* 2px */
-  --spacing-02: 0.25rem;  /* 4px */
-  --spacing-03: 0.5rem;   /* 8px */
-  --spacing-04: 0.75rem;  /* 12px */
-  --spacing-05: 1rem;     /* 16px */
-  --spacing-06: 1.5rem;   /* 24px */
-  --spacing-07: 2rem;     /* 32px */
-  --spacing-08: 2.5rem;   /* 40px */
-  --spacing-09: 3rem;     /* 48px */
-  --spacing-10: 4rem;     /* 64px */
-  --spacing-11: 5rem;     /* 80px */
-  --spacing-12: 6rem;     /* 96px */
-  --spacing-13: 10rem;    /* 160px */
+  --spacing-01: 0.125rem;
+  /* 2px */
+  --spacing-02: 0.25rem;
+  /* 4px */
+  --spacing-03: 0.5rem;
+  /* 8px */
+  --spacing-04: 0.75rem;
+  /* 12px */
+  --spacing-05: 1rem;
+  /* 16px */
+  --spacing-06: 1.5rem;
+  /* 24px */
+  --spacing-07: 2rem;
+  /* 32px */
+  --spacing-08: 2.5rem;
+  /* 40px */
+  --spacing-09: 3rem;
+  /* 48px */
+  --spacing-10: 4rem;
+  /* 64px */
+  --spacing-11: 5rem;
+  /* 80px */
+  --spacing-12: 6rem;
+  /* 96px */
+  --spacing-13: 10rem;
+  /* 160px */
 
   /* Background Colors */
   --background: light-dark(#ffffff, #161616);
@@ -79,7 +90,7 @@
 
   /* Border Colors */
   --border-interactive: light-dark(#0f62fe, #4899ff);
-  --border-subtle-00: light-dark(#a8a8a8, #525252);
+  --border-subtle-00: light-dark(#e0e0e0, #525252); 
   --border-subtle-01: light-dark(#cdc6c6, #525252);
   --border-subtle-02: light-dark(#a8a8a8, #525252);
   --border-subtle-03: light-dark(#cdc6c6, #525252);
@@ -97,243 +108,485 @@
 
   /* Typography: Body Styles */
   --body-compact-01-font: 'IBM Plex Sans', sans-serif;
-  --body-compact-01-size: 0.875rem; /* 14px */
-  --body-compact-01-line-height: 1.125rem; /* 18px */
+  --body-compact-01-size: 0.875rem;
+  /* 14px */
+  --body-compact-01-line-height: 1.125rem;
+  /* 18px */
   --body-compact-01-weight: 400;
   --body-compact-01-letter-spacing: 0.16px;
 
   --body-compact-02-font: 'IBM Plex Sans', sans-serif;
-  --body-compact-02-size: 1rem; /* 16px */
-  --body-compact-02-line-height: 1.375rem; /* 22px */
+  --body-compact-02-size: 1rem;
+  /* 16px */
+  --body-compact-02-line-height: 1.375rem;
+  /* 22px */
   --body-compact-02-weight: 400;
   --body-compact-02-letter-spacing: 0;
 
   --body-01-font: 'IBM Plex Sans', sans-serif;
-  --body-01-size: 0.875rem; /* 14px */
-  --body-01-line-height: 1.25rem; /* 20px */
+  --body-01-size: 0.875rem;
+  /* 14px */
+  --body-01-line-height: 1.25rem;
+  /* 20px */
   --body-01-weight: 400;
   --body-01-letter-spacing: 0.16px;
 
   --body-02-font: 'IBM Plex Sans', sans-serif;
-  --body-02-size: 1rem; /* 16px */
-  --body-02-line-height: 1.5rem; /* 24px */
+  --body-02-size: 1rem;
+  /* 16px */
+  --body-02-line-height: 1.5rem;
+  /* 24px */
   --body-02-weight: 400;
   --body-02-letter-spacing: 0;
 
   /* Typography: Heading Styles */
   --heading-compact-01-font: 'IBM Plex Sans', sans-serif;
-  --heading-compact-01-size: 0.875rem; /* 14px */
-  --heading-compact-01-line-height: 1.125rem; /* 18px */
+  --heading-compact-01-size: 0.875rem;
+  /* 14px */
+  --heading-compact-01-line-height: 1.125rem;
+  /* 18px */
   --heading-compact-01-weight: 600;
   --heading-compact-01-letter-spacing: 0.16px;
 
   --heading-compact-02-font: 'IBM Plex Sans', sans-serif;
-  --heading-compact-02-size: 1rem; /* 16px */
-  --heading-compact-02-line-height: 1.375rem; /* 22px */
+  --heading-compact-02-size: 1rem;
+  /* 16px */
+  --heading-compact-02-line-height: 1.375rem;
+  /* 22px */
   --heading-compact-02-weight: 600;
   --heading-compact-02-letter-spacing: 0;
 
   --heading-01-font: 'IBM Plex Sans', sans-serif;
-  --heading-01-size: 0.875rem; /* 14px */
-  --heading-01-line-height: 1.25rem; /* 20px */
+  --heading-01-size: 0.875rem;
+  /* 14px */
+  --heading-01-line-height: 1.25rem;
+  /* 20px */
   --heading-01-weight: 600;
   --heading-01-letter-spacing: 0.16px;
 
   --heading-02-font: 'IBM Plex Sans', sans-serif;
-  --heading-02-size: 1rem; /* 16px */
-  --heading-02-line-height: 1.5rem; /* 24px */
+  --heading-02-size: 1rem;
+  /* 16px */
+  --heading-02-line-height: 1.5rem;
+  /* 24px */
   --heading-02-weight: 600;
   --heading-02-letter-spacing: 0;
 
   /* Typography: Fluid Styles - LG */
   --fluid-heading-03-font: 'IBM Plex Sans', sans-serif;
-  --fluid-heading-03-size: 1.25rem; /* 20px */
-  --fluid-heading-03-line-height: 1.75rem; /* 28px */
+  --fluid-heading-03-size: 1.25rem;
+  /* 20px */
+  --fluid-heading-03-line-height: 1.75rem;
+  /* 28px */
   --fluid-heading-03-weight: 400;
   --fluid-heading-03-letter-spacing: 0;
 
   --fluid-heading-04-font: 'IBM Plex Sans', sans-serif;
-  --fluid-heading-04-size: 1.75rem; /* 28px */
-  --fluid-heading-04-line-height: 2.25rem; /* 36px */
+  --fluid-heading-04-size: 1.75rem;
+  /* 28px */
+  --fluid-heading-04-line-height: 2.25rem;
+  /* 36px */
   --fluid-heading-04-weight: 400;
   --fluid-heading-04-letter-spacing: 0;
 
   --fluid-heading-05-font: 'IBM Plex Sans', sans-serif;
-  --fluid-heading-05-size: 2.625rem; /* 42px */
-  --fluid-heading-05-line-height: 3.125rem; /* 50px */
+  --fluid-heading-05-size: 2.625rem;
+  /* 42px */
+  --fluid-heading-05-line-height: 3.125rem;
+  /* 50px */
   --fluid-heading-05-weight: 300;
   --fluid-heading-05-letter-spacing: 0;
 
   --fluid-heading-06-font: 'IBM Plex Sans', sans-serif;
-  --fluid-heading-06-size: 2.625rem; /* 42px */
-  --fluid-heading-06-line-height: 3.125rem; /* 50px */
+  --fluid-heading-06-size: 2.625rem;
+  /* 42px */
+  --fluid-heading-06-line-height: 3.125rem;
+  /* 50px */
   --fluid-heading-06-weight: 600;
   --fluid-heading-06-letter-spacing: 0;
 
   --fluid-paragraph-01-font: 'IBM Plex Sans', sans-serif;
-  --fluid-paragraph-01-size: 1.75rem; /* 28px */
-  --fluid-paragraph-01-line-height: 2.25rem; /* 36px */
+  --fluid-paragraph-01-size: 1.75rem;
+  /* 28px */
+  --fluid-paragraph-01-line-height: 2.25rem;
+  /* 36px */
   --fluid-paragraph-01-weight: 300;
   --fluid-paragraph-01-letter-spacing: 0;
 
   --fluid-quotation-01-font: 'IBM Plex Serif', serif;
-  --fluid-quotation-01-size: 1.5rem; /* 24px */
-  --fluid-quotation-01-line-height: 1.875rem; /* 30px */
+  --fluid-quotation-01-size: 1.5rem;
+  /* 24px */
+  --fluid-quotation-01-line-height: 1.875rem;
+  /* 30px */
   --fluid-quotation-01-weight: 400;
   --fluid-quotation-01-letter-spacing: 0;
 
   --fluid-quotation-02-font: 'IBM Plex Serif', serif;
-  --fluid-quotation-02-size: 2.625rem; /* 42px */
-  --fluid-quotation-02-line-height: 3.125rem; /* 50px */
+  --fluid-quotation-02-size: 2.625rem;
+  /* 42px */
+  --fluid-quotation-02-line-height: 3.125rem;
+  /* 50px */
   --fluid-quotation-02-weight: 300;
   --fluid-quotation-02-letter-spacing: 0;
 
   --fluid-display-01-font: 'IBM Plex Sans', sans-serif;
-  --fluid-display-01-size: 3.375rem; /* 54px */
-  --fluid-display-01-line-height: 4rem; /* 64px */
+  --fluid-display-01-size: 3.375rem;
+  /* 54px */
+  --fluid-display-01-line-height: 4rem;
+  /* 64px */
   --fluid-display-01-weight: 300;
   --fluid-display-01-letter-spacing: 0;
 
   --fluid-display-02-font: 'IBM Plex Sans', sans-serif;
-  --fluid-display-02-size: 3.375rem; /* 54px */
-  --fluid-display-02-line-height: 4rem; /* 64px */
+  --fluid-display-02-size: 3.375rem;
+  /* 54px */
+  --fluid-display-02-line-height: 4rem;
+  /* 64px */
   --fluid-display-02-weight: 600;
   --fluid-display-02-letter-spacing: 0;
 
   --fluid-display-03-font: 'IBM Plex Sans', sans-serif;
-  --fluid-display-03-size: 4.75rem; /* 76px */
-  --fluid-display-03-line-height: 5.375rem; /* 86px */
+  --fluid-display-03-size: 4.75rem;
+  /* 76px */
+  --fluid-display-03-line-height: 5.375rem;
+  /* 86px */
   --fluid-display-03-weight: 300;
   --fluid-display-03-letter-spacing: 0;
 
   --fluid-display-04-font: 'IBM Plex Sans', sans-serif;
-  --fluid-display-04-size: 7.5rem; /* 120px */
-  --fluid-display-04-line-height: 8.125rem; /* 130px */
+  --fluid-display-04-size: 7.5rem;
+  /* 120px */
+  --fluid-display-04-line-height: 8.125rem;
+  /* 130px */
   --fluid-display-04-weight: 300;
   --fluid-display-04-letter-spacing: -0.64px;
 
   /* Typography: Utility Styles */
   --code-01-font: 'IBM Plex Mono', monospace;
-  --code-01-size: 0.75rem; /* 12px */
-  --code-01-line-height: 1rem; /* 16px */
+  --code-01-size: 0.75rem;
+  /* 12px */
+  --code-01-line-height: 1rem;
+  /* 16px */
   --code-01-weight: 400;
   --code-01-letter-spacing: 0.32px;
 
   --code-02-font: 'IBM Plex Mono', monospace;
-  --code-02-size: 0.875rem; /* 14px */
-  --code-02-line-height: 1.25rem; /* 20px */
+  --code-02-size: 0.875rem;
+  /* 14px */
+  --code-02-line-height: 1.25rem;
+  /* 20px */
   --code-02-weight: 400;
   --code-02-letter-spacing: 0.32px;
 
   --label-01-font: 'IBM Plex Sans', sans-serif;
-  --label-01-size: 0.75rem; /* 12px */
-  --label-01-line-height: 1rem; /* 16px */
+  --label-01-size: 0.75rem;
+  /* 12px */
+  --label-01-line-height: 1rem;
+  /* 16px */
   --label-01-weight: 400;
   --label-01-letter-spacing: 0.32px;
 
   --label-02-font: 'IBM Plex Sans', sans-serif;
-  --label-02-size: 0.875rem; /* 14px */
-  --label-02-line-height: 1.125rem; /* 18px */
+  --label-02-size: 0.875rem;
+  /* 14px */
+  --label-02-line-height: 1.125rem;
+  /* 18px */
   --label-02-weight: 400;
   --label-02-letter-spacing: 0.16px;
 
   --helper-text-01-font: 'IBM Plex Sans', sans-serif;
-  --helper-text-01-size: 0.75rem; /* 12px */
-  --helper-text-01-line-height: 1rem; /* 16px */
+  --helper-text-01-size: 0.75rem;
+  /* 12px */
+  --helper-text-01-line-height: 1rem;
+  /* 16px */
   --helper-text-01-weight: 400;
   --helper-text-01-letter-spacing: 0.32px;
 
   --helper-text-02-font: 'IBM Plex Sans', sans-serif;
-  --helper-text-02-size: 0.875rem; /* 14px */
-  --helper-text-02-line-height: 1.125rem; /* 18px */
+  --helper-text-02-size: 0.875rem;
+  /* 14px */
+  --helper-text-02-line-height: 1.125rem;
+  /* 18px */
   --helper-text-02-weight: 400;
   --helper-text-02-letter-spacing: 0.16px;
 
   --legal-01-font: 'IBM Plex Sans', sans-serif;
-  --legal-01-size: 0.75rem; /* 12px */
-  --legal-01-line-height: 1rem; /* 16px */
+  --legal-01-size: 0.75rem;
+  /* 12px */
+  --legal-01-line-height: 1rem;
+  /* 16px */
   --legal-01-weight: 400;
   --legal-01-letter-spacing: 0.32px;
 
   --legal-02-font: 'IBM Plex Sans', sans-serif;
-  --legal-02-size: 0.875rem; /* 14px */
-  --legal-02-line-height: 1.125rem; /* 18px */
+  --legal-02-size: 0.875rem;
+  /* 14px */
+  --legal-02-line-height: 1.125rem;
+  /* 18px */
   --legal-02-weight: 400;
   --legal-02-letter-spacing: 0.16px;
 }
 
-
 /* Map CSS variables to Tailwind utilities */
-@utility bg-background { background-color: var(--background); }
-@utility bg-background-hover { background-color: var(--background-hover); }
-@utility bg-background-active { background-color: var(--background-active); }
-@utility bg-background-selected { background-color: var(--background-selected); }
-@utility bg-background-selected-hover { background-color: var(--background-selected-hover); }
-@utility bg-background-inverse { background-color: var(--background-inverse); }
-@utility bg-background-inverse-hover { background-color: var(--background-inverse-hover); }
-@utility bg-background-brand { background-color: var(--background-brand); }
+.bg-background {
+  background-color: var(--background);
+}
 
-@utility text-icon-primary { color: var(--icon-primary); }
-@utility text-icon-secondary { color: var(--icon-secondary); }
-@utility text-icon-on-color { color: var(--icon-on-color); }
-@utility text-icon-on-color-disabled { color: var(--icon-on-color-disabled); }
-@utility text-icon-interactive { color: var(--icon-interactive); }
-@utility text-icon-inverse { color: var(--icon-inverse); }
-@utility text-icon-disabled { color: var(--icon-disabled); }
+.bg-background-hover {
+  background-color: var(--background-hover);
+}
 
-@utility text-link-primary { color: var(--link-primary); }
-@utility text-link-primary-hover { color: var(--link-primary-hover); }
-@utility text-link-secondary { color: var(--link-secondary); }
-@utility text-link-inverse { color: var(--link-inverse); }
-@utility text-link-inverse-hover { color: var(--link-inverse-hover); }
-@utility text-link-inverse-active { color: var(--link-inverse-active); }
-@utility text-link-visited { color: var(--link-visited); }
-@utility text-link-inverse-visited { color: var(--link-inverse-visited); }
+.bg-background-active {
+  background-color: var(--background-active);
+}
 
-@utility text-text-primary { color: var(--text-primary); }
-@utility text-text-secondary { color: var(--text-secondary); }
-@utility text-text-placeholder { color: var(--text-placeholder); }
-@utility text-text-on-color { color: var(--text-on-color); }
-@utility text-text-on-color-disabled { color: var(--text-on-color-disabled); }
-@utility text-text-helper { color: var(--text-helper); }
-@utility text-text-error { color: var(--text-error); }
-@utility text-text-inverse { color: var(--text-inverse); }
-@utility text-text-disabled { color: var(--text-disabled); }
+.bg-background-selected {
+  background-color: var(--background-selected);
+}
 
-@utility bg-layer-01 { background-color: var(--layer-01); }
-@utility bg-layer-02 { background-color: var(--layer-02); }
-@utility bg-layer-03 { background-color: var(--layer-03); }
-@utility bg-layer-hover-01 { background-color: var(--layer-hover-01); }
-@utility bg-layer-hover-02 { background-color: var(--layer-hover-02); }
-@utility bg-layer-hover-03 { background-color: var(--layer-hover-03); }
-@utility bg-layer-active-01 { background-color: var(--layer-active-01); }
-@utility bg-layer-active-02 { background-color: var(--layer-active-02); }
-@utility bg-layer-active-03 { background-color: var(--layer-active-03); }
-@utility bg-layer-selected-01 { background-color: var(--layer-selected-01); }
-@utility bg-layer-selected-02 { background-color: var(--layer-selected-02); }
-@utility bg-layer-selected-03 { background-color: var(--layer-selected-03); }
-@utility bg-layer-selected-hover-01 { background-color: var(--layer-selected-hover-01); }
-@utility bg-layer-selected-hover-02 { background-color: var(--layer-selected-hover-02); }
-@utility bg-layer-selected-hover-03 { background-color: var(--layer-selected-hover-03); }
-@utility bg-layer-selected-inverse { background-color: var(--layer-selected-inverse); }
-@utility bg-layer-disabled { background-color: var(--layer-disabled); }
+.bg-background-selected-hover {
+  background-color: var(--background-selected-hover);
+}
 
-@utility border-border-interactive { border-color: var(--border-interactive); }
-@utility border-border-subtle-00 { border-color: var(--border-subtle-00); }
-@utility border-border-subtle-01 { border-color: var(--border-subtle-01); }
-@utility border-border-subtle-02 { border-color: var(--border-subtle-02); }
-@utility border-border-subtle-03 { border-color: var(--border-subtle-03); }
-@utility border-border-subtle-selected-01 { border-color: var(--border-subtle-selected-01); }
-@utility border-border-subtle-selected-02 { border-color: var(--border-subtle-selected-02); }
-@utility border-border-subtle-selected-03 { border-color: var(--border-subtle-selected-03); }
-@utility border-border-strong-01 { border-color: var(--border-strong-01); }
-@utility border-border-strong-02 { border-color: var(--border-strong-02); }
-@utility border-border-strong-03 { border-color: var(--border-strong-03); }
-@utility border-border-tile-01 { border-color: var(--border-tile-01); }
-@utility border-border-tile-02 { border-color: var(--border-tile-02); }
-@utility border-border-tile-03 { border-color: var(--border-tile-03); }
-@utility border-border-inverse { border-color: var(--border-inverse); }
-@utility border-border-disabled { border-color: var(--border-disabled); }
+.bg-background-inverse {
+  background-color: var(--background-inverse);
+}
+
+.bg-background-inverse-hover {
+  background-color: var(--background-inverse-hover);
+}
+
+.bg-background-brand {
+  background-color: var(--background-brand);
+}
+
+.text-icon-primary {
+  color: var(--icon-primary);
+}
+
+.text-icon-secondary {
+  color: var(--icon-secondary);
+}
+
+.text-icon-on-color {
+  color: var(--icon-on-color);
+}
+
+.text-icon-on-color-disabled {
+  color: var(--icon-on-color-disabled);
+}
+
+.text-icon-interactive {
+  color: var(--icon-interactive);
+}
+
+.text-icon-inverse {
+  color: var(--icon-inverse);
+}
+
+.text-icon-disabled {
+  color: var(--icon-disabled);
+}
+
+.text-link-primary {
+  color: var(--link-primary);
+}
+
+.text-link-primary-hover {
+  color: var(--link-primary-hover);
+}
+
+.text-link-secondary {
+  color: var(--link-secondary);
+}
+
+.text-link-inverse {
+  color: var(--link-inverse);
+}
+
+.text-link-inverse-hover {
+  color: var(--link-inverse-hover);
+}
+
+.text-link-inverse-active {
+  color: var(--link-inverse-active);
+}
+
+.text-link-visited {
+  color: var(--link-visited);
+}
+
+.text-link-inverse-visited {
+  color: var(--link-inverse-visited);
+}
+
+.text-text-primary {
+  color: var(--text-primary);
+}
+
+.text-text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-text-placeholder {
+  color: var(--text-placeholder);
+}
+
+.text-text-on-color {
+  color: var(--text-on-color);
+}
+
+.text-text-on-color-disabled {
+  color: var(--text-on-color-disabled);
+}
+
+.text-text-helper {
+  color: var(--text-helper);
+}
+
+.text-text-error {
+  color: var(--text-error);
+}
+
+.text-text-inverse {
+  color: var(--text-inverse);
+}
+
+.text-text-disabled {
+  color: var(--text-disabled);
+}
+
+.bg-layer-01 {
+  background-color: var(--layer-01);
+}
+
+.bg-layer-02 {
+  background-color: var(--layer-02);
+}
+
+.bg-layer-03 {
+  background-color: var(--layer-03);
+}
+
+.bg-layer-hover-01 {
+  background-color: var(--layer-hover-01);
+}
+
+.bg-layer-hover-02 {
+  background-color: var(--layer-hover-02);
+}
+
+.bg-layer-hover-03 {
+  background-color: var(--layer-hover-03);
+}
+
+.bg-layer-active-01 {
+  background-color: var(--layer-active-01);
+}
+
+.bg-layer-active-02 {
+  background-color: var(--layer-active-02);
+}
+
+.bg-layer-active-03 {
+  background-color: var(--layer-active-03);
+}
+
+.bg-layer-selected-01 {
+  background-color: var(--layer-selected-01);
+}
+
+.bg-layer-selected-02 {
+  background-color: var(--layer-selected-02);
+}
+
+.bg-layer-selected-03 {
+  background-color: var(--layer-selected-03);
+}
+
+.bg-layer-selected-hover-01 {
+  background-color: var(--layer-selected-hover-01);
+}
+
+.bg-layer-selected-hover-02 {
+  background-color: var(--layer-selected-hover-02);
+}
+
+.bg-layer-selected-hover-03 {
+  background-color: var(--layer-selected-hover-03);
+}
+
+.bg-layer-selected-inverse {
+  background-color: var(--layer-selected-inverse);
+}
+
+.bg-layer-disabled {
+  background-color: var(--layer-disabled);
+}
+
+.border-border-interactive {
+  border-color: var(--border-interactive);
+}
+
+.border-border-subtle-00 {
+  border-color: var(--border-subtle-00);
+}
+
+.border-border-subtle-01 {
+  border-color: var(--border-subtle-01);
+}
+
+.border-border-subtle-02 {
+  border-color: var(--border-subtle-02);
+}
+
+.border-border-subtle-03 {
+  border-color: var(--border-subtle-03);
+}
+
+.border-border-subtle-selected-01 {
+  border-color: var(--border-subtle-selected-01);
+}
+
+.border-border-subtle-selected-02 {
+  border-color: var(--border-subtle-selected-02);
+}
+
+.border-border-subtle-selected-03 {
+  border-color: var(--border-subtle-selected-03);
+}
+
+.border-border-strong-01 {
+  border-color: var(--border-strong-01);
+}
+
+.border-border-strong-02 {
+  border-color: var(--border-strong-02);
+}
+
+.border-border-strong-03 {
+  border-color: var(--border-strong-03);
+}
+
+.border-border-tile-01 {
+  border-color: var(--border-tile-01);
+}
+
+.border-border-tile-02 {
+  border-color: var(--border-tile-02);
+}
+
+.border-border-tile-03 {
+  border-color: var(--border-tile-03);
+}
+
+.border-border-inverse {
+  border-color: var(--border-inverse);
+}
+
+.border-border-disabled {
+  border-color: var(--border-disabled);
+}
 
 /* Typography Utility Classes */
 
@@ -558,16 +811,6 @@
 }
 
 /* Apply default body styles as per your example */
-body {
-  color: var(--text-primary);
-  background-color: var(--background);
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--text-primary);
-  --font-sans: var(--font-ibm-plex-sans);
-}
 
 body {
   background: var(--background);
