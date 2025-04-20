@@ -31,80 +31,80 @@
 
   /* Background Colors */
   --background: light-dark(#ffffff, #161616);
-  --background-hover: light-dark(#bd8d8d, #bd8d8d);
-  --background-active: light-dark(#bd8d8d, #bd8d8d);
-  --background-selected: light-dark(#bd8d8d, #bd8d8d);
-  --background-selected-hover: light-dark(#bd8d8d, #bd8d8d);
-  --background-inverse: light-dark(#393939, #f4f4f4);
-  --background-inverse-hover: light-dark(#4c4c4c, #e5e5e5);
-  --background-brand: light-dark(#0f62fe, #0f62fe);
+  --background-hover: light-dark(hsla(0, 0%, 55%, 0.12), hsla(0, 0%, 55%, 0.16));
+  --background-active: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 55%, 0.4));
+  --background-selected: light-dark(hsla(0, 0%, 55%, 0.2), hsla(0, 0%, 55%, 0.24));
+  --background-selected-hover: light-dark(hsla(0, 0%, 55%, 0.32), hsla(0, 0%, 55%, 0.32));
+  --background-inverse: light-dark(hsla(0, 0%, 22%, 1), hsla(0, 0%, 96%, 1));
+  --background-inverse-hover: light-dark(hsla(0, 0%, 28%, 1), hsla(0, 0%, 90%, 1));
+  --background-brand: light-dark(hsla(219, 99%, 53%, 1), hsla(219, 99%, 53%, 1));
 
   /* Icon Colors */
-  --icon-primary: light-dark(#161616, #f4f4f4);
-  --icon-secondary: light-dark(#525252, #c6c6c6);
-  --icon-on-color: light-dark(#ffffff, #ffffff);
-  --icon-on-color-disabled: light-dark(#bd8d8d, #bd8d8d);
-  --icon-interactive: light-dark(#0f62fe, #ffffff);
-  --icon-inverse: light-dark(#ffffff, #161616);
-  --icon-disabled: light-dark(rgba(22, 22, 22, 0.25), rgba(244, 244, 244, 0.25));
+  --icon-primary: light-dark(hsla(0, 0%, 9%, 1), hsla(0, 0%, 96%, 1));
+  --icon-secondary: light-dark(hsla(0, 0%, 32%, 1), hsla(0, 0%, 78%, 1));
+  --icon-on-color: light-dark(hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 1));
+  --icon-on-color-disabled: light-dark(hsla(0, 0%, 55%, 1), hsla(0, 0%, 96%, 0.25));
+  --icon-interactive: light-dark(hsla(219, 99%, 53%, 1), hsla(0, 0%, 100%, 1));
+  --icon-inverse: light-dark(hsla(0, 0%, 100%, 1), hsla(0, 0%, 9%, 1));
+  --icon-disabled: light-dark(hsla(0, 0%, 9%, 0.25), hsla(0, 0%, 96%, 0.25));
 
   /* Link Colors */
-  --link-primary: light-dark(#0f62fe, #78a9ff);
-  --link-primary-hover: light-dark(#054ada, #a6c8ff);
-  --link-secondary: light-dark(#0043ce, #a6c8ff);
-  --link-inverse: light-dark(#78a9ff, #0f62fe);
-  --link-inverse-hover: light-dark(#a6c8ff, #0043ce);
-  --link-inverse-active: light-dark(#f4f4f4, #161616);
-  --link-visited: light-dark(#8a3ffc, #be95ff);
-  --link-inverse-visited: light-dark(#be95ff, #8a3ffc);
+  --link-primary: light-dark(hsla(219, 99%, 53%, 1), hsla(218, 100%, 74%, 1));
+  --link-primary-hover: light-dark(hsla(220, 100%, 40%, 1), hsla(217, 100%, 83%, 1));
+  --link-secondary: light-dark(hsla(220, 100%, 40%, 1), hsla(217, 100%, 83%, 1));
+  --link-inverse: light-dark(hsla(218, 100%, 74%, 1), hsla(219, 99%, 53%, 1));
+  --link-inverse-hover: light-dark(hsla(217, 100%, 83%, 1), hsla(220, 100%, 40%, 1));
+  --link-inverse-active: light-dark(hsla(0, 0%, 96%, 1), hsla(0, 0%, 9%, 1));
+  --link-visited: light-dark(hsla(264, 97%, 62%, 1), hsla(263, 100%, 79%, 1));
+  --link-inverse-visited: light-dark(hsla(263, 100%, 79%, 1), hsla(264, 97%, 62%, 1));
 
   /* Text Colors */
-  --text-primary: light-dark(#161616, #f4f4f4);
-  --text-secondary: light-dark(#525252, #c6c6c6);
-  --text-placeholder: light-dark(#a8a8a8, #656565);
-  --text-on-color: light-dark(#ffffff, #ffffff);
-  --text-on-color-disabled: light-dark(#bd8d8d, #ffffff);
-  --text-helper: light-dark(#656565, #8d8d8d);
-  --text-error: light-dark(#da1e28, #ffb3b8);
-  --text-inverse: light-dark(#ffffff, #161616);
-  --text-disabled: light-dark(rgba(22, 22, 22, 0.25), rgba(244, 244, 244, 0.25));
+  --text-primary: light-dark(hsla(0, 0%, 9%, 1), hsla(0, 0%, 96%, 1));
+  --text-secondary: light-dark(hsla(0, 0%, 32%, 1), hsla(0, 0%, 78%, 1));
+  --text-placeholder: light-dark(hsla(0, 0%, 66%, 1), hsla(0, 0%, 44%, 1));
+  --text-on-color: light-dark(hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 1));
+  --text-on-color-disabled: light-dark(hsla(0, 0%, 55%, 1), hsla(0, 0%, 96%, 0.25));
+  --text-helper: light-dark(hsla(0, 0%, 44%, 1), hsla(0, 0%, 55%, 1));
+  --text-error: light-dark(hsla(357, 76%, 49%, 1), hsla(357, 100%, 76%, 1));
+  --text-inverse: light-dark(hsla(0, 0%, 100%, 1), hsla(0, 0%, 9%, 1));
+  --text-disabled: light-dark(hsla(0, 0%, 9%, 0.25), hsla(0, 0%, 96%, 0.25));
 
   /* Layer Colors */
-  --layer-01: light-dark(#f4f4f4, #22262c);
-  --layer-02: light-dark(#ffffff, #393939);
-  --layer-03: light-dark(#f4f4f4, #22262c);
-  --layer-hover-01: light-dark(#ebebcb, #333333);
-  --layer-hover-02: light-dark(#ebebcb, #474747);
-  --layer-hover-03: light-dark(#ebebcb, #333333);
-  --layer-active-01: light-dark(#cdc6c6, #22262c);
-  --layer-active-02: light-dark(#cdc6c6, #22262c);
-  --layer-active-03: light-dark(#cdc6c6, #22262c);
-  --layer-selected-01: light-dark(#e0e0e0, #393939);
-  --layer-selected-02: light-dark(#e0e0e0, #22262c);
-  --layer-selected-03: light-dark(#e0e0e0, #393939);
-  --layer-selected-hover-01: light-dark(#cacaca, #656565);
-  --layer-selected-hover-02: light-dark(#cacaca, #565656);
-  --layer-selected-hover-03: light-dark(#cacaca, #656565);
-  --layer-selected-inverse: light-dark(#151616, #f4f4f4);
-  --layer-disabled: light-dark(#bd8d8d, #bd8d8d);
+  --layer-01: light-dark(hsla(0, 0%, 96%, 1), hsla(0, 0%, 15%, 1));
+  --layer-02: light-dark(hsla(0, 0%, 100%, 1), hsla(0, 0%, 22%, 1));
+  --layer-03: light-dark(hsla(0, 0%, 96%, 1), hsla(0, 0%, 32%, 1));
+  --layer-hover-01: light-dark(hsla(0, 0%, 91%, 1), hsla(0, 0%, 20%, 1));
+  --layer-hover-02: light-dark(hsla(0, 0%, 91%, 1), hsla(0, 0%, 28%, 1));
+  --layer-hover-03: light-dark(hsla(0, 0%, 91%, 1), hsla(0, 0%, 55%, 1));
+  --layer-active-01: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 22%, 1));
+  --layer-active-02: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 44%, 1));
+  --layer-active-03: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 55%, 1));
+  --layer-selected-01: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 22%, 1));
+  --layer-selected-02: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 32%, 1));
+  --layer-selected-03: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 44%, 1));
+  --layer-selected-hover-01: light-dark(hsla(0, 0%, 82%, 1), hsla(0, 0%, 30%, 1));
+  --layer-selected-hover-02: light-dark(hsla(0, 0%, 82%, 1), hsla(0, 0%, 40%, 1));
+  --layer-selected-hover-03: light-dark(hsla(0, 0%, 82%, 1), hsla(0, 0%, 37%, 1));
+  --layer-selected-inverse: light-dark(hsla(0, 0%, 9%, 1), hsla(0, 0%, 96%, 1));
+  --layer-disabled: light-dark(hsla(0, 0%, 55%, 1), hsla(0, 0%, 44%, 1));
 
   /* Border Colors */
-  --border-interactive: light-dark(#0f62fe, #4899ff);
-  --border-subtle-00: light-dark(#e0e0e0, #525252); 
-  --border-subtle-01: light-dark(#cdc6c6, #525252);
-  --border-subtle-02: light-dark(#a8a8a8, #525252);
-  --border-subtle-03: light-dark(#cdc6c6, #525252);
-  --border-subtle-selected-01: light-dark(#a8a8a8, #656565);
-  --border-subtle-selected-02: light-dark(#cdc6c6, #656565);
-  --border-subtle-selected-03: light-dark(#a8a8a8, #656565);
-  --border-strong-01: light-dark(#bd8d8d, #656565);
-  --border-strong-02: light-dark(#bd8d8d, #656565);
-  --border-strong-03: light-dark(#bd8d8d, #656565);
-  --border-tile-01: light-dark(#a8a8a8, #525252);
-  --border-tile-02: light-dark(#cdc6c6, #525252);
-  --border-tile-03: light-dark(#a8a8a8, #525252);
-  --border-inverse: light-dark(#151616, #f4f4f4);
-  --border-disabled: light-dark(#bd8d8d, #bd8d8d);
+  --border-interactive: light-dark(hsla(219, 99%, 53%, 1), hsla(218, 100%, 64%, 1));
+  --border-subtle-00: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 22%, 1));
+  --border-subtle-01: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 22%, 1));
+  --border-subtle-02: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 32%, 1));
+  --border-subtle-03: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 44%, 1));
+  --border-subtle-selected-01: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 32%, 1));
+  --border-subtle-selected-02: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 44%, 1));
+  --border-subtle-selected-03: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 55%, 1));
+  --border-strong-01: light-dark(hsla(0, 0%, 55%, 1), hsla(0, 0%, 44%, 1));
+  --border-strong-02: light-dark(hsla(0, 0%, 55%, 1), hsla(0, 0%, 55%, 1));
+  --border-strong-03: light-dark(hsla(0, 0%, 55%, 1), hsla(0, 0%, 66%, 1));
+  --border-tile-01: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 32%, 1));
+  --border-tile-02: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 44%, 1));
+  --border-tile-03: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 55%, 1));
+  --border-inverse: light-dark(hsla(0, 0%, 9%, 1), hsla(0, 0%, 96%, 1));
+  --border-disabled: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 55%, 0.5));
 
   /* Typography: Body Styles */
   --body-compact-01-font: 'IBM Plex Sans', sans-serif;
