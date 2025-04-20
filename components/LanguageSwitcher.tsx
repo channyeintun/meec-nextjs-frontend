@@ -1,8 +1,9 @@
 'use client';
 
-import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useRouter, usePathname, useParams } from 'next/navigation';
 import { useState, useTransition } from 'react';
+import ChevronUp from './icons/ChevronUp';
+import ChevronDown from './icons/ChevronDown';
 
 export const LanguageSwitcher = () => {
   const { lang } = useParams<{ lang: string }>();
@@ -38,15 +39,15 @@ export const LanguageSwitcher = () => {
         onClick={() => {
           setIsOpen((prev) => !prev);
         }}
-        className="border-b border-border-subtle-00 flex items-center justify-between w-[70px] px-4 py-2 bg-layer-01 hover:bg-layer-hover-01 border-none shadow-[0_2px_8px_rgba(0,0,0,0.08)] focus:outline-none"
+        className="border-b border-border-subtle-00 flex gap-2 items-center justify-between w-[70px] px-4 py-[15px] bg-layer-01 hover:bg-layer-hover-01 shadow-[0_2px_6px_0px_rgba(0, 0, 0, 0.30)] focus:outline-none"
       >
         <span className="body-01 text-text-primary uppercase">{selectedLanguage}</span>
-        {isOpen ? <ChevronUp size={16} className='text-icon-primary' /> : <ChevronDown size={16} className='text-icon-primary' />}
+        {isOpen ? <ChevronUp /> : <ChevronDown />}
       </button>
 
       {/* Dropdown menu */}
       {isOpen && (
-        <div className="absolute end-0 top-full w-[180px] bg-layer-01 hover:bg-layer-hover-01 border-none shadow-[0_4px_16px_rgba(0,0,0,0.1)] z-10">
+        <div className="absolute end-0 top-full bg-layer-01 hover:bg-layer-hover-01 border-none shadow-[0_2px_6px_0px_rgba(0, 0, 0, 0.30)] z-10">
           {languages.map((lang) => (
             <button
               key={lang.code}
@@ -55,7 +56,7 @@ export const LanguageSwitcher = () => {
                 handleSelect(lang.code);
                 changeLocale(lang.code);
               }}
-              className="w-full text-left px-4 py-2 text-[14px] text-text-primary bg-layer-01 focus:outline-none"
+              className="w-full text-left px-4 py-3 text-[14px] text-text-primary bg-layer-01 focus:outline-none whitespace-nowrap"
             >
               {lang.name}
             </button>
