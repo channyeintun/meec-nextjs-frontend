@@ -10,10 +10,10 @@
 
 @layer utilities {
     .carbon-button {
-        @apply flex items-center justify-start font-sans text-base text-[var(--text-primary)] bg-transparent hover:bg-[var(--layer-hover-01)];
+        @apply p-[15px] lg:pt-[25px] flex items-center justify-start font-sans text-base text-[var(--text-primary)] bg-transparent hover:bg-[var(--layer-hover-01)];
     }
 
     .carbon-button-primary {
-        @apply px-[10px] py-[15px] lg:pt-[25px] flex items-center justify-start font-sans text-base hover:bg-[var(--button-primary-hover)] bg-[var(--button-primary)] text-[var(--text-on-color)];
+        @apply p-[15px] lg:pt-[25px] flex items-center justify-start font-sans text-base hover:bg-[var(--button-primary-hover)] bg-[var(--button-primary)] text-[var(--text-on-color)];
     }
 }

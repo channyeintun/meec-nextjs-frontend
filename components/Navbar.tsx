@@ -31,14 +31,14 @@ export const Navbar = () => {
             <nav className="lg:flex lg:items-center lg:justify-start">
                 <ul className="lg:ps-[var(--spacing-05)] hidden group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:static border-b border-[var(--border-subtle-00)] bg-[var(--background)]">
                     <li>
-                        <Link href="/" className="block max-lg:px-8 max-lg:py-[14px] carbon-button">Home</Link>
+                        <Link href="/" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button">Home</Link>
                     </li>
                     <li>
-                        <Link href="/about" className="block max-lg:px-8 max-lg:py-[14px] carbon-button">About</Link>
+                        <Link href="/about" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button">About</Link>
                     </li>
                     <li>
                         <details className="group relative">
-                            <summary className="flex items-center cursor-pointer max-lg:px-8 max-lg:py-[14px] carbon-button lg:group-open:bg-[var(--layer-01)]">
+                            <summary className="flex items-center cursor-pointer max-lg:!px-8 max-lg:!py-[14px] carbon-button lg:group-open:bg-[var(--layer-01)]">
                                 News & Blogs
                                 <span className="w-4 h-4 ms-auto lg:ml-1 group-open:rotate-180">
                                     <ChevronDown />
@@ -61,16 +61,16 @@ export const Navbar = () => {
                         </details>
                     </li>
                     <li>
-                        <Link href="/publications" className="block carbon-button max-lg:px-8 max-lg:py-[14px]">Publications</Link>
+                        <Link href="/publications" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button">Publications</Link>
                     </li>
                     <li>
-                        <Link href="/events" className="block max-lg:px-8 max-lg:py-[14px] carbon-button">Events</Link>
+                        <Link href="/events" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button">Events</Link>
                     </li>
                     <li>
-                        <Link href="/contact" className="block max-lg:px-8 max-lg:py-[14px] carbon-button">Contact Us</Link>
+                        <Link href="/contact" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button">Contact Us</Link>
                     </li>
                     <li className="lg:ml-auto">
-                        <Link href="/apply" className="block max-lg:px-8 max-lg:py-[14px] carbon-button-primary">Apply for assistance</Link>
+                        <Link href="/apply" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary">Apply for assistance</Link>
                     </li>
                 </ul>
             </nav>
