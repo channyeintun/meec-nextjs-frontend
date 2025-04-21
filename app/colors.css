@@ -162,3 +162,42 @@
     --tag-hover-green: light-dark(hsla(136, 71%, 68%, 1), hsla(138, 74%, 26%, 1));
     --tag-boder-green: light-dark(hsla(137, 49%, 50%, 1), hsla(137, 63%, 39%, 1));
 }
+
+@supports (anchor-name: --a) {
+    a:target {
+        anchor-name: --target;
+    }
+
+    li:has(a:is(:hover, :focus-visible)) {
+        anchor-name: --anchor;
+    }
+
+    ul::before {
+        content: '';
+        position: absolute;
+        position-anchor: --anchor;
+        left:anchor(left);
+        top: anchor(bottom);
+        width: 200px;
+        height: 3px;
+        background-color: red;
+        z-index: 50;
+    }
+
+    ul::after {
+        content: '';
+        position: absolute;
+        position-anchor: --target;
+        left: calc(anchor(left));
+        top: anchor(bottom);
+        width: calc(anchor-size(width));
+        height: 3px;
+        background-color: red;
+        z-index: 50;
+    }
+}
+
+::view-transition-group(target),
+::view-transition-group(item) {
+    mix-blend-mode: normal;
+}

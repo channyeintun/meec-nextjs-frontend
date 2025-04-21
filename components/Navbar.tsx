@@ -40,7 +40,7 @@ export const Navbar = () => {
 
                 {/* Navigation Links */}
                 <nav className="lg:flex lg:items-center lg:justify-start">
-                    <ul className="lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:static border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0">
+                    <ul className="lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0">
                         <li>
                             <Link href="/" className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] carbon-button",
