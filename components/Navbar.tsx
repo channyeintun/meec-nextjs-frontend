@@ -42,23 +42,23 @@ export const Navbar = () => {
                 <ul className="lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:static border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0">
                     <li>
                         <Link href="/" className={cn(
-                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button border-b-3 border-transparent",
+                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                             {
-                                "border-[var(--border-interactive)] hover:!border-[var(--border-interactive)]": pathname.replace(`/${lang}`, '') === ""
+                                "": pathname.replace(`/${lang}`, '') === ""
                             }
                         )}>Home</Link>
                     </li>
                     <li>
                         <Link href="/about" className={cn(
-                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button border-b-3 border-transparent",
+                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                             {
-                                "border-[var(--border-interactive)] hover:!border-[var(--border-interactive)]": pathname.replace(`/${lang}`, '') === "/about"
+                                "": pathname.replace(`/${lang}`, '') === "/about"
                             }
                         )}>About</Link>
                     </li>
                     <li>
                         <details className="group relative">
-                            <summary className="relative z-10 flex items-center cursor-pointer max-lg:!px-8 max-lg:!py-[14px] carbon-button lg:group-open:bg-[var(--layer-01)] group-open:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)] border-b-3 border-transparent">
+                            <summary className="relative z-10 flex items-center cursor-pointer max-lg:!px-8 max-lg:!py-[14px] carbon-button lg:group-open:bg-[var(--layer-01)] group-open:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]">
                                 News & Blogs
                                 <span className="w-4 h-4 ms-auto lg:ml-1 group-open:rotate-180">
                                     <ChevronDown />
@@ -82,30 +82,30 @@ export const Navbar = () => {
                     </li>
                     <li>
                         <Link href="/publications" className={cn(
-                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button border-b-3 border-transparent",
+                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                             {
-                                "border-b-3 border-[var(--border-interactive)] hover:!border-[var(--border-interactive)]": pathname.replace(`/${lang}`, '') === "/publications"
+                                "": pathname.replace(`/${lang}`, '') === "/publications"
                             }
                         )}>Publications</Link>
                     </li>
                     <li>
                         <Link href="/events" className={cn(
-                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button border-b-3 border-transparent",
+                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                             {
-                                "border-b-3 border-[var(--border-interactive)] hover:!border-[var(--border-interactive)]": pathname.replace(`/${lang}`, '') === "/events"
+                                "": pathname.replace(`/${lang}`, '') === "/events"
                             }
                         )}>Events</Link>
                     </li>
                     <li>
                         <Link href="/contact" className={cn(
-                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button border-b-3 border-transparent",
+                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                             {
-                                "border-b-3 border-[var(--border-interactive)] hover:!border-[var(--border-interactive)]": pathname.replace(`/${lang}`, '') === "/contact"
+                                "": pathname.replace(`/${lang}`, '') === "/contact"
                             }
                         )}>Contact Us</Link>
                     </li>
                     <li className="lg:ml-auto">
-                        <Link href="/apply" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary border-b-3 border-[var(--button-primary)]">Apply for assistance</Link>
+                        <Link href="/apply" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary">Apply for assistance</Link>
                     </li>
                 </ul>
             </nav >
