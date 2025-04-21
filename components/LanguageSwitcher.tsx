@@ -39,7 +39,7 @@ export const LanguageSwitcher = () => {
         onClick={() => {
           setIsOpen((prev) => !prev);
         }}
-        className="border-b border-border-subtle-00 flex gap-2 items-center justify-between w-[70px] px-4 py-[15px] bg-layer-01 hover:bg-layer-hover-01 shadow-[0_2px_6px_0px_rgba(0, 0, 0, 0.30)] focus:outline-none"
+        className="border-b border-[var(--border-subtle-00)] flex gap-2 items-center justify-between w-[70px] px-4 py-[15px] bg-[var(--layer-01)] hover:bg-[var(--layer-hover-01)] shadow-[0_2px_6px_0px_rgba(0, 0, 0, 0.30)] focus:outline-none"
       >
         <span className="body-01 text-text-primary uppercase">{selectedLanguage}</span>
         {isOpen ? <ChevronUp /> : <ChevronDown />}
@@ -47,7 +47,7 @@ export const LanguageSwitcher = () => {
 
       {/* Dropdown menu */}
       {isOpen && (
-        <div className="absolute end-0 top-full bg-layer-01 hover:bg-layer-hover-01 border-none shadow-[0_2px_6px_0px_rgba(0, 0, 0, 0.30)] z-10">
+        <div className="absolute end-0 top-full bg-[var(--layer-01)] hover:bg-[var(--layer-hover-01)] border-none shadow-[0_2px_6px_0px_rgba(0, 0, 0, 0.30)] z-10">
           {languages.map((lang) => (
             <button
               key={lang.code}
@@ -56,7 +56,7 @@ export const LanguageSwitcher = () => {
                 handleSelect(lang.code);
                 changeLocale(lang.code);
               }}
-              className="w-full text-left px-4 py-3 text-[14px] text-text-primary bg-layer-01 focus:outline-none whitespace-nowrap"
+              className="w-full text-left px-4 py-3 text-[14px] text-[var(--text-primary)] bg-[var(--layer-01)] focus:outline-none whitespace-nowrap"
             >
               {lang.name}
             </button>

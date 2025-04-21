@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import "./tailwindcss.css";
 import "./globals.css";
+import { Navbar } from "@/components/Navbar";
 
 const sans = IBM_Plex_Sans({
   weight: ['400'],
@@ -30,6 +31,7 @@ export default function RootLayout({
         }}
         className={`${sans.variable} antialiased content-auto`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
