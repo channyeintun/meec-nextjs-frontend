@@ -1,10 +1,18 @@
+"use client";
+
 import Link from "next/link"
 import { LanguageSwitcher } from "./LanguageSwitcher"
 import Menu from "./icons/Menu"
 import Close from "./icons/Close"
 import ChevronDown from "./icons/ChevronDown"
+import { useParams, usePathname } from "next/navigation"
+import { cn } from "@/lib/utils";
 
 export const Navbar = () => {
+
+    const pathname = usePathname();
+
+    const { lang } = useParams<{ lang: string }>();
 
     return (
         <header className="bg-[var(--background)] group relative">
@@ -33,14 +41,24 @@ export const Navbar = () => {
             <nav className="lg:flex lg:items-center lg:justify-start">
                 <ul className="lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:static border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0">
                     <li>
-                        <Link href="/" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button">Home</Link>
+                        <Link href="/" className={cn(
+                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button border-b-3 border-transparent",
+                            {
+                                "border-[var(--border-interactive)] hover:!border-[var(--border-interactive)]": pathname.replace(`/${lang}`, '') === ""
+                            }
+                        )}>Home</Link>
                     </li>
                     <li>
-                        <Link href="/about" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button">About</Link>
+                        <Link href="/about" className={cn(
+                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button border-b-3 border-transparent",
+                            {
+                                "border-[var(--border-interactive)] hover:!border-[var(--border-interactive)]": pathname.replace(`/${lang}`, '') === "/about"
+                            }
+                        )}>About</Link>
                     </li>
                     <li>
                         <details className="group relative">
-                            <summary className="relative z-10 flex items-center cursor-pointer max-lg:!px-8 max-lg:!py-[14px] carbon-button lg:group-open:bg-[var(--layer-01)] group-open:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]">
+                            <summary className="relative z-10 flex items-center cursor-pointer max-lg:!px-8 max-lg:!py-[14px] carbon-button lg:group-open:bg-[var(--layer-01)] group-open:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)] border-b-3 border-transparent">
                                 News & Blogs
                                 <span className="w-4 h-4 ms-auto lg:ml-1 group-open:rotate-180">
                                     <ChevronDown />
@@ -63,19 +81,34 @@ export const Navbar = () => {
                         </details>
                     </li>
                     <li>
-                        <Link href="/publications" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button">Publications</Link>
+                        <Link href="/publications" className={cn(
+                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button border-b-3 border-transparent",
+                            {
+                                "border-b-3 border-[var(--border-interactive)] hover:!border-[var(--border-interactive)]": pathname.replace(`/${lang}`, '') === "/publications"
+                            }
+                        )}>Publications</Link>
                     </li>
                     <li>
-                        <Link href="/events" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button">Events</Link>
+                        <Link href="/events" className={cn(
+                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button border-b-3 border-transparent",
+                            {
+                                "border-b-3 border-[var(--border-interactive)] hover:!border-[var(--border-interactive)]": pathname.replace(`/${lang}`, '') === "/events"
+                            }
+                        )}>Events</Link>
                     </li>
                     <li>
-                        <Link href="/contact" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button">Contact Us</Link>
+                        <Link href="/contact" className={cn(
+                            "block max-lg:!px-8 max-lg:!py-[14px] carbon-button border-b-3 border-transparent",
+                            {
+                                "border-b-3 border-[var(--border-interactive)] hover:!border-[var(--border-interactive)]": pathname.replace(`/${lang}`, '') === "/contact"
+                            }
+                        )}>Contact Us</Link>
                     </li>
                     <li className="lg:ml-auto">
-                        <Link href="/apply" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary">Apply for assistance</Link>
+                        <Link href="/apply" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary border-b-3 border-[var(--button-primary)]">Apply for assistance</Link>
                     </li>
                 </ul>
-            </nav>
-        </header>
+            </nav >
+        </header >
     )
 }

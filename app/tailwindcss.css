@@ -10,7 +10,7 @@
 
 @layer utilities {
     .carbon-button {
-        @apply p-[15px] lg:pt-[25px] flex items-center justify-start font-sans text-base text-[var(--text-primary)] bg-transparent hover:bg-[var(--layer-hover-01)];
+        @apply p-[15px] lg:pt-[25px] flex items-center justify-start font-sans text-base text-[var(--text-primary)] bg-transparent hover:bg-[var(--layer-hover-01)] hover:border-b-3 hover:border-[var(--layer-hover-01)];
     }
 
     .carbon-button-primary {
