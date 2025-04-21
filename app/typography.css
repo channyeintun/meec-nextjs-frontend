@@ -1,0 +1,443 @@
+:root {
+    /* Typography: Body Styles */
+    --body-compact-01-font: 'IBM Plex Sans', sans-serif;
+    --body-compact-01-size: 0.875rem;
+    /* 14px */
+    --body-compact-01-line-height: 1.125rem;
+    /* 18px */
+    --body-compact-01-weight: 400;
+    --body-compact-01-letter-spacing: 0.16px;
+
+    --body-compact-02-font: 'IBM Plex Sans', sans-serif;
+    --body-compact-02-size: 1rem;
+    /* 16px */
+    --body-compact-02-line-height: 1.375rem;
+    /* 22px */
+    --body-compact-02-weight: 400;
+    --body-compact-02-letter-spacing: 0;
+
+    --body-01-font: 'IBM Plex Sans', sans-serif;
+    --body-01-size: 0.875rem;
+    /* 14px */
+    --body-01-line-height: 1.25rem;
+    /* 20px */
+    --body-01-weight: 400;
+    --body-01-letter-spacing: 0.16px;
+
+    --body-02-font: 'IBM Plex Sans', sans-serif;
+    --body-02-size: 1rem;
+    /* 16px */
+    --body-02-line-height: 1.5rem;
+    /* 24px */
+    --body-02-weight: 400;
+    --body-02-letter-spacing: 0;
+
+    /* Typography: Heading Styles */
+    --heading-compact-01-font: 'IBM Plex Sans', sans-serif;
+    --heading-compact-01-size: 0.875rem;
+    /* 14px */
+    --heading-compact-01-line-height: 1.125rem;
+    /* 18px */
+    --heading-compact-01-weight: 600;
+    --heading-compact-01-letter-spacing: 0.16px;
+
+    --heading-compact-02-font: 'IBM Plex Sans', sans-serif;
+    --heading-compact-02-size: 1rem;
+    /* 16px */
+    --heading-compact-02-line-height: 1.375rem;
+    /* 22px */
+    --heading-compact-02-weight: 600;
+    --heading-compact-02-letter-spacing: 0;
+
+    --heading-01-font: 'IBM Plex Sans', sans-serif;
+    --heading-01-size: 0.875rem;
+    /* 14px */
+    --heading-01-line-height: 1.25rem;
+    /* 20px */
+    --heading-01-weight: 600;
+    --heading-01-letter-spacing: 0.16px;
+
+    --heading-02-font: 'IBM Plex Sans', sans-serif;
+    --heading-02-size: 1rem;
+    /* 16px */
+    --heading-02-line-height: 1.5rem;
+    /* 24px */
+    --heading-02-weight: 600;
+    --heading-02-letter-spacing: 0;
+
+    /* Typography: Fluid Styles - LG */
+    --fluid-heading-03-font: 'IBM Plex Sans', sans-serif;
+    --fluid-heading-03-size: 1.25rem;
+    /* 20px */
+    --fluid-heading-03-line-height: 1.75rem;
+    /* 28px */
+    --fluid-heading-03-weight: 400;
+    --fluid-heading-03-letter-spacing: 0;
+
+    --fluid-heading-04-font: 'IBM Plex Sans', sans-serif;
+    --fluid-heading-04-size: 1.75rem;
+    /* 28px */
+    --fluid-heading-04-line-height: 2.25rem;
+    /* 36px */
+    --fluid-heading-04-weight: 400;
+    --fluid-heading-04-letter-spacing: 0;
+
+    --fluid-heading-05-font: 'IBM Plex Sans', sans-serif;
+    --fluid-heading-05-size: 2.625rem;
+    /* 42px */
+    --fluid-heading-05-line-height: 3.125rem;
+    /* 50px */
+    --fluid-heading-05-weight: 300;
+    --fluid-heading-05-letter-spacing: 0;
+
+    --fluid-heading-06-font: 'IBM Plex Sans', sans-serif;
+    --fluid-heading-06-size: 2.625rem;
+    /* 42px */
+    --fluid-heading-06-line-height: 3.125rem;
+    /* 50px */
+    --fluid-heading-06-weight: 600;
+    --fluid-heading-06-letter-spacing: 0;
+
+    --fluid-paragraph-01-font: 'IBM Plex Sans', sans-serif;
+    --fluid-paragraph-01-size: 1.75rem;
+    /* 28px */
+    --fluid-paragraph-01-line-height: 2.25rem;
+    /* 36px */
+    --fluid-paragraph-01-weight: 300;
+    --fluid-paragraph-01-letter-spacing: 0;
+
+    --fluid-quotation-01-font: 'IBM Plex Serif', serif;
+    --fluid-quotation-01-size: 1.5rem;
+    /* 24px */
+    --fluid-quotation-01-line-height: 1.875rem;
+    /* 30px */
+    --fluid-quotation-01-weight: 400;
+    --fluid-quotation-01-letter-spacing: 0;
+
+    --fluid-quotation-02-font: 'IBM Plex Serif', serif;
+    --fluid-quotation-02-size: 2.625rem;
+    /* 42px */
+    --fluid-quotation-02-line-height: 3.125rem;
+    /* 50px */
+    --fluid-quotation-02-weight: 300;
+    --fluid-quotation-02-letter-spacing: 0;
+
+    --fluid-display-01-font: 'IBM Plex Sans', sans-serif;
+    --fluid-display-01-size: 3.375rem;
+    /* 54px */
+    --fluid-display-01-line-height: 4rem;
+    /* 64px */
+    --fluid-display-01-weight: 300;
+    --fluid-display-01-letter-spacing: 0;
+
+    --fluid-display-02-font: 'IBM Plex Sans', sans-serif;
+    --fluid-display-02-size: 3.375rem;
+    /* 54px */
+    --fluid-display-02-line-height: 4rem;
+    /* 64px */
+    --fluid-display-02-weight: 600;
+    --fluid-display-02-letter-spacing: 0;
+
+    --fluid-display-03-font: 'IBM Plex Sans', sans-serif;
+    --fluid-display-03-size: 4.75rem;
+    /* 76px */
+    --fluid-display-03-line-height: 5.375rem;
+    /* 86px */
+    --fluid-display-03-weight: 300;
+    --fluid-display-03-letter-spacing: 0;
+
+    --fluid-display-04-font: 'IBM Plex Sans', sans-serif;
+    --fluid-display-04-size: 7.5rem;
+    /* 120px */
+    --fluid-display-04-line-height: 8.125rem;
+    /* 130px */
+    --fluid-display-04-weight: 300;
+    --fluid-display-04-letter-spacing: -0.64px;
+
+    /* Typography: Utility Styles */
+    --code-01-font: 'IBM Plex Mono', monospace;
+    --code-01-size: 0.75rem;
+    /* 12px */
+    --code-01-line-height: 1rem;
+    /* 16px */
+    --code-01-weight: 400;
+    --code-01-letter-spacing: 0.32px;
+
+    --code-02-font: 'IBM Plex Mono', monospace;
+    --code-02-size: 0.875rem;
+    /* 14px */
+    --code-02-line-height: 1.25rem;
+    /* 20px */
+    --code-02-weight: 400;
+    --code-02-letter-spacing: 0.32px;
+
+    --label-01-font: 'IBM Plex Sans', sans-serif;
+    --label-01-size: 0.75rem;
+    /* 12px */
+    --label-01-line-height: 1rem;
+    /* 16px */
+    --label-01-weight: 400;
+    --label-01-letter-spacing: 0.32px;
+
+    --label-02-font: 'IBM Plex Sans', sans-serif;
+    --label-02-size: 0.875rem;
+    /* 14px */
+    --label-02-line-height: 1.125rem;
+    /* 18px */
+    --label-02-weight: 400;
+    --label-02-letter-spacing: 0.16px;
+
+    --helper-text-01-font: 'IBM Plex Sans', sans-serif;
+    --helper-text-01-size: 0.75rem;
+    /* 12px */
+    --helper-text-01-line-height: 1rem;
+    /* 16px */
+    --helper-text-01-weight: 400;
+    --helper-text-01-letter-spacing: 0.32px;
+
+    --helper-text-02-font: 'IBM Plex Sans', sans-serif;
+    --helper-text-02-size: 0.875rem;
+    /* 14px */
+    --helper-text-02-line-height: 1.125rem;
+    /* 18px */
+    --helper-text-02-weight: 400;
+    --helper-text-02-letter-spacing: 0.16px;
+
+    --legal-01-font: 'IBM Plex Sans', sans-serif;
+    --legal-01-size: 0.75rem;
+    /* 12px */
+    --legal-01-line-height: 1rem;
+    /* 16px */
+    --legal-01-weight: 400;
+    --legal-01-letter-spacing: 0.32px;
+
+    --legal-02-font: 'IBM Plex Sans', sans-serif;
+    --legal-02-size: 0.875rem;
+    /* 14px */
+    --legal-02-line-height: 1.125rem;
+    /* 18px */
+    --legal-02-weight: 400;
+    --legal-02-letter-spacing: 0.16px;
+}
+
+/* Typography Utility Classes */
+
+/* Body Styles */
+.body-compact-01 {
+    font-family: var(--body-compact-01-font);
+    font-size: var(--body-compact-01-size);
+    line-height: var(--body-compact-01-line-height);
+    font-weight: var(--body-compact-01-weight);
+    letter-spacing: var(--body-compact-01-letter-spacing);
+}
+
+.body-compact-02 {
+    font-family: var(--body-compact-02-font);
+    font-size: var(--body-compact-02-size);
+    line-height: var(--body-compact-02-line-height);
+    font-weight: var(--body-compact-02-weight);
+    letter-spacing: var(--body-compact-02-letter-spacing);
+}
+
+.body-01 {
+    font-family: var(--body-01-font);
+    font-size: var(--body-01-size);
+    line-height: var(--body-01-line-height);
+    font-weight: var(--body-01-weight);
+    letter-spacing: var(--body-01-letter-spacing);
+}
+
+.body-02 {
+    font-family: var(--body-02-font);
+    font-size: var(--body-02-size);
+    line-height: var(--body-02-line-height);
+    font-weight: var(--body-02-weight);
+    letter-spacing: var(--body-02-letter-spacing);
+}
+
+/* Heading Styles */
+.heading-compact-01 {
+    font-family: var(--heading-compact-01-font);
+    font-size: var(--heading-compact-01-size);
+    line-height: var(--heading-compact-01-line-height);
+    font-weight: var(--heading-compact-01-weight);
+    letter-spacing: var(--heading-compact-01-letter-spacing);
+}
+
+.heading-compact-02 {
+    font-family: var(--heading-compact-02-font);
+    font-size: var(--heading-compact-02-size);
+    line-height: var(--heading-compact-02-line-height);
+    font-weight: var(--heading-compact-02-weight);
+    letter-spacing: var(--heading-compact-02-letter-spacing);
+}
+
+.heading-01 {
+    font-family: var(--heading-01-font);
+    font-size: var(--heading-01-size);
+    line-height: var(--heading-01-line-height);
+    font-weight: var(--heading-01-weight);
+    letter-spacing: var(--heading-01-letter-spacing);
+}
+
+.heading-02 {
+    font-family: var(--heading-02-font);
+    font-size: var(--heading-02-size);
+    line-height: var(--heading-02-line-height);
+    font-weight: var(--heading-02-weight);
+    letter-spacing: var(--heading-02-letter-spacing);
+}
+
+/* Fluid Styles */
+.fluid-heading-03 {
+    font-family: var(--fluid-heading-03-font);
+    font-size: var(--fluid-heading-03-size);
+    line-height: var(--fluid-heading-03-line-height);
+    font-weight: var(--fluid-heading-03-weight);
+    letter-spacing: var(--fluid-heading-03-letter-spacing);
+}
+
+.fluid-heading-04 {
+    font-family: var(--fluid-heading-04-font);
+    font-size: var(--fluid-heading-04-size);
+    line-height: var(--fluid-heading-04-line-height);
+    font-weight: var(--fluid-heading-04-weight);
+    letter-spacing: var(--fluid-heading-04-letter-spacing);
+}
+
+.fluid-heading-05 {
+    font-family: var(--fluid-heading-05-font);
+    font-size: var(--fluid-heading-05-size);
+    line-height: var(--fluid-heading-05-line-height);
+    font-weight: var(--fluid-heading-05-weight);
+    letter-spacing: var(--fluid-heading-05-letter-spacing);
+}
+
+.fluid-heading-06 {
+    font-family: var(--fluid-heading-06-font);
+    font-size: var(--fluid-heading-06-size);
+    line-height: var(--fluid-heading-06-line-height);
+    font-weight: var(--fluid-heading-06-weight);
+    letter-spacing: var(--fluid-heading-06-letter-spacing);
+}
+
+.fluid-paragraph-01 {
+    font-family: var(--fluid-paragraph-01-font);
+    font-size: var(--fluid-paragraph-01-size);
+    line-height: var(--fluid-paragraph-01-line-height);
+    font-weight: var(--fluid-paragraph-01-weight);
+    letter-spacing: var(--fluid-paragraph-01-letter-spacing);
+}
+
+.fluid-quotation-01 {
+    font-family: var(--fluid-quotation-01-font);
+    font-size: var(--fluid-quotation-01-size);
+    line-height: var(--fluid-quotation-01-line-height);
+    font-weight: var(--fluid-quotation-01-weight);
+    letter-spacing: var(--fluid-quotation-01-letter-spacing);
+}
+
+.fluid-quotation-02 {
+    font-family: var(--fluid-quotation-02-font);
+    font-size: var(--fluid-quotation-02-size);
+    line-height: var(--fluid-quotation-02-line-height);
+    font-weight: var(--fluid-quotation-02-weight);
+    letter-spacing: var(--fluid-quotation-02-letter-spacing);
+}
+
+.fluid-display-01 {
+    font-family: var(--fluid-display-01-font);
+    font-size: var(--fluid-display-01-size);
+    line-height: var(--fluid-display-01-line-height);
+    font-weight: var(--fluid-display-01-weight);
+    letter-spacing: var(--fluid-display-01-letter-spacing);
+}
+
+.fluid-display-02 {
+    font-family: var(--fluid-display-02-font);
+    font-size: var(--fluid-display-02-size);
+    line-height: var(--fluid-display-02-line-height);
+    font-weight: var(--fluid-display-02-weight);
+    letter-spacing: var(--fluid-display-02-letter-spacing);
+}
+
+.fluid-display-03 {
+    font-family: var(--fluid-display-03-font);
+    font-size: var(--fluid-display-03-size);
+    line-height: var(--fluid-display-03-line-height);
+    font-weight: var(--fluid-display-03-weight);
+    letter-spacing: var(--fluid-display-03-letter-spacing);
+}
+
+.fluid-display-04 {
+    font-family: var(--fluid-display-04-font);
+    font-size: var(--fluid-display-04-size);
+    line-height: var(--fluid-display-04-line-height);
+    font-weight: var(--fluid-display-04-weight);
+    letter-spacing: var(--fluid-display-04-letter-spacing);
+}
+
+/* Utility Styles */
+.code-01 {
+    font-family: var(--code-01-font);
+    font-size: var(--code-01-size);
+    line-height: var(--code-01-line-height);
+    font-weight: var(--code-01-weight);
+    letter-spacing: var(--code-01-letter-spacing);
+}
+
+.code-02 {
+    font-family: var(--code-02-font);
+    font-size: var(--code-02-size);
+    line-height: var(--code-02-line-height);
+    font-weight: var(--code-02-weight);
+    letter-spacing: var(--code-02-letter-spacing);
+}
+
+.label-01 {
+    font-family: var(--label-01-font);
+    font-size: var(--label-01-size);
+    line-height: var(--label-01-line-height);
+    font-weight: var(--label-01-weight);
+    letter-spacing: var(--label-01-letter-spacing);
+}
+
+.label-02 {
+    font-family: var(--label-02-font);
+    font-size: var(--label-02-size);
+    line-height: var(--label-02-line-height);
+    font-weight: var(--label-02-weight);
+    letter-spacing: var(--label-02-letter-spacing);
+}
+
+.helper-text-01 {
+    font-family: var(--helper-text-01-font);
+    font-size: var(--helper-text-01-size);
+    line-height: var(--helper-text-01-line-height);
+    font-weight: var(--helper-text-01-weight);
+    letter-spacing: var(--helper-text-01-letter-spacing);
+}
+
+.helper-text-02 {
+    font-family: var(--helper-text-02-font);
+    font-size: var(--helper-text-02-size);
+    line-height: var(--helper-text-02-line-height);
+    font-weight: var(--helper-text-02-weight);
+    letter-spacing: var(--helper-text-02-letter-spacing);
+}
+
+.legal-01 {
+    font-family: var(--legal-01-font);
+    font-size: var(--legal-01-size);
+    line-height: var(--legal-01-line-height);
+    font-weight: var(--legal-01-weight);
+    letter-spacing: var(--legal-01-letter-spacing);
+}
+
+.legal-02 {
+    font-family: var(--legal-02-font);
+    font-size: var(--legal-02-size);
+    line-height: var(--legal-02-line-height);
+    font-weight: var(--legal-02-weight);
+    letter-spacing: var(--legal-02-letter-spacing);
+}

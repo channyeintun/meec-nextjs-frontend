@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import "./tailwindcss.css";
+import "./colors.css";
+import "./typography.css";
+import "./spacing.css";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 

@@ -1,0 +1,164 @@
+:root {
+    /* Background Colors */
+    --background: light-dark(#ffffff, #161616);
+    --background-hover: light-dark(hsla(0, 0%, 55%, 0.12), hsla(0, 0%, 55%, 0.16));
+    --background-active: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 55%, 0.4));
+    --background-selected: light-dark(hsla(0, 0%, 55%, 0.2), hsla(0, 0%, 55%, 0.24));
+    --background-selected-hover: light-dark(hsla(0, 0%, 55%, 0.32), hsla(0, 0%, 55%, 0.32));
+    --background-inverse: light-dark(hsla(0, 0%, 22%, 1), hsla(0, 0%, 96%, 1));
+    --background-inverse-hover: light-dark(hsla(0, 0%, 28%, 1), hsla(0, 0%, 90%, 1));
+    --background-brand: light-dark(hsla(219, 99%, 53%, 1), hsla(219, 99%, 53%, 1));
+
+    /* Icon Colors */
+    --icon-primary: light-dark(hsla(0, 0%, 9%, 1), hsla(0, 0%, 96%, 1));
+    --icon-secondary: light-dark(hsla(0, 0%, 32%, 1), hsla(0, 0%, 78%, 1));
+    --icon-on-color: light-dark(hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 1));
+    --icon-on-color-disabled: light-dark(hsla(0, 0%, 55%, 1), hsla(0, 0%, 96%, 0.25));
+    --icon-interactive: light-dark(hsla(219, 99%, 53%, 1), hsla(0, 0%, 100%, 1));
+    --icon-inverse: light-dark(hsla(0, 0%, 100%, 1), hsla(0, 0%, 9%, 1));
+    --icon-disabled: light-dark(hsla(0, 0%, 9%, 0.25), hsla(0, 0%, 96%, 0.25));
+
+    /* Link Colors */
+    --link-primary: light-dark(hsla(219, 99%, 53%, 1), hsla(218, 100%, 74%, 1));
+    --link-primary-hover: light-dark(hsla(220, 100%, 40%, 1), hsla(217, 100%, 83%, 1));
+    --link-secondary: light-dark(hsla(220, 100%, 40%, 1), hsla(217, 100%, 83%, 1));
+    --link-inverse: light-dark(hsla(218, 100%, 74%, 1), hsla(219, 99%, 53%, 1));
+    --link-inverse-hover: light-dark(hsla(217, 100%, 83%, 1), hsla(220, 100%, 40%, 1));
+    --link-inverse-active: light-dark(hsla(0, 0%, 96%, 1), hsla(0, 0%, 9%, 1));
+    --link-visited: light-dark(hsla(264, 97%, 62%, 1), hsla(263, 100%, 79%, 1));
+    --link-inverse-visited: light-dark(hsla(263, 100%, 79%, 1), hsla(264, 97%, 62%, 1));
+
+    /* Text Colors */
+    --text-primary: light-dark(hsla(0, 0%, 9%, 1), hsla(0, 0%, 96%, 1));
+    --text-secondary: light-dark(hsla(0, 0%, 32%, 1), hsla(0, 0%, 78%, 1));
+    --text-placeholder: light-dark(hsla(0, 0%, 66%, 1), hsla(0, 0%, 44%, 1));
+    --text-on-color: light-dark(hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 1));
+    --text-on-color-disabled: light-dark(hsla(0, 0%, 55%, 1), hsla(0, 0%, 96%, 0.25));
+    --text-helper: light-dark(hsla(0, 0%, 44%, 1), hsla(0, 0%, 55%, 1));
+    --text-error: light-dark(hsla(357, 76%, 49%, 1), hsla(357, 100%, 76%, 1));
+    --text-inverse: light-dark(hsla(0, 0%, 100%, 1), hsla(0, 0%, 9%, 1));
+    --text-disabled: light-dark(hsla(0, 0%, 9%, 0.25), hsla(0, 0%, 96%, 0.25));
+
+    /* Layer Colors */
+    --layer-01: light-dark(hsla(0, 0%, 96%, 1), hsla(0, 0%, 15%, 1));
+    --layer-02: light-dark(hsla(0, 0%, 100%, 1), hsla(0, 0%, 22%, 1));
+    --layer-03: light-dark(hsla(0, 0%, 96%, 1), hsla(0, 0%, 32%, 1));
+    --layer-hover-01: light-dark(hsla(0, 0%, 91%, 1), hsla(0, 0%, 20%, 1));
+    --layer-hover-02: light-dark(hsla(0, 0%, 91%, 1), hsla(0, 0%, 28%, 1));
+    --layer-hover-03: light-dark(hsla(0, 0%, 91%, 1), hsla(0, 0%, 55%, 1));
+    --layer-active-01: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 22%, 1));
+    --layer-active-02: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 44%, 1));
+    --layer-active-03: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 55%, 1));
+    --layer-selected-01: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 22%, 1));
+    --layer-selected-02: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 32%, 1));
+    --layer-selected-03: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 44%, 1));
+    --layer-selected-hover-01: light-dark(hsla(0, 0%, 82%, 1), hsla(0, 0%, 30%, 1));
+    --layer-selected-hover-02: light-dark(hsla(0, 0%, 82%, 1), hsla(0, 0%, 40%, 1));
+    --layer-selected-hover-03: light-dark(hsla(0, 0%, 82%, 1), hsla(0, 0%, 37%, 1));
+    --layer-selected-inverse: light-dark(hsla(0, 0%, 9%, 1), hsla(0, 0%, 96%, 1));
+    --layer-disabled: light-dark(hsla(0, 0%, 55%, 1), hsla(0, 0%, 44%, 1));
+
+    /* Border Colors */
+    --border-interactive: light-dark(hsla(219, 99%, 53%, 1), hsla(218, 100%, 64%, 1));
+    --border-subtle-00: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 22%, 1));
+    --border-subtle-01: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 22%, 1));
+    --border-subtle-02: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 32%, 1));
+    --border-subtle-03: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 44%, 1));
+    --border-subtle-selected-01: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 32%, 1));
+    --border-subtle-selected-02: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 44%, 1));
+    --border-subtle-selected-03: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 55%, 1));
+    --border-strong-01: light-dark(hsla(0, 0%, 55%, 1), hsla(0, 0%, 44%, 1));
+    --border-strong-02: light-dark(hsla(0, 0%, 55%, 1), hsla(0, 0%, 55%, 1));
+    --border-strong-03: light-dark(hsla(0, 0%, 55%, 1), hsla(0, 0%, 66%, 1));
+    --border-tile-01: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 32%, 1));
+    --border-tile-02: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 44%, 1));
+    --border-tile-03: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 55%, 1));
+    --border-inverse: light-dark(hsla(0, 0%, 9%, 1), hsla(0, 0%, 96%, 1));
+    --border-disabled: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 55%, 0.5));
+
+    /* Button Colors */
+
+    --button-primary: light-dark(hsla(219, 99%, 53%, 1), hsla(219, 99%, 53%, 1));
+    --button-primary-hover: light-dark(hsla(219, 100%, 45%, 1), hsla(219, 97%, 46%, 1));
+    --button-primary-active: light-dark(hsla(223, 100%, 31%, 1), hsla(223, 100%, 31%, 1));
+    --button-secondary: light-dark(hsla(0, 0%, 22%, 1), hsla(0, 0%, 44%, 1));
+    --button-secondary-hover: light-dark(hsla(0, 0%, 28%, 1), hsla(0, 0%, 38%, 1));
+    --button-secondary-active: light-dark(hsla(0, 0%, 44%, 1), hsla(0, 0%, 22%, 1));
+    --button-tertiary: light-dark(hsla(219, 99%, 53%, 1), hsla(0, 0%, 100%, 1));
+    --button-tertiary-hover: light-dark(hsla(219, 100%, 45%, 1), hsla(0, 0%, 96%, 1));
+    --button-tertiary-active: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 78%, 1));
+    --button-danger-primary: light-dark(hsla(357, 76%, 49%, 1), hsla(357, 76%, 49%, 1));
+    --button-danger-secondary: light-dark(hsla(0, 0%, 78%, 1), hsla(357, 95%, 64%, 1));
+    --button-danger-hover: light-dark(hsla(0, 0%, 78%, 1), hsla(357, 75%, 42%, 1));
+    --button-danger-active: light-dark(hsla(0, 0%, 78%, 1), hsla(357, 79%, 26%, 1));
+    --button-separator: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 9%, 1));
+    --button-disabled: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 32%, 1));
+
+    /* MISCELLANEOUS TOKENS */
+    --interactive: light-dark(hsla(219, 99%, 53%, 1), hsla(218, 100%, 64%, 1));
+    --highlight: light-dark(hsla(217, 100%, 91%, 1), hsla(224, 100%, 21%, 1));
+    --overlay: light-dark(hsla(0, 0%, 9%, 0.5), hsla(0, 0%, 9%, 0.7));
+    --skeleton-background: light-dark(hsla(0, 0%, 91%, 1), hsla(0, 0%, 21%, 1));
+    --skeleton-element: light-dark(hsla(0, 0%, 78%, 1), hsla(0, 0%, 32%, 1));
+    --toggle-off: light-dark(hsla(0, 0%, 93%, 1), hsla(0, 0%, 44%, 1));
+
+    /* FOCUS TOKENS */
+    --focus: light-dark(hsla(219, 99%, 53%, 1), hsla(0, 0%, 100%, 1));
+    --focus-inset: light-dark(hsla(0, 0%, 100%, 1), hsla(0, 0%, 9%, 1));
+    --focus-inverse: light-dark(hsla(0, 0%, 100%, 1), hsla(219, 99%, 53%, 1));
+
+    /* SUPPORT TOKENS */
+    --support-error: light-dark(hsla(357, 76%, 49%, 1), hsla(357, 95%, 64%, 1));
+    --support-success: light-dark(hsla(137, 63%, 39%, 1), hsla(137, 49%, 50%, 1));
+    --support-warning: light-dark(hsla(47, 88%, 53%, 1), hsla(47, 88%, 53%, 1));
+    --support-info: light-dark(hsla(220, 100%, 40%, 1), hsla(218, 100%, 64%, 1));
+    --support-error-inverse: light-dark(hsla(357, 95%, 64%, 1), hsla(357, 76%, 49%, 1));
+    --support-success-inverse: light-dark(hsla(137, 49%, 50%, 1), hsla(137, 63%, 39%, 1));
+    --support-warning-inverse: light-dark(hsla(47, 88%, 53%, 1), hsla(47, 88%, 53%, 1));
+    --support-info-inverse: light-dark(hsla(218, 100%, 64%, 1), hsla(220, 100%, 40%, 1));
+    --support-caution-major: light-dark(hsla(25, 100%, 58%, 1), hsla(25, 100%, 58%, 1));
+    --support-caution-minor: light-dark(hsla(47, 88%, 53%, 1), hsla(47, 88%, 53%, 1));
+    --support-undefined: light-dark(hsla(264, 97%, 62%, 1), hsla(263, 100%, 72%, 1));
+
+    /* TAG TOKENS */
+    --tag-background-gray: light-dark(hsla(0, 0%, 88%, 1), hsla(0, 0%, 32%, 1));
+    --tag-color-gray: light-dark(hsla(0, 0%, 9%, 1), hsla(0, 0%, 88%, 1));
+    --tag-hover-gray: light-dark(hsla(0, 0%, 82%, 1), hsla(0, 0%, 39%, 1));
+    --tag-border-gray: light-dark(hsla(0, 0%, 66%, 1), hsla(0, 0%, 55%, 1));
+    --tag-background-cool-gray: light-dark(hsla(213, 15%, 88%, 1), hsla(207, 7%, 32%, 1));
+    --tag-color-cool-gray: light-dark(hsla(206, 16%, 8%, 1), hsla(213, 15%, 88%, 1));
+    --tag-hover-cool-gray: light-dark(hsla(212, 15%, 83%, 1), hsla(208, 7%, 39%, 1));
+    --tag-border-cool-gray: light-dark(hsla(210, 8%, 66%, 1), hsla(216, 7%, 56%, 1));
+    --tag-background-warm-gray: light-dark(hsla(10, 10%, 89%, 1), hsla(0, 3%, 33%, 1));
+    --tag-color-warm-gray: light-dark(hsla(0, 7%, 8%, 1), hsla(10, 10%, 89%, 1));
+    --tag-hover-warm-gray: light-dark(hsla(7, 10%, 83%, 1), hsla(0, 3%, 40%, 1));
+    --tag-border-warm-gray: light-dark(hsla(0, 3%, 67%, 1), hsla(0, 2%, 55%, 1));
+    --tag-background-red: light-dark(hsla(357, 100%, 92%, 1), hsla(357, 73%, 37%, 1));
+    --tag-color-red: light-dark(hsla(357, 73%, 37%, 1), hsla(357, 100%, 92%, 1));
+    --tag-hover-red: light-dark(hsla(357, 100%, 88%, 1), hsla(357, 73%, 44%, 1));
+    --tag-border-red: light-dark(hsla(357, 100%, 76%, 1), hsla(357, 95%, 64%, 1));
+    --tag-background-magenta: light-dark(hsla(334, 100%, 92%, 1), hsla(334, 74%, 36%, 1));
+    --tag-color-magenta: light-dark(hsla(334, 74%, 36%, 1), hsla(334, 100%, 92%, 1));
+    --tag-hover-magenta: light-dark(hsla(334, 100%, 87%, 1), hsla(334, 74%, 43%, 1));
+    --tag-border-magenta: light-dark(hsla(334, 100%, 75%, 1), hsla(334, 82%, 63%, 1));
+    --tag-background-purple: light-dark(hsla(263, 100%, 93%, 1), hsla(265, 65%, 46%, 1));
+    --tag-color-purple: light-dark(hsla(265, 65%, 46%, 1), hsla(263, 100%, 93%, 1));
+    --tag-hover-purple: light-dark(hsla(263, 100%, 89%, 1), hsla(265, 65%, 54%, 1));
+    --tag-border-purple: light-dark(hsla(263, 100%, 79%, 1), hsla(263, 100%, 72%, 1));
+    --tag-background-blue: light-dark(hsla(217, 100%, 91%, 1), hsla(220, 100%, 40%, 1));
+    --tag-color-blue: light-dark(hsla(220, 100%, 40%, 1), hsla(217, 100%, 91%, 1));
+    --tag-hover-blue: light-dark(hsla(217, 100%, 86%, 1), hsla(220, 100%, 50%, 1));
+    --tag-boder-blue: light-dark(hsla(218, 100%, 74%, 1), hsla(218, 100%, 64%, 1));
+    --tag-background-cyan: light-dark(hsla(202, 100%, 86%, 1), hsla(208, 100%, 30%, 1));
+    --tag-color-cyan: light-dark(hsla(208, 100%, 30%, 1), hsla(202, 100%, 86%, 1));
+    --tag-hover-cyan: light-dark(hsla(202, 100%, 80%, 1), hsla(208, 100%, 37%, 1));
+    --tag-boder-cyan: light-dark(hsla(203, 100%, 60%, 1), hsla(204, 86%, 49%, 1));
+    --tag-background-teal: light-dark(hsla(180, 73%, 78%, 1), hsla(180, 100%, 18%, 1));
+    --tag-color-teal: light-dark(hsla(180, 100%, 18%, 1), hsla(180, 73%, 78%, 1));
+    --tag-hover-teal: light-dark(hsla(180, 73%, 62%, 1), hsla(180, 100%, 22%, 1));
+    --tag-boder-teal: light-dark(hsla(179, 92%, 39%, 1), hsla(179, 100%, 31%, 1));
+    --tag-background-green: light-dark(hsla(136, 71%, 80%, 1), hsla(138, 75%, 22%, 1));
+    --tag-color-green: light-dark(hsla(138, 75%, 22%, 1), hsla(136, 71%, 80%, 1));
+    --tag-hover-green: light-dark(hsla(136, 71%, 68%, 1), hsla(138, 74%, 26%, 1));
+    --tag-boder-green: light-dark(hsla(137, 49%, 50%, 1), hsla(137, 63%, 39%, 1));
+}
