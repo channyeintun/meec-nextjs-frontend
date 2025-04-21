@@ -17,7 +17,7 @@ const Menu = ({
     >
         <path fill="#fff" fillOpacity="0.01" d="M0 0h16v16H0z"></path>
         <path
-            fill="#161616"
+            fill="var(--icon-primary)"
             d="M14 3H2v1h12zM14 12H2v1h12zM14 6H2v1h12zM14 9H2v1h12z"
         ></path>
     </svg>
