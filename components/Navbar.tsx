@@ -8,14 +8,16 @@ export const Navbar = () => {
 
     return (
         <header className="bg-[var(--background)] group relative">
-            <div className="flex items-center justify-between border-b border-[var(--border-subtle-00)]">
+            <div className="flex items-center justify-between box-border border-y border-[var(--border-subtle-00)]">
+                {/* overlay */}
+                <div className="w-full h-full bg-[var(--overlay)] absolute inset-0 transition-transform duration-300 ease-in-out lg:hidden -translate-x-full group-has-[:checked]:translate-x-0 z-10"></div>
                 <div className="flex items-center">
                     {/* Hamburger Menu for Mobile */}
-                    <div className="lg:hidden p-4">
-                        <label className="cursor-pointer max-w-6 max-h-6 relative">
-                            <input type="checkbox" className="peer absolute inset-0 w-6 h-6 opacity-0" />
-                            <Menu className="w-6 h-6 peer-checked:hidden" />
-                            <Close className="w-6 h-6 hidden peer-checked:block" />
+                    <div className="border-2 border-transparent group-has-[:checked]:border-[var(--border-interactive)] lg:hidden relative box-content p-4 w-5 h-5 group-has-[:checked]:bg-[var(--layer-01)] hover:bg-[var(--layer-hover-01)] z-20 transition-colors duration-150 ease-in-out">
+                        <label className="inline-block cursor-pointer w-5 h-5 relative">
+                            <input type="checkbox" className="peer w-full max-w-5 h-full max-h-5 opacity-0" />
+                            <Menu className="absolute inset-0 w-full max-w-5 h-full max-h-5 transition-opacity ease-in duration-300 opacity-100 peer-checked:opacity-0" />
+                            <Close className="absolute inset-0 w-full max-w-5 h-full max-h-5 transition-opacity ease-in duration-300 opacity-0 peer-checked:opacity-100" />
                         </label>
                     </div>
 
@@ -29,7 +31,7 @@ export const Navbar = () => {
 
             {/* Navigation Links */}
             <nav className="lg:flex lg:items-center lg:justify-start">
-                <ul className="lg:ps-[var(--spacing-05)] hidden group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:static border-b border-[var(--border-subtle-00)] bg-[var(--background)]">
+                <ul className="lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:static border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0">
                     <li>
                         <Link href="/" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button">Home</Link>
                     </li>
@@ -38,15 +40,15 @@ export const Navbar = () => {
                     </li>
                     <li>
                         <details className="group relative">
-                            <summary className="flex items-center cursor-pointer max-lg:!px-8 max-lg:!py-[14px] carbon-button lg:group-open:bg-[var(--layer-01)]">
+                            <summary className="relative z-10 flex items-center cursor-pointer max-lg:!px-8 max-lg:!py-[14px] carbon-button lg:group-open:bg-[var(--layer-01)] group-open:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]">
                                 News & Blogs
                                 <span className="w-4 h-4 ms-auto lg:ml-1 group-open:rotate-180">
                                     <ChevronDown />
                                 </span>
                             </summary>
-                            <ul className="w-full lg:w-48 bg-[var(--layer-01)] lg:absolute lg:left-0 group-open:block hidden">
+                            <ul className="w-full border-t border-[var(--border-subtle-00)] lg:w-48 bg-[var(--layer-01)] lg:absolute lg:left-0 group-open:block hidden z-20 shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]">
                                 <li>
-                                    <Link href="/news" className="block text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">News</Link>
+                                    <Link href="/news" className="block relative z- text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">News</Link>
                                 </li>
                                 <li>
                                     <Link href="/insight" className="block text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Insight</Link>

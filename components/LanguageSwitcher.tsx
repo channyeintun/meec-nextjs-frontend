@@ -4,6 +4,7 @@ import { useRouter, usePathname, useParams } from 'next/navigation';
 import { useState, useTransition } from 'react';
 import ChevronUp from './icons/ChevronUp';
 import ChevronDown from './icons/ChevronDown';
+import { cn } from '@/lib/utils';
 
 export const LanguageSwitcher = () => {
   const { lang } = useParams<{ lang: string }>();
@@ -33,13 +34,18 @@ export const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="relative inline-block font-sans">
+    <div className="self-stretch relative font-sans">
       {/* Button to toggle dropdown */}
       <button
         onClick={() => {
           setIsOpen((prev) => !prev);
         }}
-        className="flex gap-2 items-center justify-between w-[70px] px-4 py-[15px] bg-transparent hover:bg-[var(--layer-hover-01)] shadow-[0_2px_6px_0px_rgba(0, 0, 0, 0.30)] focus:outline-none bg-origin-border"
+        className={cn(
+          "relative z-10 h-full flex gap-2 items-center justify-between w-[70px] p-4 hover:bg-[var(--layer-hover-01)] focus:outline-none",
+          {
+            "bg-[var(--layer-01)] shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]": isOpen,
+          }
+        )}
       >
         <span className="body-01 text-[var(--text-primary)] uppercase">{selectedLanguage}</span>
         {isOpen ? <ChevronUp /> : <ChevronDown />}
@@ -47,7 +53,7 @@ export const LanguageSwitcher = () => {
 
       {/* Dropdown menu */}
       {isOpen && (
-        <div className="absolute end-0 top-full bg-[var(--layer-01)] hover:bg-[var(--layer-hover-01)] border-none shadow-[0_2px_6px_0px_rgba(0, 0, 0, 0.30)] z-10">
+        <div className="border-t border-[var(--border-subtle-00)] absolute end-0 top-full min-w-[168px] bg-[var(--layer-01)] hover:bg-[var(--layer-hover-01)] shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)] z-20">
           {languages.map((lang) => (
             <button
               key={lang.code}

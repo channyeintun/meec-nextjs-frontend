@@ -7,8 +7,7 @@ export default async function Page({
 }) {
     const { lang } = await params;
     return (
-        <div className="min-h-dvh">
-            <h1 className="text-3xl font-bold underline">Hello world! {lang}</h1>
+        <div className="min-h-dvh w-full">
         </div>
     );
 }
