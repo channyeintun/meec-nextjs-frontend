@@ -163,6 +163,37 @@
     --tag-boder-green: light-dark(hsla(137, 49%, 50%, 1), hsla(137, 63%, 39%, 1));
 }
 
+ul::before,
+ul::after {
+    --transition: 0.18s;
+    pointer-events: none;
+    transition: top var(--transition), left var(--transition),
+        height var(--transition), opacity var(--transition), color var(--transition),
+        width var(--transition);
+    transition-timing-function: linear(0 0%,
+            0.2342 12.49%,
+            0.4374 24.99%,
+            0.6093 37.49%,
+            0.6835 43.74%,
+            0.7499 49.99%,
+            0.8086 56.25%,
+            0.8593 62.5%,
+            0.9023 68.75%,
+            0.9375 75%,
+            0.9648 81.25%,
+            0.9844 87.5%,
+            0.9961 93.75%,
+            1 100%);
+}
+
+ul::after {
+    top: calc(var(--target-y) * 1px);
+    left: calc((var(--target-x) * 1px) + 1.25rem);
+    height: calc(var(--target-height) * 1px);
+    width: calc((var(--target-width) * 1px) - 2.5rem);
+    view-transition-name: target;
+}
+
 @supports (anchor-name: --a) {
     a:target {
         anchor-name: --target;
@@ -176,12 +207,13 @@
         content: '';
         position: absolute;
         position-anchor: --anchor;
-        left:anchor(left);
+        left: anchor(left);
         top: anchor(bottom);
         width: 200px;
         height: 3px;
-        background-color: red;
+        background-color: var(--border-interactive);
         z-index: 50;
+
     }
 
     ul::after {
@@ -192,7 +224,7 @@
         top: anchor(bottom);
         width: calc(anchor-size(width));
         height: 3px;
-        background-color: red;
+        background-color: var(--border-interactive);
         z-index: 50;
     }
 }
