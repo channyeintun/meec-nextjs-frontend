@@ -61,7 +61,7 @@ export const Navbar = () => {
                     <ul className="nav-links lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0">
                         <li>
                             <Link href="/" className={cn(
-                                "block max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
+                                "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/"
                                 }
@@ -69,7 +69,7 @@ export const Navbar = () => {
                         </li>
                         <li>
                             <Link href="/about" className={cn(
-                                "block max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
+                                "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/about"
                                 }
@@ -77,7 +77,7 @@ export const Navbar = () => {
                         </li>
                         <li>
                             <details className="group relative">
-                                <summary className="relative z-10 flex items-center cursor-pointer max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button lg:group-open:bg-[var(--layer-01)] group-open:lg:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]">
+                                <summary className="relative z-10 flex items-center cursor-pointer max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button lg:group-open:bg-[var(--layer-01)] group-open:lg:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]">
                                     News & Blogs
                                     <span className="w-4 h-4 ms-auto lg:ml-1 group-open:rotate-180">
                                         <ChevronDown />
@@ -85,23 +85,23 @@ export const Navbar = () => {
                                 </summary>
                                 <ul className="w-full lg:border-t border-[var(--border-subtle-00)] lg:w-48 bg-[var(--layer-01)] lg:absolute lg:left-0 group-open:block hidden z-20 lg:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]">
                                     <li>
-                                        <Link href="/news" className="block relative z- text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">News</Link>
+                                        <Link href="/news" className="block relative z- text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">News</Link>
                                     </li>
                                     <li>
-                                        <Link href="/insight" className="block text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Insight</Link>
+                                        <Link href="/insight" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Insight</Link>
                                     </li>
                                     <li>
-                                        <Link href="/case-study" className="block text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Case study</Link>
+                                        <Link href="/case-study" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Case study</Link>
                                     </li>
                                     <li>
-                                        <Link href="/podcast" className="block text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Podcast</Link>
+                                        <Link href="/podcast" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Podcast</Link>
                                     </li>
                                 </ul>
                             </details>
                         </li>
                         <li>
                             <Link href="/publications" className={cn(
-                                "block max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
+                                "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/publications"
                                 }
@@ -109,7 +109,7 @@ export const Navbar = () => {
                         </li>
                         <li>
                             <Link href="/events" className={cn(
-                                "block max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
+                                "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/events"
                                 }
@@ -117,7 +117,7 @@ export const Navbar = () => {
                         </li>
                         <li>
                             <Link href="/contact" className={cn(
-                                "block max-lg:!px-8 max-lg:!py-[14px] carbon-button",
+                                "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                                 {
                                     "active": pathname === "/contact"
                                 }
