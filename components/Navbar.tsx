@@ -45,7 +45,7 @@ export const Navbar = () => {
                             <Link href="/" className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                                 {
-                                    "": pathname.replace(`/${lang}`, '') === ""
+                                    "active": pathname.replace(`/${lang}`, '') === ""
                                 }
                             )}>Home</Link>
                         </li>
@@ -53,7 +53,7 @@ export const Navbar = () => {
                             <Link href="/about" className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                                 {
-                                    "": pathname.replace(`/${lang}`, '') === "/about"
+                                    "active": pathname.replace(`/${lang}`, '') === "/about"
                                 }
                             )}>About</Link>
                         </li>
@@ -85,7 +85,7 @@ export const Navbar = () => {
                             <Link href="/publications" className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                                 {
-                                    "": pathname.replace(`/${lang}`, '') === "/publications"
+                                    "active": pathname.replace(`/${lang}`, '') === "/publications"
                                 }
                             )}>Publications</Link>
                         </li>
@@ -93,7 +93,7 @@ export const Navbar = () => {
                             <Link href="/events" className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                                 {
-                                    "": pathname.replace(`/${lang}`, '') === "/events"
+                                    "active": pathname.replace(`/${lang}`, '') === "/events"
                                 }
                             )}>Events</Link>
                         </li>
@@ -101,7 +101,7 @@ export const Navbar = () => {
                             <Link href="/contact" className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                                 {
-                                    "": pathname.replace(`/${lang}`, '') === "/contact"
+                                    "active": pathname.replace(`/${lang}`, '') === "/contact"
                                 }
                             )}>Contact Us</Link>
                         </li>
