@@ -190,30 +190,34 @@ a {
 }
 
 @supports (anchor-name: --a) {
-    .nav-links>li:has(a.active) {
-        anchor-name: --anchor;
-    }
+    @media screen and (min-width:64rem) {
+        .nav-links>li:has(a.active) {
+            anchor-name: --anchor;
+        }
 
-    .nav-links::before {
-        content: '';
-        position: absolute;
-        position-anchor: --anchor;
-        left: anchor(left);
-        top: calc(anchor(bottom) - 2px);
-        width: calc(anchor-size(width));
-        height: 3px;
-        background-color: var(--border-interactive);
-        z-index: 50;
+        .nav-links::before {
+            content: '';
+            position: absolute;
+            position-anchor: --anchor;
+            left: anchor(left);
+            top: calc(anchor(bottom) - 2px);
+            width: calc(anchor-size(width));
+            height: 3px;
+            background-color: var(--border-interactive);
+            z-index: 50;
+        }
     }
 }
 
 @supports not (anchor-name: --a) {
-    .nav-links>li:has(a.active)::before {
-        width: 100%;
-        height: 3px;
-        background-color: var(--border-interactive);
-        position: absolute;
-        left: 0;
-        bottom: 0;
+    @media screen and (min-width:64rem) {
+        .nav-links>li:has(a.active)::before {
+            width: 100%;
+            height: 3px;
+            background-color: var(--border-interactive);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
     }
 }
