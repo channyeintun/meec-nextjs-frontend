@@ -6,56 +6,23 @@ import Close from "./icons/Close"
 import ChevronDown from "./icons/ChevronDown"
 import { cn } from "@/lib/utils";
 import { usePathname, Link } from "@/i18n/navigation";
-import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useViewportSize, useWindowScroll } from "@mantine/hooks";
 
 export const Navbar = () => {
     const pathname = usePathname();
-    const [lastScrollY, setLastScrollY] = useState(0);
-    const [shouldHideTopBar, setShouldHideTopBar] = useState(false);
-    const [isDesktop, setIsDesktop] = useState(true); // Default to true for SSR
+    const { width } = useViewportSize();
+    const [scroll] = useWindowScroll();
 
-    // Check if we're on desktop
-    useEffect(() => {
-        const checkIfDesktop = () => {
-            setIsDesktop(window.innerWidth >= 1024); // 1024px is the lg breakpoint in Tailwind
-        };
+    // Check if screen is desktop size (lg breakpoint in Tailwind is 1024px)
+    const isDesktop = width >= 1024;
 
-        // Initial check
-        checkIfDesktop();
-
-        // Listen for resize events
-        window.addEventListener("resize", checkIfDesktop);
-        return () => window.removeEventListener("resize", checkIfDesktop);
-    }, []);
-
-    useEffect(() => {
-        // Only apply scroll behavior on desktop
-        if (!isDesktop) {
-            setShouldHideTopBar(false);
-            return;
-        }
-
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-
-            // Hide top bar when scrolling down, show when at top
-            if (currentScrollY > lastScrollY && currentScrollY > 50) {
-                setShouldHideTopBar(true);
-            } else if (currentScrollY <= 0) {
-                setShouldHideTopBar(false);
-            }
-
-            setLastScrollY(currentScrollY);
-        };
-
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [lastScrollY, isDesktop]);
+    // Only hide top bar when scrolling down on desktop
+    const shouldHideTopBar = isDesktop && scroll.y > 50;
 
     return (
         <>
-            <header className="bg-[var(--background)] group relative sticky top-0">
+            <header className="bg-[var(--background)] group relative sticky top-0 overflow-hidden">
                 <AnimatePresence>
                     {(!shouldHideTopBar || !isDesktop) && (
                         <motion.div
