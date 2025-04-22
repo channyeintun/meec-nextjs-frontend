@@ -22,7 +22,7 @@ export const Navbar = () => {
 
     return (
         <>
-            <header className="bg-[var(--background)] group relative sticky top-0 overflow-hidden">
+            <header className="bg-[var(--background)] group relative sticky top-0">
                 <AnimatePresence>
                     {(!shouldHideTopBar || !isDesktop) && (
                         <motion.div
