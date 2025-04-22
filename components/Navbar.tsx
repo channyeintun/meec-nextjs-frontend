@@ -6,36 +6,88 @@ import Close from "./icons/Close"
 import ChevronDown from "./icons/ChevronDown"
 import { cn } from "@/lib/utils";
 import { usePathname, Link } from "@/i18n/navigation";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Navbar = () => {
-
     const pathname = usePathname();
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const [shouldHideTopBar, setShouldHideTopBar] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(true); // Default to true for SSR
+
+    // Check if we're on desktop
+    useEffect(() => {
+        const checkIfDesktop = () => {
+            setIsDesktop(window.innerWidth >= 1024); // 1024px is the lg breakpoint in Tailwind
+        };
+
+        // Initial check
+        checkIfDesktop();
+
+        // Listen for resize events
+        window.addEventListener("resize", checkIfDesktop);
+        return () => window.removeEventListener("resize", checkIfDesktop);
+    }, []);
+
+    useEffect(() => {
+        // Only apply scroll behavior on desktop
+        if (!isDesktop) {
+            setShouldHideTopBar(false);
+            return;
+        }
+
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            // Hide top bar when scrolling down, show when at top
+            if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                setShouldHideTopBar(true);
+            } else if (currentScrollY <= 0) {
+                setShouldHideTopBar(false);
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [lastScrollY, isDesktop]);
 
     return (
         <>
-            <header className="bg-[var(--background)] group relative">
-                <div className="flex items-center justify-between box-border border-y border-[var(--border-subtle-00)]">
-                    {/* overlay */}
-                    <div className="w-full h-full bg-[var(--overlay)] absolute inset-0 transition-transform duration-300 ease-in-out lg:hidden -translate-x-full group-has-[:checked]:translate-x-0 z-10"></div>
-                    <div className="flex items-center">
-                        {/* Hamburger Menu for Mobile */}
-                        <div className="border-2 border-transparent group-has-[:checked]:border-[var(--border-interactive)] lg:hidden relative box-content p-4 w-5 h-5 group-has-[:checked]:bg-[var(--layer-01)] hover:bg-[var(--layer-hover-01)] z-20 transition-colors duration-150 ease-in-out">
-                            <label className="inline-block cursor-pointer w-5 h-5 relative">
-                                <input type="checkbox" className="peer w-full max-w-5 h-full max-h-5 opacity-0" />
-                                <Menu className="absolute inset-0 w-full max-w-5 h-full max-h-5 transition-opacity ease-in duration-300 opacity-100 peer-checked:opacity-0" />
-                                <Close className="absolute inset-0 w-full max-w-5 h-full max-h-5 transition-opacity ease-in duration-300 opacity-0 peer-checked:opacity-100" />
-                            </label>
-                        </div>
+            <header className="bg-[var(--background)] group relative sticky top-0">
+                <AnimatePresence>
+                    {(!shouldHideTopBar || !isDesktop) && (
+                        <motion.div
+                            className="flex items-center justify-between box-border border-y border-[var(--border-subtle-00)]"
+                            initial={isDesktop ? { height: 0, opacity: 0 } : { height: "auto", opacity: 1 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={isDesktop ? { height: 0, opacity: 0 } : { height: "auto", opacity: 1 }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                        >
+                            {/* overlay */}
+                            <div className="w-full h-full bg-[var(--overlay)] absolute inset-0 transition-transform duration-300 ease-in-out lg:hidden -translate-x-full group-has-[:checked]:translate-x-0 z-10"></div>
+                            <div className="flex items-center">
+                                {/* Hamburger Menu for Mobile */}
+                                <div className="border-2 border-transparent group-has-[:checked]:border-[var(--border-interactive)] lg:hidden relative box-content p-4 w-5 h-5 group-has-[:checked]:bg-[var(--layer-01)] hover:bg-[var(--layer-hover-01)] z-20 transition-colors duration-150 ease-in-out">
+                                    <label className="inline-block cursor-pointer w-5 h-5 relative">
+                                        <input type="checkbox" className="peer w-full max-w-5 h-full max-h-5 opacity-0" />
+                                        <Menu className="absolute inset-0 w-full max-w-5 h-full max-h-5 transition-opacity ease-in duration-300 opacity-100 peer-checked:opacity-0" />
+                                        <Close className="absolute inset-0 w-full max-w-5 h-full max-h-5 transition-opacity ease-in duration-300 opacity-0 peer-checked:opacity-100" />
+                                    </label>
+                                </div>
 
-                        {/* Logo */}
-                        <Link href="/">
-                            <h1 className="font-sans text-[var(--text-primary)] font-bold text-[24px] leading-[24px] m-0 px-2 lg:px-8 py-[15px]">MEEC</h1>
-                        </Link>
+                                {/* Logo */}
+                                <Link href="/">
+                                    <h1 className="font-sans text-[var(--text-primary)] font-bold text-[24px] leading-[24px] m-0 px-2 lg:px-8 py-[15px]">MEEC</h1>
+                                </Link>
 
-                    </div>
-                    {/* Language Switcher */}
-                    <LanguageSwitcher />
-                </div>
+                            </div>
+                            {/* Language Switcher */}
+                            <LanguageSwitcher />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
                 {/* Navigation Links */}
                 <nav className="lg:flex lg:items-center lg:justify-start">
