@@ -124,7 +124,7 @@ export const Navbar = () => {
                             )}>Contact Us</Link>
                         </li>
                         <li className="lg:ml-auto">
-                            <Link href="/apply" className="block max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary">Apply for assistance</Link>
+                            <Link href="/apply" className="block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary">Apply for assistance</Link>
                         </li>
                     </ul>
                 </nav >
