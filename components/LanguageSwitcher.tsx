@@ -1,23 +1,23 @@
 'use client';
 
-import { useRouter, usePathname, useParams } from 'next/navigation';
 import { useState, useTransition } from 'react';
 import ChevronUp from './icons/ChevronUp';
 import ChevronDown from './icons/ChevronDown';
 import { cn } from '@/lib/utils';
+import { usePathname, useRouter } from '@/i18n/navigation';
+import { useLocale } from 'next-intl';
 
 export const LanguageSwitcher = () => {
-  const { lang } = useParams<{ lang: string }>();
 
+  const lang = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
 
   const changeLocale = (newLocale: string) => {
-    // Replace the current locale in the pathname (e.g., /en/about -> /fr/about)
-    const newPath = pathname.replace(/^\/[^\/]+/, `/${newLocale}`);
     startTransition(() => {
-      router.push(newPath);
+      router.replace(pathname, { locale: newLocale });
+      router.refresh();
     });
   };
   const [isOpen, setIsOpen] = useState(false);

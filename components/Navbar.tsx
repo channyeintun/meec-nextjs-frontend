@@ -1,18 +1,15 @@
 "use client";
 
-import Link from "next/link"
 import { LanguageSwitcher } from "./LanguageSwitcher"
 import Menu from "./icons/Menu"
 import Close from "./icons/Close"
 import ChevronDown from "./icons/ChevronDown"
-import { useParams, usePathname } from "next/navigation"
 import { cn } from "@/lib/utils";
+import { usePathname, Link } from "@/i18n/navigation";
 
 export const Navbar = () => {
 
     const pathname = usePathname();
-
-    const { lang } = useParams<{ lang: string }>();
 
     return (
         <>
@@ -45,7 +42,7 @@ export const Navbar = () => {
                             <Link href="/" className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
-                                    "active": pathname.replace(`/${lang}`, '') === ""
+                                    "active": pathname === "/"
                                 }
                             )}>Home</Link>
                         </li>
@@ -53,7 +50,7 @@ export const Navbar = () => {
                             <Link href="/about" className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
-                                    "active": pathname.replace(`/${lang}`, '') === "/about"
+                                    "active": pathname === "/about"
                                 }
                             )}>About</Link>
                         </li>
@@ -85,7 +82,7 @@ export const Navbar = () => {
                             <Link href="/publications" className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
-                                    "active": pathname.replace(`/${lang}`, '') === "/publications"
+                                    "active": pathname === "/publications"
                                 }
                             )}>Publications</Link>
                         </li>
@@ -93,7 +90,7 @@ export const Navbar = () => {
                             <Link href="/events" className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
-                                    "active": pathname.replace(`/${lang}`, '') === "/events"
+                                    "active": pathname === "/events"
                                 }
                             )}>Events</Link>
                         </li>
@@ -101,7 +98,7 @@ export const Navbar = () => {
                             <Link href="/contact" className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                                 {
-                                    "active": pathname.replace(`/${lang}`, '') === "/contact"
+                                    "active": pathname === "/contact"
                                 }
                             )}>Contact Us</Link>
                         </li>

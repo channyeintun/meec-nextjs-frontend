@@ -1,3 +1,4 @@
+import { NextIntlClientProvider } from 'next-intl';
 import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import "./tailwindcss.css";
@@ -18,13 +19,18 @@ export const metadata: Metadata = {
   description: "Myanmar Earthquake Engineering Community",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+
+  // Ensure that the incoming `locale` is valid
+  const { locale } = await params;
   return (
-    <html lang="en" style={{
+    <html lang={locale} style={{
       backgroundColor: 'var(--background)'
     }}>
       <body
@@ -34,8 +40,10 @@ export default function RootLayout({
         }}
         className={`${sans.variable} antialiased content-auto`}
       >
-        <Navbar />
-        {children}
+        <NextIntlClientProvider>
+          <Navbar />
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
