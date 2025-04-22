@@ -33,7 +33,7 @@ export const Navbar = () => {
                             transition={{ duration: 0.3, ease: "easeInOut" }}
                         >
                             {/* overlay */}
-                            <div className="w-full h-full bg-[var(--overlay)] absolute inset-0 transition-transform duration-300 ease-in-out lg:hidden -translate-x-full group-has-[:checked]:translate-x-0 z-10"></div>
+                            <div className="w-full h-full bg-[var(--overlay)] absolute inset-0 transition-transform duration-300 ease-in-out lg:hidden -translate-x-full group-has-[:checked]:translate-x-0 z-20"></div>
                             <div className="flex items-center">
                                 {/* Hamburger Menu for Mobile */}
                                 <div className="border-2 border-transparent group-has-[:checked]:border-[var(--border-interactive)] lg:hidden relative box-content p-4 w-5 h-5 group-has-[:checked]:bg-[var(--layer-01)] hover:bg-[var(--layer-hover-01)] z-20 transition-colors duration-150 ease-in-out">
