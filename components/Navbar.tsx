@@ -28,7 +28,9 @@ export const Navbar = () => {
                         </div>
 
                         {/* Logo */}
-                        <h1 className="font-sans text-[var(--text-primary)] font-bold text-[24px] leading-[24px] m-0 px-2 lg:px-8 py-[15px]">MEEC</h1>
+                        <Link href="/">
+                            <h1 className="font-sans text-[var(--text-primary)] font-bold text-[24px] leading-[24px] m-0 px-2 lg:px-8 py-[15px]">MEEC</h1>
+                        </Link>
 
                     </div>
                     {/* Language Switcher */}
