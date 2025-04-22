@@ -40,3 +40,7 @@ export default function RootLayout({
     </html>
   );
 }
+
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'mm' }];
+}

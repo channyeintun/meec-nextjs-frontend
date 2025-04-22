@@ -5,14 +5,15 @@ import { LanguageSwitcher } from "./LanguageSwitcher"
 import Menu from "./icons/Menu"
 import Close from "./icons/Close"
 import ChevronDown from "./icons/ChevronDown"
-import { useParams, usePathname } from "next/navigation"
+import { usePathname, useSearchParams } from "next/navigation"
 import { cn } from "@/lib/utils";
 
 export const Navbar = () => {
 
     const pathname = usePathname();
 
-    const { lang } = useParams<{ lang: string }>();
+    const searchParams = useSearchParams();
+    const lang = searchParams.get('lang') || 'en';
 
     return (
         <>
@@ -42,18 +43,18 @@ export const Navbar = () => {
                 <nav className="lg:flex lg:items-center lg:justify-start">
                     <ul className="nav-links lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0">
                         <li>
-                            <Link href="/" className={cn(
+                            <Link href={lang === 'en' ? '/' : `/?lang=${lang}`} className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
-                                    "active": pathname.replace(`/${lang}`, '') === ""
+                                    "active": pathname === "/"
                                 }
                             )}>Home</Link>
                         </li>
                         <li>
-                            <Link href="/about" className={cn(
+                            <Link href={lang === 'en' ? '/about' : `/about?lang=${lang}`} className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
-                                    "active": pathname.replace(`/${lang}`, '') === "/about"
+                                    "active": pathname === "/about"
                                 }
                             )}>About</Link>
                         </li>
@@ -67,41 +68,41 @@ export const Navbar = () => {
                                 </summary>
                                 <ul className="w-full lg:border-t border-[var(--border-subtle-00)] lg:w-48 bg-[var(--layer-01)] lg:absolute lg:left-0 group-open:block hidden z-20 lg:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]">
                                     <li>
-                                        <Link href="/news" className="block relative z- text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">News</Link>
+                                        <Link href={lang === 'en' ? '/news' : `/news?lang=${lang}`} className="block relative z- text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">News</Link>
                                     </li>
                                     <li>
-                                        <Link href="/insight" className="block text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Insight</Link>
+                                        <Link href={lang === 'en' ? 'insight' : `/insight?lang=${lang}`} className="block text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Insight</Link>
                                     </li>
                                     <li>
-                                        <Link href="/case-study" className="block text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Case study</Link>
+                                        <Link href={lang === 'en' ? '/case-study' : `/case-study?lang=${lang}`} className="block text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Case study</Link>
                                     </li>
                                     <li>
-                                        <Link href="/podcast" className="block text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Podcast</Link>
+                                        <Link href={lang === 'en' ? '/podcast' : `/podcast?lang=${lang}`} className="block text-[var(--text-primary)] px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Podcast</Link>
                                     </li>
                                 </ul>
                             </details>
                         </li>
                         <li>
-                            <Link href="/publications" className={cn(
+                            <Link href={lang === 'en' ? '/publications' : `/publications?lang=${lang}`} className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
-                                    "active": pathname.replace(`/${lang}`, '') === "/publications"
+                                    "active": pathname === "/publications"
                                 }
                             )}>Publications</Link>
                         </li>
                         <li>
-                            <Link href="/events" className={cn(
+                            <Link href={lang === 'en' ? '/events' : `/events?lang=${lang}`} className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
-                                    "active": pathname.replace(`/${lang}`, '') === "/events"
+                                    "active": pathname === "/events"
                                 }
                             )}>Events</Link>
                         </li>
                         <li>
-                            <Link href="/contact" className={cn(
+                            <Link href={lang === 'en' ? '/contact' : `/contact?lang=${lang}`} className={cn(
                                 "block max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                                 {
-                                    "active": pathname.replace(`/${lang}`, '') === "/contact"
+                                    "active": pathname === "/contact"
                                 }
                             )}>Contact Us</Link>
                         </li>

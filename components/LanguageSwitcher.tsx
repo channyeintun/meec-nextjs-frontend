@@ -1,27 +1,25 @@
 'use client';
 
-import { useRouter, usePathname, useParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useState, useTransition } from 'react';
 import ChevronUp from './icons/ChevronUp';
 import ChevronDown from './icons/ChevronDown';
 import { cn } from '@/lib/utils';
 
 export const LanguageSwitcher = () => {
-  const { lang } = useParams<{ lang: string }>();
+  const searchParams = useSearchParams();
 
-  const router = useRouter();
   const pathname = usePathname();
+  const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
   const changeLocale = (newLocale: string) => {
-    // Replace the current locale in the pathname (e.g., /en/about -> /fr/about)
-    const newPath = pathname.replace(/^\/[^\/]+/, `/${newLocale}`);
     startTransition(() => {
-      router.push(newPath);
+      newLocale === 'en' ? router.replace(pathname) : router.replace(`?lang=${newLocale}`);
     });
   };
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(lang);
+  const [selectedLanguage, setSelectedLanguage] = useState(searchParams.get('lang') || 'en');
 
   const languages = [
     { code: 'en', name: 'English' },
