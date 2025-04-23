@@ -14,6 +14,7 @@ export const Navbar = () => {
     const { width } = useViewportSize();
     const [scroll] = useWindowScroll();
     const [opened, handlers] = useDisclosure();
+    const [menuOpened, menuHandlers] = useDisclosure();
 
     // Check if screen is desktop size (lg breakpoint in Tailwind is 1024px)
     const isDesktop = width >= 1024;
@@ -32,6 +33,7 @@ export const Navbar = () => {
                             animate={{ height: "auto", opacity: 1 }}
                             exit={isDesktop ? { height: 0, opacity: 0 } : { height: "auto", opacity: 1 }}
                             transition={{ duration: 0.3, ease: "easeInOut" }}
+                            style={{ ["anchor-name" as string]: "--header" }}
                         >
                             {/* overlay */}
                             <div className="w-full h-full bg-[var(--overlay)] absolute inset-0 transition-transform duration-300 ease-in-out lg:hidden -translate-x-full group-has-[:checked]:translate-x-0 z-20"></div>
@@ -39,7 +41,7 @@ export const Navbar = () => {
                                 {/* Hamburger Menu for Mobile */}
                                 <div className="border-2 border-transparent group-has-[:checked]:border-[var(--border-interactive)] lg:hidden relative box-content p-4 w-5 h-5 group-has-[:checked]:bg-[var(--layer-01)] hover:bg-[var(--layer-hover-01)] z-20 transition-colors duration-150 ease-in-out">
                                     <label className="inline-block cursor-pointer w-5 h-5 relative">
-                                        <input type="checkbox" className="peer w-full max-w-5 h-full max-h-5 opacity-0" />
+                                        <input checked={menuOpened} onChange={menuHandlers.toggle} type="checkbox" className="peer w-full max-w-5 h-full max-h-5 opacity-0" />
                                         <Menu className="absolute inset-0 w-full max-w-5 h-full max-h-5 transition-opacity ease-in duration-300 opacity-100 peer-checked:opacity-0" />
                                         <Close className="absolute inset-0 w-full max-w-5 h-full max-h-5 transition-opacity ease-in duration-300 opacity-0 peer-checked:opacity-100" />
                                     </label>
@@ -58,9 +60,9 @@ export const Navbar = () => {
 
                 {/* Navigation Links */}
                 <nav className="lg:flex lg:items-center lg:justify-start">
-                    <ul className="nav-links lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0">
+                    <ul className="nav-links lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0" style={{ ["position-anchor" as string]: "--header", height: "calc(100dvh - anchor-size(height))" }}>
                         <li>
-                            <Link href="/" className={cn(
+                            <Link onClick={menuHandlers.close} href="/" className={cn(
                                 "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/"
@@ -68,7 +70,7 @@ export const Navbar = () => {
                             )}>Home</Link>
                         </li>
                         <li>
-                            <Link href="/about" className={cn(
+                            <Link onClick={menuHandlers.close} href="/about" className={cn(
                                 "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/about"
@@ -93,21 +95,21 @@ export const Navbar = () => {
                                 { "block": opened, "hidden": !opened }
                             )}>
                                 <li>
-                                    <Link href="/news" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">News</Link>
+                                    <Link onClick={menuHandlers.close} href="/news" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">News</Link>
                                 </li>
                                 <li>
-                                    <Link href="/insight" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Insight</Link>
+                                    <Link onClick={menuHandlers.close} href="/insight" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Insight</Link>
                                 </li>
                                 <li>
-                                    <Link href="/case-study" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Case study</Link>
+                                    <Link onClick={menuHandlers.close} href="/case-study" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Case study</Link>
                                 </li>
                                 <li>
-                                    <Link href="/podcast" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Podcast</Link>
+                                    <Link onClick={menuHandlers.close} href="/podcast" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Podcast</Link>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <Link href="/publications" className={cn(
+                            <Link onClick={menuHandlers.close} href="/publications" className={cn(
                                 "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/publications"
@@ -115,7 +117,7 @@ export const Navbar = () => {
                             )}>Publications</Link>
                         </li>
                         <li>
-                            <Link href="/events" className={cn(
+                            <Link onClick={menuHandlers.close} href="/events" className={cn(
                                 "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/events"
@@ -123,7 +125,7 @@ export const Navbar = () => {
                             )}>Events</Link>
                         </li>
                         <li>
-                            <Link href="/contact" className={cn(
+                            <Link onClick={menuHandlers.close} href="/contact" className={cn(
                                 "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                                 {
                                     "active": pathname === "/contact"
@@ -131,7 +133,7 @@ export const Navbar = () => {
                             )}>Contact Us</Link>
                         </li>
                         <li className="lg:ml-auto">
-                            <Link href="/apply" className="block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary">Apply for assistance</Link>
+                            <Link onClick={menuHandlers.close} href="/apply" className="relative block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary after:content-[''] after:absolute after:bottom-[-1px] after:h-[1px] after:w-full after:bg-[var(--button-primary)] after:start-0 hover:after:bg-[var(--button-primary-hover)]">Apply for assistance</Link>
                         </li>
                     </ul>
                 </nav>

@@ -1,13 +1,31 @@
-export default async function Page({
-    params,
-}: {
-    params: Promise<{
-        lang: string;
-    }>;
-}) {
-    const { lang } = await params;
+import ArrowOutward from "@/components/icons/ArrowOutward";
+import Audio from "@/components/icons/Audio";
+import Link from "next/link";
+
+export default function Page() {
     return (
-        <div className="min-h-dvh w-full">
-        </div>
+        <main className="min-h-dvh w-full">
+            <section className="px-4 sm:px-8 grid sm:grid-cols-2 lg:grid-cols-[448px_1fr] gap-[var(--spacing-08)] sm:gap-8 lg:pb-[var(--spacing-08)] bg-[var(--background)] sm:min-h-[560px] lg:min-h-[672px]" style={{
+                ["--background" as string]: "light-dark(#161616,#ffffff)",
+                ["--text-primary" as string]: "light-dark(hsla(0, 0%, 96%, 1),hsla(0, 0%, 9%, 1))"
+            }}>
+                <div className="flex flex-col pt-[var(--spacing-07)] pb-[var(--spacing-07)] sm:pb-[var(--spacing-08)]">
+                    <p className="whitespace-pre-wrap fluid-display-01 text-[var(--text-primary)]">
+                        Myanmar <br />
+                        Earthquake <br />
+                        Engineering <br />
+                        Community
+                    </p>
+                    <p className="fluid-paragraph-01 text-[var(--text-primary)] mt-[var(--spacing-08)] sm:mt-auto">A community-driven effort to enhance earthquake resilience and structural integrity in Myanmar.</p>
+                    <Link style={{ ["--button-tertiary" as string]: "light-dark(hsla(0, 0%, 100%, 1),hsla(219, 99%, 53%, 1))" }} className="mt-[var(--spacing-07)] w-fit font-sans text-base tracking-[0] leading-[22px] flex items-center gap-8 px-4 py-[13px] border border-[var(--button-tertiary)] text-[var(--button-tertiary)]" href="https://www.facebook.com" target="_blank">
+                        Join our facebook group
+                        <ArrowOutward />
+                    </Link>
+                </div>
+                <div className="grid place-items-center mb-[var(--spacing-08)] sm:mb-0">
+                    <Audio className="w-[256px] sm:w-[288px] lg:w-[512px] aspect-square" />
+                </div>
+            </section>
+        </main>
     );
 }
