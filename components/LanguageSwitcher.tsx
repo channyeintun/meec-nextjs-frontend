@@ -6,6 +6,7 @@ import ChevronDown from './icons/ChevronDown';
 import { cn } from '@/lib/utils';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
+import { useDisclosure } from '@mantine/hooks';
 
 export const LanguageSwitcher = () => {
 
@@ -20,7 +21,7 @@ export const LanguageSwitcher = () => {
       router.refresh();
     });
   };
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, handlers] = useDisclosure();
   const [selectedLanguage, setSelectedLanguage] = useState(lang);
 
   const languages = [
@@ -30,16 +31,14 @@ export const LanguageSwitcher = () => {
 
   const handleSelect = (code: string) => {
     setSelectedLanguage(code);
-    setIsOpen(false);
+    handlers.close();
   };
 
   return (
     <div className="self-stretch relative font-sans">
       {/* Button to toggle dropdown */}
       <button
-        onClick={() => {
-          setIsOpen((prev) => !prev);
-        }}
+        onClick={handlers.toggle}
         className={cn(
           "relative z-10 h-full flex gap-2 items-center justify-between w-[70px] p-4 hover:bg-[var(--layer-hover-01)] focus:outline-none",
           {
@@ -48,7 +47,12 @@ export const LanguageSwitcher = () => {
         )}
       >
         <span className="body-01 text-[var(--text-primary)] uppercase">{selectedLanguage}</span>
-        {isOpen ? <ChevronUp /> : <ChevronDown />}
+        <span className={cn(
+          "w-4 h-4 duration-300",
+          { "rotate-180": isOpen }
+        )}>
+          <ChevronDown />
+        </span>
       </button>
 
       {/* Dropdown menu */}

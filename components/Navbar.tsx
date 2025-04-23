@@ -7,12 +7,13 @@ import ChevronDown from "./icons/ChevronDown"
 import { cn } from "@/lib/utils";
 import { usePathname, Link } from "@/i18n/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { useViewportSize, useWindowScroll } from "@mantine/hooks";
+import { useDisclosure, useViewportSize, useWindowScroll } from "@mantine/hooks";
 
 export const Navbar = () => {
     const pathname = usePathname();
     const { width } = useViewportSize();
     const [scroll] = useWindowScroll();
+    const [opened, handlers] = useDisclosure();
 
     // Check if screen is desktop size (lg breakpoint in Tailwind is 1024px)
     const isDesktop = width >= 1024;
@@ -48,7 +49,6 @@ export const Navbar = () => {
                                 <Link href="/">
                                     <h1 className="font-sans text-[var(--text-primary)] font-bold text-[24px] leading-[24px] m-0 px-2 lg:px-8 py-[15px]">MEEC</h1>
                                 </Link>
-
                             </div>
                             {/* Language Switcher */}
                             <LanguageSwitcher />
@@ -75,29 +75,36 @@ export const Navbar = () => {
                                 }
                             )}>About</Link>
                         </li>
-                        <li>
-                            <details className="group relative">
-                                <summary className="relative z-10 flex items-center cursor-pointer max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button lg:group-open:bg-[var(--layer-01)] group-open:lg:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]">
-                                    News & Blogs
-                                    <span className="w-4 h-4 ms-auto lg:ml-1 group-open:rotate-180">
-                                        <ChevronDown />
-                                    </span>
-                                </summary>
-                                <ul className="w-full lg:border-t border-[var(--border-subtle-00)] lg:w-48 bg-[var(--layer-01)] lg:absolute lg:left-0 group-open:block hidden z-20 lg:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]">
-                                    <li>
-                                        <Link href="/news" className="block relative z- text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">News</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/insight" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Insight</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/case-study" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Case study</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/podcast" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Podcast</Link>
-                                    </li>
-                                </ul>
-                            </details>
+                        <li className="relative">
+                            <div
+                                className="flex items-center cursor-pointer max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button lg:hover:bg-[var(--layer-01)]"
+                                onClick={handlers.toggle}
+                            >
+                                News & Blogs
+                                <span className={cn(
+                                    "w-4 h-4 ms-auto lg:ml-1 transition-transform duration-300",
+                                    { "rotate-180": opened }
+                                )}>
+                                    <ChevronDown />
+                                </span>
+                            </div>
+                            <ul className={cn(
+                                "w-full lg:border-t border-[var(--border-subtle-00)] lg:w-48 bg-[var(--layer-01)] lg:absolute lg:left-0 z-20 lg:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]",
+                                { "block": opened, "hidden": !opened }
+                            )}>
+                                <li>
+                                    <Link href="/news" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">News</Link>
+                                </li>
+                                <li>
+                                    <Link href="/insight" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Insight</Link>
+                                </li>
+                                <li>
+                                    <Link href="/case-study" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Case study</Link>
+                                </li>
+                                <li>
+                                    <Link href="/podcast" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Podcast</Link>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <Link href="/publications" className={cn(
@@ -127,8 +134,8 @@ export const Navbar = () => {
                             <Link href="/apply" className="block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary">Apply for assistance</Link>
                         </li>
                     </ul>
-                </nav >
-            </header >
+                </nav>
+            </header>
         </>
     )
 }
