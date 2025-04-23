@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useTransition } from 'react';
-import ChevronUp from './icons/ChevronUp';
 import ChevronDown from './icons/ChevronDown';
 import { cn } from '@/lib/utils';
 import { usePathname, useRouter } from '@/i18n/navigation';
