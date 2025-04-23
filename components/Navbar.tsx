@@ -33,7 +33,8 @@ export const Navbar = () => {
                             animate={{ height: "auto", opacity: 1 }}
                             exit={isDesktop ? { height: 0, opacity: 0 } : { height: "auto", opacity: 1 }}
                             transition={{ duration: 0.3, ease: "easeInOut" }}
-                            style={{ ["anchor-name" as string]: "--header" }}
+                            // @ts-ignore
+                            style={{ anchorName: "--header" }}
                         >
                             {/* overlay */}
                             <div className="w-full h-full bg-[var(--overlay)] absolute inset-0 transition-transform duration-300 ease-in-out lg:hidden -translate-x-full group-has-[:checked]:translate-x-0 z-20"></div>
@@ -60,7 +61,8 @@ export const Navbar = () => {
 
                 {/* Navigation Links */}
                 <nav className="lg:flex lg:items-center lg:justify-start">
-                    <ul className="nav-links lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0" style={{ ["position-anchor" as string]: "--header", height: "calc(100dvh - anchor-size(height))" }}>
+                    {/* @ts-ignore */}
+                    <ul className="nav-links lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0" style={{ positionAnchor: "--header", height: "calc(100dvh - anchor-size(height))" }}>
                         <li>
                             <Link onClick={menuHandlers.close} href="/" className={cn(
                                 "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
