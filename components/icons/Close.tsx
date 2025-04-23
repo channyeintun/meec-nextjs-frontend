@@ -1,10 +1,7 @@
 import * as React from "react";
+import { IconProps } from ".";
 
-interface CloseProps {
-    className?: string;
-}
-
-const Close = ({ className }: CloseProps) => (
+const Close = ({ className }: IconProps) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

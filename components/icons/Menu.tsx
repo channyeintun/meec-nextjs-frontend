@@ -1,12 +1,9 @@
 import * as React from "react";
-
-interface MenuProps {
-    className?: string;
-}
+import { IconProps } from ".";
 
 const Menu = ({
     className
-}: MenuProps) => (
+}: IconProps) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
