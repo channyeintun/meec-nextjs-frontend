@@ -1,6 +1,10 @@
 {
-    "HomePage": {
-      "title": "Hello world MM!",
-      "about": "Go to the about page MM"
-    }
+  "HomePage": {
+    "Myanmar": "Myanmar",
+    "Earthquake": "Earthquake",
+    "Engineering": "Engineering",
+    "Community": "Community",
+    "description": "A community-driven effort to enhance earthquake resilience and structural integrity in Myanmar.",
+    "Join our facebook group": "Join our facebook group"
   }
+}
