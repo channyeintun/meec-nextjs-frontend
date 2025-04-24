@@ -59,10 +59,10 @@ export const Navbar = () => {
 
                 {/* Navigation Links */}
                 <nav className="lg:flex lg:items-center lg:justify-start">
-                    <ul className="nav-links lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0 max-sm:h-[calc(100dvh-58px)]">
+                    <ul className="nav-links lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0 max-lg:h-[calc(100dvh-58px)]">
                         <li>
                             <Link onNavigate={menuHandlers.close} href="/" className={cn(
-                                "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
+                                "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/"
                                 }
@@ -70,7 +70,7 @@ export const Navbar = () => {
                         </li>
                         <li>
                             <Link onNavigate={menuHandlers.close} href="/about" className={cn(
-                                "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
+                                "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/about"
                                 }
@@ -78,7 +78,7 @@ export const Navbar = () => {
                         </li>
                         <li className="relative">
                             <div
-                                className="flex items-center cursor-pointer max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button lg:hover:bg-[var(--layer-01)]"
+                                className="flex items-center cursor-pointer max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button lg:hover:bg-[var(--layer-01)]"
                                 onClick={handlers.toggle}
                             >
                                 News & Blogs
@@ -109,7 +109,7 @@ export const Navbar = () => {
                         </li>
                         <li>
                             <Link onNavigate={menuHandlers.close} href="/publications" className={cn(
-                                "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
+                                "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/publications"
                                 }
@@ -117,7 +117,7 @@ export const Navbar = () => {
                         </li>
                         <li>
                             <Link onNavigate={menuHandlers.close} href="/events" className={cn(
-                                "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
+                                "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/events"
                                 }
@@ -125,14 +125,14 @@ export const Navbar = () => {
                         </li>
                         <li>
                             <Link onNavigate={menuHandlers.close} href="/contact" className={cn(
-                                "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button",
+                                "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                                 {
                                     "active": pathname === "/contact"
                                 }
                             )}>Contact Us</Link>
                         </li>
                         <li className="lg:ml-auto">
-                            <Link onNavigate={menuHandlers.close} href="/apply" className="relative block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary after:content-[''] after:absolute after:bottom-[-1px] after:h-[1px] after:w-full after:bg-[var(--button-primary)] after:start-0 hover:after:bg-[var(--button-primary-hover)]">Apply for assistance</Link>
+                            <Link onNavigate={menuHandlers.close} href="/apply" className="relative block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary after:content-[''] after:absolute after:bottom-[-1px] after:h-[1px] after:w-full after:bg-[var(--button-primary)] after:start-0 hover:after:bg-[var(--button-primary-hover)]">Apply for assistance</Link>
                         </li>
                     </ul>
                 </nav>
