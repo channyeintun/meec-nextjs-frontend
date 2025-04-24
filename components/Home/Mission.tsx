@@ -2,6 +2,8 @@ import { useTranslations } from "next-intl"
 import CommunityCentered from "../icons/CommunityCentered";
 import KnowledgeSharing from "../icons/KnowledgeSharing";
 import SocialResponsibility from "../icons/SocialResponsibility";
+import { Link } from "@/i18n/navigation";
+import ArrowRight from "../icons/ArrowRight";
 
 export const Mission = () => {
     const t = useTranslations("HomePage");
@@ -30,6 +32,10 @@ export const Mission = () => {
                             <h2 className="heading-01 text-[var(--text-primary)]">{t("Social Responsibility")}</h2>
                             <p className="body-02 text-[var(--text-primary)]">{t("Social Responsibility description")}</p>
                         </div>
+                    </li>
+                    <li className="flex flex-col sm:flex-row gap-[var(--spacing-05)] sm:gap-[var(--spacing-08)]">
+                        <div className="w-16 hidden sm:block"></div>
+                        <Link href="/about" className="body-01 text-[var(--link-primary)] flex items-center gap-[var(--spacing-03)]">Learn more about us <ArrowRight /></Link>
                     </li>
                 </ul>
             </div>
