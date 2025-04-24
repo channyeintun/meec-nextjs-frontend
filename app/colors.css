@@ -190,6 +190,12 @@ a {
 }
 
 @supports (anchor-name: --a) {
+    .nav-links {
+        position-anchor: --header;
+        height: calc (100dvh - 58px); /* fallback */
+        height: calc(100dvh - anchor-size(height));
+    }
+
     @media screen and (min-width:64rem) {
         .nav-links>li:has(a.active) {
             anchor-name: --anchor;

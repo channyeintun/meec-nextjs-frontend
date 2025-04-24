@@ -61,10 +61,9 @@ export const Navbar = () => {
 
                 {/* Navigation Links */}
                 <nav className="lg:flex lg:items-center lg:justify-start">
-                    {/* @ts-ignore */}
-                    <ul className="nav-links lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0" style={{ positionAnchor: "--header", height: "calc(100dvh - anchor-size(height))" }}>
+                    <ul className="nav-links lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0">
                         <li>
-                            <Link onClick={menuHandlers.close} href="/" className={cn(
+                            <Link onNavigate={menuHandlers.close} href="/" className={cn(
                                 "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/"
@@ -72,7 +71,7 @@ export const Navbar = () => {
                             )}>Home</Link>
                         </li>
                         <li>
-                            <Link onClick={menuHandlers.close} href="/about" className={cn(
+                            <Link onNavigate={menuHandlers.close} href="/about" className={cn(
                                 "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/about"
@@ -97,21 +96,21 @@ export const Navbar = () => {
                                 { "block": opened, "hidden": !opened }
                             )}>
                                 <li>
-                                    <Link onClick={menuHandlers.close} href="/news" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">News</Link>
+                                    <Link onNavigate={menuHandlers.close} href="/news" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">News</Link>
                                 </li>
                                 <li>
-                                    <Link onClick={menuHandlers.close} href="/insight" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Insight</Link>
+                                    <Link onNavigate={menuHandlers.close} href="/insight" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Insight</Link>
                                 </li>
                                 <li>
-                                    <Link onClick={menuHandlers.close} href="/case-study" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Case study</Link>
+                                    <Link onNavigate={menuHandlers.close} href="/case-study" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Case study</Link>
                                 </li>
                                 <li>
-                                    <Link onClick={menuHandlers.close} href="/podcast" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Podcast</Link>
+                                    <Link onNavigate={menuHandlers.close} href="/podcast" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Podcast</Link>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <Link onClick={menuHandlers.close} href="/publications" className={cn(
+                            <Link onNavigate={menuHandlers.close} href="/publications" className={cn(
                                 "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/publications"
@@ -119,7 +118,7 @@ export const Navbar = () => {
                             )}>Publications</Link>
                         </li>
                         <li>
-                            <Link onClick={menuHandlers.close} href="/events" className={cn(
+                            <Link onNavigate={menuHandlers.close} href="/events" className={cn(
                                 "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/events"
@@ -127,7 +126,7 @@ export const Navbar = () => {
                             )}>Events</Link>
                         </li>
                         <li>
-                            <Link onClick={menuHandlers.close} href="/contact" className={cn(
+                            <Link onNavigate={menuHandlers.close} href="/contact" className={cn(
                                 "block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button",
                                 {
                                     "active": pathname === "/contact"
@@ -135,7 +134,7 @@ export const Navbar = () => {
                             )}>Contact Us</Link>
                         </li>
                         <li className="lg:ml-auto">
-                            <Link onClick={menuHandlers.close} href="/apply" className="relative block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary after:content-[''] after:absolute after:bottom-[-1px] after:h-[1px] after:w-full after:bg-[var(--button-primary)] after:start-0 hover:after:bg-[var(--button-primary-hover)]">Apply for assistance</Link>
+                            <Link onNavigate={menuHandlers.close} href="/apply" className="relative block max-md:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary after:content-[''] after:absolute after:bottom-[-1px] after:h-[1px] after:w-full after:bg-[var(--button-primary)] after:start-0 hover:after:bg-[var(--button-primary-hover)]">Apply for assistance</Link>
                         </li>
                     </ul>
                 </nav>
