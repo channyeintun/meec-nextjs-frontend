@@ -39,7 +39,7 @@ export const LanguageSwitcher = () => {
       <button
         onClick={handlers.toggle}
         className={cn(
-          "relative z-10 h-full flex gap-2 items-center justify-between w-[70px] p-4 hover:bg-[var(--layer-hover-01)] focus:outline-none",
+          "relative z-10 h-full flex gap-2 items-center justify-between w-[70px] p-4 hover:bg-[var(--layer-hover-01)]",
           {
             "bg-[var(--layer-01)] shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]": isOpen,
           }
@@ -65,7 +65,7 @@ export const LanguageSwitcher = () => {
                 handleSelect(lang.code);
                 changeLocale(lang.code);
               }}
-              className="w-full text-left px-4 py-3 text-[14px] text-[var(--text-primary)] bg-[var(--layer-01)] hover:bg-[var(--layer-hover-01)] focus:outline-none whitespace-nowrap"
+              className="w-full text-left px-4 py-3 text-[14px] text-[var(--text-primary)] bg-[var(--layer-01)] hover:bg-[var(--layer-hover-01)] whitespace-nowrap"
             >
               {lang.name}
             </button>

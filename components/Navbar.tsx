@@ -24,7 +24,7 @@ export const Navbar = () => {
 
     return (
         <>
-            <header className="bg-[var(--background)] group relative sticky top-0">
+            <header className="bg-[var(--background)] group sticky top-0 z-50">
                 <AnimatePresence>
                     {(!shouldHideTopBar || !isDesktop) && (
                         <motion.div
@@ -38,7 +38,7 @@ export const Navbar = () => {
                             <div className="w-full h-full bg-[var(--overlay)] absolute inset-0 transition-transform duration-300 ease-in-out lg:hidden -translate-x-full group-has-[:checked]:translate-x-0 z-20"></div>
                             <div className="flex items-center">
                                 {/* Hamburger Menu for Mobile */}
-                                <div className="border-2 border-transparent group-has-[:checked]:border-[var(--border-interactive)] lg:hidden relative box-content p-4 w-5 h-5 group-has-[:checked]:bg-[var(--layer-01)] hover:bg-[var(--layer-hover-01)] z-20 transition-colors duration-150 ease-in-out">
+                                <div className="border-2 border-transparent focus-within:border-[var(--border-interactive)] lg:hidden relative box-content p-4 w-5 h-5 group-has-[:checked]:bg-[var(--layer-01)] hover:bg-[var(--layer-hover-01)] z-20 transition-colors duration-150 ease-in-out">
                                     <label className="inline-block cursor-pointer w-5 h-5 relative">
                                         <input checked={menuOpened} onChange={menuHandlers.toggle} type="checkbox" className="peer w-full max-w-5 h-full max-h-5 opacity-0" />
                                         <Menu className="absolute inset-0 w-full max-w-5 h-full max-h-5 transition-opacity ease-in duration-300 opacity-100 peer-checked:opacity-0" />
@@ -59,7 +59,7 @@ export const Navbar = () => {
 
                 {/* Navigation Links */}
                 <nav className="lg:flex lg:items-center lg:justify-start">
-                    <ul className="nav-links lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0 max-lg:h-[calc(100dvh-58px)]">
+                    <ul className="nav-links lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute z-50 top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0 max-lg:h-[calc(100dvh-58px)]">
                         <li>
                             <Link onNavigate={menuHandlers.close} href="/" className={cn(
                                 "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
