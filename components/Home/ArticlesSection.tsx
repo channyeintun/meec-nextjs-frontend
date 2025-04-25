@@ -68,7 +68,7 @@ export const ArticlesSection = async () => {
                             </div>
                             <div className="space-y-4 mt-auto">
                                 <p className="body-01 mt-auto text-[var(--primary)] line-clamp-3">{article.description}</p>
-                                <p>{article.topics.map(it => <span className="label-01 px-[var(--spacing-03)] py-[var(--spacing-02)] text-[var(--tag-color-gray)] bg-[var(--tag-background-gray)] rounded-[40px]" key={it.createdAt}>{it.name}</span>)}</p>
+                                <p>{article.topics.map(it => <span className="label-01 px-[var(--spacing-03)] py-[var(--spacing-02)] text-[var(--tag-color-gray)] bg-[var(--tag-background-gray)] rounded-[40px] hover:bg-[var(--tag-hover-gray)]" key={it.createdAt}>{it.name}</span>)}</p>
                             </div>
                         </article>
                     ) : <div key={idx} className={cn("border-[var(--border-strong-01)] hidden lg:block", {

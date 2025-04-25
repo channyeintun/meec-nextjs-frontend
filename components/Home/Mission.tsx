@@ -35,7 +35,7 @@ export const Mission = () => {
                     </li>
                     <li className="flex flex-col sm:flex-row gap-[var(--spacing-05)] sm:gap-[var(--spacing-08)]">
                         <div className="w-16 hidden sm:block"></div>
-                        <Link href="/about" className="body-01 text-[var(--link-primary)] flex items-center gap-[var(--spacing-03)] hover:text-[var(--link-primary-hover)]">Learn more about us <ArrowRight /></Link>
+                        <Link href="/about" className="body-01 text-[var(--link-primary)] flex items-center gap-[var(--spacing-03)] hover:text-[var(--link-primary-hover)]">Learn more about us <ArrowRight className="w-5 h-5"/></Link>
                     </li>
                 </ul>
             </div>
