@@ -18,9 +18,9 @@ export const HeroSection = () => {
                     {t("Community")}
                 </p>
                 <p className="fluid-paragraph-01 text-[var(--text-primary)] mt-[var(--spacing-08)] sm:mt-auto">{t("description")}</p>
-                <Link style={{ ["--button-tertiary" as string]: "light-dark(hsla(0, 0%, 100%, 1),hsla(219, 99%, 53%, 1))" }} className="mt-[var(--spacing-07)] w-fit font-sans text-base tracking-[0] leading-[22px] flex items-center gap-8 px-4 py-[13px] border border-[var(--button-tertiary)] text-[var(--button-tertiary)]" href="https://www.facebook.com" target="_blank">
+                <Link style={{ ["--button-tertiary" as string]: "light-dark(hsla(0, 0%, 100%, 1),hsla(219, 99%, 53%, 1))" }} className="mt-[var(--spacing-07)] w-fit font-sans text-base tracking-[0] leading-[22px] flex items-center gap-8 px-4 py-[13px] border hover:border-[var(--button-tertiary-hover)] border-[var(--button-tertiary)] text-[var(--button-tertiary)] hover:bg-[var(--button-tertiary-hover)] hover:text-[--text-inverse]" href="https://www.facebook.com" target="_blank">
                     {t("Join our facebook group")}
-                    <ArrowOutward />
+                    <ArrowOutward fill="var(--button-tertiary)"/>
                 </Link>
             </div>
             <div className="grid place-items-center mb-[var(--spacing-08)] sm:mb-0">

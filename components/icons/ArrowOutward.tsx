@@ -1,7 +1,7 @@
 import * as React from "react";
 import { IconProps } from ".";
 
-const ArrowOutward = ({ className }: IconProps) => (
+const ArrowOutward = ({ className, fill="currentColor" }: IconProps) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
@@ -16,7 +16,7 @@ const ArrowOutward = ({ className }: IconProps) => (
         </g>
         <defs>
             <clipPath id="clip0_904_605">
-                <path fill="#fff" d="M0 0h20v20H0z"></path>
+                <path fill={fill} d="M0 0h20v20H0z"></path>
             </clipPath>
         </defs>
     </svg>
