@@ -1,7 +1,7 @@
 import * as React from "react";
 import { IconProps } from ".";
 
-const Insight = ({ className, fill }: IconProps) => (
+const Insight = ({ className, fill = "currentColor" }: IconProps) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"

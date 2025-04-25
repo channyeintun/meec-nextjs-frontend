@@ -4,6 +4,7 @@ import { GET_ARTICLES } from "@/graphql/queries/articles";
 import { getLocale } from "next-intl/server";
 import { ReadMoreLink } from "./ReadMoreLink";
 import { cn } from "@/lib/utils";
+import { Category } from "./Category";
 
 interface Article {
     createdAt: string;
@@ -55,7 +56,7 @@ export const ArticlesSection = async () => {
                             "sm:border-l": [0, 3].includes(idx),
                             "sm:max-lg:border-l": idx === 5
                         })}>
-                            <p className="label-01">{article.category.name}</p>
+                            <Category name={article.category.name} />
                             <img src={formatImageUrl(article.cover.url)} alt={article.title} className="w-full aspect-3/2 object-cover my-[var(--spacing-06)]" />
                             <div className="space-y-[var(--spacing-02)]">
                                 <p className="text-sm text-[var(--text-secondary)] label-02">{new Date(article.createdAt).toLocaleDateString(locale, {
