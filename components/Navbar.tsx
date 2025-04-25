@@ -77,18 +77,22 @@ export const Navbar = () => {
                             )}>About</Link>
                         </li>
                         <li className="relative">
-                            <div
-                                className="flex items-center cursor-pointer max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button lg:hover:bg-[var(--layer-01)]"
+                            <button
+                                className="flex items-center cursor-pointer max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button lg:hover:bg-[var(--layer-01)] w-full text-left"
                                 onClick={handlers.toggle}
+                                aria-expanded={opened}
+                                aria-controls="news-blogs-submenu"
                             >
                                 News & Blogs
-                                <span className={cn(
-                                    "w-4 h-4 ms-auto lg:ml-1 transition-transform duration-300",
-                                    { "rotate-180": opened }
-                                )}>
+                                <span
+                                    className={cn(
+                                        "w-4 h-4 ms-auto lg:ml-1 transition-transform duration-300",
+                                        { "rotate-180": opened }
+                                    )}
+                                >
                                     <ChevronDown />
                                 </span>
-                            </div>
+                            </button>
                             <ul className={cn(
                                 "w-full lg:border-t border-[var(--border-subtle-00)] lg:w-48 bg-[var(--layer-01)] lg:absolute lg:left-0 z-20 lg:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]",
                                 { "block": opened, "hidden": !opened }

@@ -1,12 +1,13 @@
-import { NextIntlClientProvider } from 'next-intl';
-import type { Metadata } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
-import "./tailwindcss.css";
-import "./colors.css";
-import "./typography.css";
-import "./spacing.css";
-import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import type { Metadata } from "next";
+import { NextIntlClientProvider } from 'next-intl';
+import { IBM_Plex_Sans } from "next/font/google";
+import "./colors.css";
+import "./globals.css";
+import "./spacing.css";
+import "./tailwindcss.css";
+import "./typography.css";
+import { ApolloClientProvider } from "@/components/ApolloClientProvider";
 
 const sans = IBM_Plex_Sans({
   weight: ['400'],
@@ -41,8 +42,10 @@ export default async function RootLayout({
         className={`${sans.variable} antialiased content-auto`}
       >
         <NextIntlClientProvider>
-          <Navbar />
-          {children}
+          <ApolloClientProvider>
+            <Navbar />
+            {children}
+          </ApolloClientProvider>
         </NextIntlClientProvider>
       </body>
     </html>
