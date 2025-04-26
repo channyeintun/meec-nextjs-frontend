@@ -35,6 +35,12 @@ export const ArticlesSection = async () => {
 
     const { data } = await client.query<ArticlesData>({
         query: GET_ARTICLES,
+        variables: {
+            locale,
+            pagination: {
+                limit:6
+            }
+        }
     });
 
     let arr = data?.articles ?? [];
