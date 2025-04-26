@@ -8,9 +8,11 @@ export const GET_ARTICLES = gql`
       description
       body
       category {
+        slug
         name
       }
       topics {
+        slug
         createdAt
         name
       }

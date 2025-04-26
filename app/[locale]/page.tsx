@@ -1,6 +1,7 @@
 import { ArticlesSection } from "@/components/Home/ArticlesSection";
 import { HeroSection } from "@/components/Home/HeroSection";
 import { Mission } from "@/components/Home/Mission";
+import { PublicationsSection } from "@/components/Home/PublicationsSection";
 import { WorkshopSection } from "@/components/Home/WorkshopSection";
 
 export default function Page() {
@@ -11,6 +12,7 @@ export default function Page() {
             <Mission />
             <ArticlesSection />
             <WorkshopSection />
+            <PublicationsSection />
         </main>
     );
 }
