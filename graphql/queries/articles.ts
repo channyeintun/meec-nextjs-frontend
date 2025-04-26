@@ -12,7 +12,6 @@ export const GET_ARTICLES = gql`
         name
       }
       topics {
-        slug
         createdAt
         name
       }
