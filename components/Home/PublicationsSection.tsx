@@ -48,7 +48,7 @@ export const PublicationsSection = async () => {
                         <div className="p-[var(--spacing-05)] min-h-[288px] flex flex-col">
                             <h1 className="fluid-heading-03 text-[var(--text-primary)] line-clamp-3 group-hover:text-[var(--link-primary)]">{book.title}</h1>
                             <p className="body-02 text-[var(--text-primary)] line-clamp-3 mb-6 mt-auto">{book.description}</p>
-                            <ArrowRight className="w-6 h-6 group-hover:translate-x-full transition-all duration-50 ease-in group-hover:text-[var(--icon-interactive)]" />
+                            <ArrowRight className="w-6 h-6 group-hover:translate-x-full transition-all duration-200 ease-[cubic-bezier(0.47,0,0.23,1.38)] group-hover:text-[var(--icon-interactive)]" />
                         </div>
                     </article>
                 ))}
