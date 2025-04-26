@@ -41,7 +41,6 @@ export const ArticlesSection = async () => {
 
     const articles = [...arr.slice(0, 2), null, ...arr.slice(2, 5), null, ...arr.slice(5)];
 
-    const formatImageUrl = (url: string) => `${process.env.NEXT_PUBLIC_API_URL}${url}`;
     return (
         <section className="sm:px-8 grid lg:grid-cols-[160px_1fr] gap-6 sm:gap-[var(--spacing-08)] lg:gap-[var(--spacing-11)] py-[var(--spacing-11)]">
             <div className="pt-[var(--spacing-03)] px-[var(--spacing-05)] sm:px-0 lg:border-t border-[var(--border-strong-01)]">
@@ -57,7 +56,7 @@ export const ArticlesSection = async () => {
                             "sm:max-lg:border-l": idx === 5
                         })}>
                             <Category name={article.category.name} />
-                            <img src={formatImageUrl(article.cover.url)} alt={article.title} className="w-full aspect-3/2 object-cover my-[var(--spacing-06)]" />
+                            <img src={article.cover.url} alt={article.title} className="w-full aspect-3/2 object-cover my-[var(--spacing-06)]" />
                             <div className="space-y-[var(--spacing-02)]">
                                 <p className="text-sm text-[var(--text-secondary)] label-02">{new Date(article.createdAt).toLocaleDateString(locale, {
                                     day: '2-digit',
