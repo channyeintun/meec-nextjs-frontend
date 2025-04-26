@@ -4,6 +4,13 @@ import { Mission } from "@/components/Home/Mission";
 import { PublicationsSection } from "@/components/Home/PublicationsSection";
 import { WorkshopSection } from "@/components/Home/WorkshopSection";
 
+export async function generateStaticParams() {
+    return [
+        { locale: 'en' },
+        { locale: 'mm' },
+    ];
+}
+
 export default function Page() {
 
     return (
