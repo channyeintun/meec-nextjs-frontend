@@ -7,5 +7,10 @@ export function createApolloClient() {
       uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`,
     }),
     cache: new InMemoryCache(),
+    defaultOptions: {
+      query: {
+        fetchPolicy: 'cache-first'
+      }
+    }
   });
 }
