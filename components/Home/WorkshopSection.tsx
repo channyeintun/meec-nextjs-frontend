@@ -1,9 +1,10 @@
+import Image from "next/image"
 import { RegisterNowLink } from "./RegisterNow"
 
 export const WorkshopSection = () => {
     return (
         <section className="grid lg:grid-cols-2 sm:px-[var(--spacing-07)] py-[var(--spacing-10)]">
-            <img className="w-full sm:h-full object-cover max-lg:aspect-video" src="/workshop.png" alt="A photo of Post-Earthquake Data Collection Workshop" />
+            <Image width={624} height={800} className="w-full sm:h-full object-cover max-lg:aspect-video" src="/workshop.png" alt="A photo of Post-Earthquake Data Collection Workshop" />
             <div style={{
                 ["--background" as string]: "light-dark(#161616,#ffffff)"
             }} className="flex flex-col">

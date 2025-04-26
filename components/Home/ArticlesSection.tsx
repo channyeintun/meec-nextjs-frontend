@@ -5,6 +5,7 @@ import { getLocale } from "next-intl/server";
 import { ReadMoreLink } from "./ReadMoreLink";
 import { cn } from "@/lib/utils";
 import { Category } from "./Category";
+import Image from "next/image";
 
 interface Article {
     createdAt: string;
@@ -62,7 +63,7 @@ export const ArticlesSection = async () => {
                             "sm:max-lg:border-l": idx === 5
                         })}>
                             <Category name={article.category.name} />
-                            <img src={article.cover.url} alt={article.title} className="w-full aspect-3/2 object-cover my-[var(--spacing-06)]" />
+                            <Image width={272} height={136} src={article.cover.url} alt={article.title} className="w-full aspect-3/2 object-cover my-[var(--spacing-06)]" />
                             <div className="space-y-[var(--spacing-02)]">
                                 <p className="text-sm text-[var(--text-secondary)] label-02">{new Date(article.createdAt).toLocaleDateString(locale, {
                                     day: '2-digit',
