@@ -10,7 +10,7 @@ const ArrowOutward = ({ className, fill="currentColor" }: IconProps) => (
         viewBox="0 0 20 20"
         className={className}
     >
-        <g fill="var(--button-tertiary)" clipPath="url(#clip0_904_605)">
+        <g fill={fill} clipPath="url(#clip0_904_605)">
             <path fillOpacity="0.01" d="M0 0h20v20H0z"></path>
             <path d="M6.25 3.75V5h7.869L3.75 15.369l.881.881L15 5.881v7.869h1.25v-10z"></path>
         </g>
