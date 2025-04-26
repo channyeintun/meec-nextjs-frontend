@@ -43,12 +43,12 @@ export const PublicationsSection = async () => {
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4">
                 {data?.books?.map((book, idx) => (
-                    <article key={idx} className="group text-[var(--text-primary)] flex flex-col border-[var(--border-subtle-01)] bg-[var(--layer-01)] hover:bg-[var(--layer-hover-01)] first:border-t first:border-s border-e border-b lg:nth-5:border-s sm:max-lg:nth-3:border-s max-sm:border-s">
+                    <article key={idx} className="group text-[var(--text-primary)] flex flex-col border-[var(--border-subtle-01)] bg-[var(--layer-01)] hover:bg-[var(--layer-02)] first:border-t first:border-s border-e border-b lg:nth-5:border-s sm:max-lg:nth-3:border-s max-sm:border-s">
                         <img className="w-full aspect-3/2" src={book.cover.url} />
                         <div className="p-[var(--spacing-05)] min-h-[288px] flex flex-col">
-                            <h1 className="fluid-heading-03 text-[var(--text-primary)] line-clamp-3">{book.title}</h1>
+                            <h1 className="fluid-heading-03 text-[var(--text-primary)] line-clamp-3 group-hover:text-[var(--link-primary)]">{book.title}</h1>
                             <p className="body-02 text-[var(--text-primary)] line-clamp-3 mb-6 mt-auto">{book.description}</p>
-                            <ArrowRight className="w-6 h-6 group-hover:translate-x-full transition-all duration-50 ease-in" />
+                            <ArrowRight className="w-6 h-6 group-hover:translate-x-full transition-all duration-50 ease-in group-hover:text-[var(--icon-interactive)]" />
                         </div>
                     </article>
                 ))}
