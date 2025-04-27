@@ -8,6 +8,7 @@ import "./spacing.css";
 import "./tailwindcss.css";
 import "./typography.css";
 import { ApolloClientProvider } from "@/components/ApolloClientProvider";
+import { Footer } from "@/components/Footer";
 
 const sans = IBM_Plex_Sans({
   weight: ['400'],
@@ -45,6 +46,7 @@ export default async function RootLayout({
           <ApolloClientProvider>
             <Navbar />
             {children}
+            <Footer />
           </ApolloClientProvider>
         </NextIntlClientProvider>
       </body>
