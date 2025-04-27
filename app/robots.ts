@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-export default function robots({ params }: { params: { locale: string } }): MetadataRoute.Robots {
+export default function robots(): MetadataRoute.Robots {
     return {
         rules: {
             userAgent: '*',
@@ -8,6 +8,6 @@ export default function robots({ params }: { params: { locale: string } }): Meta
             disallow: ['/api/*', '/admin/*'],
         },
         // update domain after production release
-        sitemap: `https://meec-web.vercel.app/${params.locale}/sitemap.xml`,
+        sitemap: `https://meec-web.vercel.app/sitemap.xml`,
     }
 }
