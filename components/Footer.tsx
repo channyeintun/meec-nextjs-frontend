@@ -25,14 +25,14 @@ export const Footer = () => {
                     ></path>
                 </svg>
                 <ul className="space-y-[var(--spacing-03)]">
-                    <h1 className="text-[var(--text-primary)] heading-02">Quick links</h1>
+                    <li><h1 className="text-[var(--text-primary)] heading-02">Quick links</h1></li>
                     <li><Link href="about" className="body-02">About us</Link></li>
                     <li><Link href="/" className="body-02">Our mission</Link></li>
                     <li><Link href="/" className="body-02">Our vission</Link></li>
                     <li><Link href="https://facebook.com" target="_blank" className="body-02">Become a member</Link></li>
                 </ul>
                 <ul className="space-y-[var(--spacing-03)]">
-                    <h1 className="text-[var(--text-primary)] heading-02">Resources</h1>
+                    <li><h1 className="text-[var(--text-primary)] heading-02">Resources</h1></li>
                     <li><Link href="/news">News</Link></li>
                     <li><Link href="/insight">Insights</Link></li>
                     <li><Link href="/case-study">Case study</Link></li>
@@ -40,7 +40,7 @@ export const Footer = () => {
                     <li><Link href="/publications">Publications</Link></li>
                 </ul>
                 <ul className="space-y-[var(--spacing-03)]">
-                    <h1 className="text-[var(--text-primary)] heading-02">Engage with MEEC</h1>
+                    <li><h1 className="text-[var(--text-primary)] heading-02">Engage with MEEC</h1></li>
                     <li><Link href="https://facebook.com" target="_blank">Facebook</Link></li>
                     <li><Link href="https://twitter.com" target="_blank">Twitter</Link></li>
                     <li><Link href="https://linkedin.com" target="_blank">LinkedIn</Link></li>
