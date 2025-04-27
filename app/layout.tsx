@@ -9,6 +9,7 @@ import "./tailwindcss.css";
 import "./typography.css";
 import { ApolloClientProvider } from "@/components/ApolloClientProvider";
 import { Footer } from "@/components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const sans = IBM_Plex_Sans({
   weight: ['400'],
@@ -57,6 +58,7 @@ export default async function RootLayout({
             </main>
           </ApolloClientProvider>
         </NextIntlClientProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
