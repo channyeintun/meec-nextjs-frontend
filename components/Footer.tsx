@@ -40,7 +40,7 @@ export const Footer = () => {
                     <li><Link href="/publications">Publications</Link></li>
                 </ul>
                 <ul className="space-y-[var(--spacing-03)]">
-                    <h1 className="text-[var(--text-primary)]">Engage with MEEC</h1>
+                    <h1 className="text-[var(--text-primary)] heading-02">Engage with MEEC</h1>
                     <li><Link href="https://facebook.com" target="_blank">Facebook</Link></li>
                     <li><Link href="https://twitter.com" target="_blank">Twitter</Link></li>
                     <li><Link href="https://linkedin.com" target="_blank">LinkedIn</Link></li>
