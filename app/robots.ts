@@ -8,6 +8,6 @@ export default function robots({ params }: { params: { locale: string } }): Meta
             disallow: ['/api/*', '/admin/*'],
         },
         // update domain after production release
-        sitemap: `https://www.meec-web.vercel.app/${params.locale}/sitemap.xml`,
+        sitemap: `https://meec-web.vercel.app/${params.locale}/sitemap.xml`,
     }
 }
