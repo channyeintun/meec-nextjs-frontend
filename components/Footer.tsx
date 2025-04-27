@@ -7,7 +7,7 @@ export const Footer = () => {
             ["--text-primary" as string]: "light-dark(hsla(0, 0%, 96%, 1),hsla(0, 0%, 9%, 1))",
             ["--text-secondary" as string]: "light-dark(hsla(0, 0%, 78%, 1),hsla(0, 0%, 32%, 1))",
             ["--icon-primary" as string]: "light-dark(hsla(0, 0%, 96%, 1),hsla(0, 0%, 9%, 1))"
-        }} className="bg-[var(--background)] text-[var(--text-secondary)] px-[var(--spacing-07)] pt-[var(--spacing-11)] pb-[var(--spacing-06)] flex flex-col gap-[var(--spacing-12)]">
+        }} className="mt-auto bg-[var(--background)] text-[var(--text-secondary)] px-[var(--spacing-07)] pt-[var(--spacing-11)] pb-[var(--spacing-06)] flex flex-col gap-[var(--spacing-12)]">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[var(--spacing-07)]">
                 <svg
                     className="sm:max-lg:col-span-2"

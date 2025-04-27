@@ -15,13 +15,13 @@ export async function generateStaticParams() {
 export default function Page() {
 
     return (
-        <main className="min-h-dvh w-full">
+        <>
             <HeroSection />
             <Mission />
             <ArticlesSection />
             <WorkshopSection />
             <PublicationsSection />
             <YoutubeSection />
-        </main>
+        </>
     );
 }

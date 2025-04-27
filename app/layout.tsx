@@ -51,8 +51,10 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <ApolloClientProvider>
             <Navbar />
-            {children}
-            <Footer />
+            <main className="flex flex-col min-h-dvh w-full">
+              {children}
+              <Footer />
+            </main>
           </ApolloClientProvider>
         </NextIntlClientProvider>
       </body>
