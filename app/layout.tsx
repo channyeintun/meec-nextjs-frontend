@@ -18,6 +18,7 @@ const sans = IBM_Plex_Sans({
 
 const sansMyanmar = Noto_Sans_Myanmar({
   weight: ['400'],
+  preload: false,
   variable: '--font-noto-sans-myanmar',
 })
 
