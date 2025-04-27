@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
-import { IBM_Plex_Sans } from "next/font/google";
+import { IBM_Plex_Sans, Noto_Sans_Myanmar } from "next/font/google";
 import "./colors.css";
 import "./globals.css";
 import "./spacing.css";
@@ -14,6 +14,11 @@ const sans = IBM_Plex_Sans({
   weight: ['400'],
   subsets: ['latin'],
   variable: '--font-ibm-plex-sans',
+})
+
+const sansMyanmar = Noto_Sans_Myanmar({
+  weight: ['400'],
+  variable: '--font-noto-sans-myanmar',
 })
 
 export const metadata: Metadata = {
@@ -40,7 +45,7 @@ export default async function RootLayout({
           minHeight: '100dvh',
           backgroundColor: 'var(--background)'
         }}
-        className={`${sans.variable} antialiased content-auto`}
+        className={`${sans.variable} ${sansMyanmar.variable} antialiased content-auto`}
       >
         <NextIntlClientProvider>
           <ApolloClientProvider>

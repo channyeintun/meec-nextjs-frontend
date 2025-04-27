@@ -6,6 +6,7 @@
 
 @theme inline {
     --font-sans: var(--font-ibm-plex-sans);
+    --font-sans-mm: var(--font-noto-sans-myanmar);
 }
 
 @layer utilities {

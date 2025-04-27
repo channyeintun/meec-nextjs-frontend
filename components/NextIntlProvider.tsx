@@ -10,7 +10,6 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { lang: string };
 }) {
-  console.log('Server: Rendering Layout with lang:', params.lang); // Debug log
   const messages = await getMessages({ locale: params.lang });
 
   return (
