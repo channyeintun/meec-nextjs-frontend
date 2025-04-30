@@ -1,10 +1,10 @@
 {
   "HomePage": {
-    "Myanmar": "Myanmar",
-    "Earthquake": "Earthquake",
-    "Engineering": "Engineering",
-    "Community": "Community",
-    "description": "A community-driven effort to enhance earthquake resilience and structural integrity in Myanmar.",
+    "Myanmar": "မြန်မာနိုင်ငံ",
+    "Earthquake": "ငလျင်",
+    "Engineering": "အင်ဂျင်နီယာ",
+    "Community": "အသင်းအဖွဲ့",
+    "description": "မြန်မာနိုင်ငံတွင် ငလျင်ဒဏ်ခံနိုင်စွမ်းနှင့် အဆောက်အဦးခိုင်ခံ့မှု တိုးမြှင့်ရေးအတွက် community အခြေပြု ပူးပေါင်းဆောင်ရွက်မှု",
     "Join our facebook group": "Join our facebook group",
     "who_we_are": "We are a non-governmental organization of professionals dedicated to promoting earthquake-resistant construction in Myanmar.",
     "Community Centered": "Community Centered",

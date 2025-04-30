@@ -13,11 +13,13 @@ export const HeroSection = () => {
             ["--text-primary" as string]: "light-dark(hsla(0, 0%, 96%, 1),hsla(0, 0%, 9%, 1))"
         }}>
             <div className="flex flex-col pt-[var(--spacing-07)] pb-[var(--spacing-07)] sm:pb-[var(--spacing-08)]">
-                <p className="whitespace-pre-wrap fluid-display-01 text-[var(--text-primary)]">
+                <p className={cn("whitespace-pre-wrap fluid-display-01 text-[var(--text-primary)]",{
+                    "mm-display-hero": locale === "mm",
+                })}>
                     {t("Myanmar")} {t("Earthquake")} {t("Engineering")} {t("Community")}
                 </p>
                 <p className={cn("fluid-paragraph-01 text-[var(--text-primary)] mt-[var(--spacing-08)] sm:mt-auto", {
-                    "font-sans-mm": locale === "mm"
+                    "mm-paragraph": locale === "mm"
                 })}>{t("description")}</p>
                 <Link style={{ ["--button-tertiary" as string]: "light-dark(hsla(0, 0%, 100%, 1),hsla(219, 99%, 53%, 1))" }} className="mt-[var(--spacing-07)] w-fit font-sans text-base tracking-[0] leading-[22px] flex items-center gap-8 px-4 py-[13px] border hover:border-[var(--button-tertiary-hover)] border-[var(--button-tertiary)] text-[var(--button-tertiary)] hover:bg-[var(--button-tertiary-hover)] hover:text-[--text-inverse]" href="https://www.facebook.com" target="_blank">
                     {t("Join our facebook group")}
