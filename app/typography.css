@@ -457,3 +457,91 @@
         letter-spacing: var(--fluid-heading-04-letter-spacing);
     }
 }
+
+.mm-display-hero {
+    font-family: var(--font-noto-sans-myanmar);
+    font-size: 3.5rem;
+    line-height: 5.5rem;
+    font-weight: 300;
+    letter-spacing: 0;
+}
+
+.mm-display {
+    font-family: var(--font-noto-sans-myanmar);
+    font-size: 2.5rem;
+    line-height: 4rem;
+    font-weight: 300;
+    letter-spacing: 0;
+}
+
+.mm-display-card {
+    font-family: var(--font-noto-sans-myanmar);
+    font-size: 2.25rem;
+    line-height: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.mm-heading-expressive {
+    font-family: var(--font-noto-sans-myanmar);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.mm-heading-03 {
+    font-family: var(--font-noto-sans-myanmar);
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.mm-heading-04 {
+    font-family: var(--font-noto-sans-myanmar);
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.mm-paragraph {
+    font-family: var(--font-noto-sans-myanmar);
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.16;
+}
+
+.mm-body-01 {
+    font-family: var(--font-noto-sans-myanmar);
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.mm-body-02 {
+    font-family: var(--font-noto-sans-myanmar);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.mm-body-card {
+    font-family: var(--font-noto-sans-myanmar);
+    font-size: 0.813rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.mm-label {
+    font-family: var(--font-noto-sans-myanmar);
+    font-size: 0.813rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.16;
+}
