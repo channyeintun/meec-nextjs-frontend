@@ -41,7 +41,8 @@ export const ArticlesSection = async () => {
             pagination: {
                 limit:6
             }
-        }
+        },
+        fetchPolicy: "no-cache"
     });
 
     let arr = data?.articles ?? [];
