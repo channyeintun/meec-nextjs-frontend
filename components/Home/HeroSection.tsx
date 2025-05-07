@@ -14,7 +14,7 @@ export const HeroSection = () => {
         }}>
             <div className="flex flex-col pt-[var(--spacing-07)] pb-[var(--spacing-07)] sm:pb-[var(--spacing-08)]">
                 <p className={cn("whitespace-pre-wrap fluid-display-01 text-[var(--text-primary)]",{
-                    "mm-display-hero": locale === "mm",
+                    "mm-display-01": locale === "mm",
                 })}>
                     {t("Myanmar")} {t("Earthquake")} {t("Engineering")} {t("Community")}
                 </p>
