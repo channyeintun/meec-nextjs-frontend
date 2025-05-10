@@ -8,6 +8,8 @@ export const GET_BOOKS = gql`
             description
             cover {
                 url
+                alternativeText
+                caption
             }
         }
     }

@@ -18,6 +18,8 @@ export const GET_ARTICLES = gql`
       }
       cover {
         url
+        alternativeText
+        caption
       }
     }
   }
