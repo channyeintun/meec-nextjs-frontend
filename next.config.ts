@@ -9,7 +9,13 @@ const nextConfig: NextConfig = {
             hostname: '**.media.strapiapp.com',
             port: '',
             pathname: '/**',
-        },]
+        },
+        {
+            protocol: 'http',
+            hostname: 'localhost',
+            port: '1337',
+            pathname: '/**',
+        }]
     }
 };
 
