@@ -6,10 +6,10 @@ import Calendar from "@/components/icons/Calendar";
 import Clock from "@/components/icons/Clock";
 import News from "@/components/icons/News";
 import { createApolloClient } from "@/graphql";
-import { GET_ARTICLES_BY_SLUG, GET_ARTICLES_SLUGS } from "@/graphql/queries/articles";
+import { GET_ARTICLES_BY_SLUG } from "@/graphql/queries/articles";
 import { Link } from "@/i18n/navigation";
 import { cn, dateFormatter } from "@/lib/utils";
-import { Article, ArticlesData } from "@/types/article";
+import { ArticlesData } from "@/types/article";
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import { getLocale } from "next-intl/server";
 import { headers } from "next/headers";
@@ -18,31 +18,6 @@ import { notFound } from "next/navigation";
 import readingTime from "reading-time";
 
 const client = createApolloClient();
-
-export async function generateStaticParams() {
-    const locales = ['en', 'mm']
-    const slugs: { slug: string }[] = [];
-
-    locales.forEach(async locale => {
-        const { data } = await client.query<{
-            articles: Partial<Article>[]
-        }>({
-            query: GET_ARTICLES_SLUGS,
-            variables: {
-                locale
-            }
-        });
-        if (data) {
-            data.articles.forEach(article => {
-                slugs.push({
-                    slug: article.slug!
-                });
-            })
-        }
-    })
-
-    return slugs;
-}
 
 export default async function NewsPage({ params }: {
     params: Promise<{
