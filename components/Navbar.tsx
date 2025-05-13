@@ -119,7 +119,7 @@ export const Navbar = () => {
                                 }
                             )}>Publications</Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link onNavigate={menuHandlers.close} href="/events" className={cn(
                                 "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
@@ -134,7 +134,7 @@ export const Navbar = () => {
                                     "active": pathname === "/contact"
                                 }
                             )}>Contact Us</Link>
-                        </li>
+                        </li> */}
                         <li className="lg:ml-auto">
                             <Link onNavigate={menuHandlers.close} href="/apply" className="relative block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary after:content-[''] after:absolute after:bottom-[-1px] after:h-[1px] after:w-full after:bg-[var(--button-primary)] after:start-0 hover:after:bg-[var(--button-primary-hover)]">Apply for assistance</Link>
                         </li>

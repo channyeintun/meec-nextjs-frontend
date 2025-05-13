@@ -1,3 +1,6 @@
+import { LatestArticles } from "@/components/Blog/LatestArticles";
+import { Share } from "@/components/Blog/Share";
+import { SubscribeYoutube } from "@/components/Blog/SubscribeYoutube";
 import { Topic } from "@/components/common/Topic";
 import Calendar from "@/components/icons/Calendar";
 import Clock from "@/components/icons/Clock";
@@ -14,6 +17,7 @@ import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import { getLocale } from "next-intl/server";
 import { headers } from "next/headers";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import readingTime from "reading-time";
 
 const client = createApolloClient();
@@ -76,6 +80,10 @@ export default async function NewsPage({ params }: {
 
     const link_to_article = encodeURI(protocol + '://' + domain! + '/blogs/' + slug);
 
+    if (!article) {
+        notFound();
+    }
+
     return (
         <div className="flex flex-col pt-[var(--spacing-08)] lg:pt-0">
             <div className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
@@ -87,25 +95,18 @@ export default async function NewsPage({ params }: {
                 <div className="grid grid-cols-1 lg:grid-cols-[208px_1fr] px-[var(--spacing-05)] sm:px-[var(--spacing-07)] lg:pt-[var(--spacing-08)] pb-[var(--spacing-10)] gap-[var(--spacing-11)]">
                     <div className="hidden lg:flex flex-col">
                         <div className="border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
-                            <span>Date</span>
-                            <span>{dateFormatter.format(Date.parse(article.publishedAt))}</span>
+                            <span className="text-[var(--text-primary)] label-01">Date</span>
+                            <span className="text-[var(--text-primary)] body-01">{dateFormatter.format(Date.parse(article.publishedAt))}</span>
                         </div>
                         {article.author && (<div className="border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
-                            <span>Authors</span>
-                            <span className="text-[var(--link-primary)]">{article.author.name}</span>
+                            <span className="text-[var(--text-primary)] label-01">Authors</span>
+                            <span className="text-[var(--link-primary)] body-01">{article.author.name}</span>
                         </div>)}
                         <div className="border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
-                            <span>Topics</span>
+                            <span className="text-[var(--text-primary)] label-01">Topics</span>
                             <div className="flex gap-2 flex-wrap items-center">{article.topics.map(it => <Topic key={it.slug}>{it.name}</Topic>)}</div>
                         </div>
-                        <div className="border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
-                            <span>Share</span>
-                            <div className="flex gap-[var(--spacing-05)]">
-                                <Link target="_blank" href={`https://www.facebook.com/share_channel/?type=reshare&link=${link_to_article}&app_id=966242223397117&source_surface=external_reshare&display&hashtag#`}><Facebook /></Link>
-                                <Link target="_blank" href={`https://www.linkedin.com/shareArticle?mini=true&url=${link_to_article}`}><LinkedIn /></Link>
-                                <Link target="_blank" href={`https://twitter.com/intent/tweet?url=${link_to_article}`}><X /></Link>
-                            </div>
-                        </div>
+                        <Share url={link_to_article} />
                     </div>
                     <article>
                         <div className="pt-[var(--spacing-05)] pb-[var(--spacing-08)] sm:max-lg:flex grid grid-cols-2 lg:grid-cols-4 gap-y-[var(--spacing-05)] gap-x-[var(--spacing-09)] sm:gap-x-[var(--spacing-11)] lg:gap-x-[var(--spacing-08)] border-t border-[var(--border-strong-01)]">
@@ -137,15 +138,18 @@ export default async function NewsPage({ params }: {
                                 src={'http://localhost:1337' + article.cover.url} />
                             <figcaption className="text-[var(--text-secondary)] body-01">{article.cover.caption}</figcaption>
                         </figure>
-                        <div className={cn("[&_a]:text-[var(--link-primary)] [&_a]:underline text-[var(--text-primary)]", {
+                        <div className={cn("[&_a]:text-[var(--link-primary)] [&_a]:underline text-[var(--text-primary)] lg:max-w-[616px]", {
                             "mm-body-03": locale === 'mm',
                             "fluid-heading-03": locale === 'mm'
                         })}>
                             <BlocksRenderer
                                 content={article.body as any} />
                         </div>
+                        <SubscribeYoutube />
+                        <Share url={link_to_article} className="lg:hidden flex-row justify-between"/>
                     </article>
-                </div>) : <h1>404 Not Found</h1>}
+                </div>) : null}
+            <LatestArticles />
         </div>
     );
 }
