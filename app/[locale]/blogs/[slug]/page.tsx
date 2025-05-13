@@ -8,7 +8,7 @@ import X from "@/components/icons/X";
 import { createApolloClient } from "@/graphql";
 import { GET_ARTICLES_BY_SLUG, GET_ARTICLES_SLUGS } from "@/graphql/queries/articles";
 import { Link } from "@/i18n/navigation";
-import { dateFormatter } from "@/lib/utils";
+import { cn, dateFormatter } from "@/lib/utils";
 import { Article, ArticlesData } from "@/types/article";
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import { getLocale } from "next-intl/server";
@@ -58,7 +58,7 @@ export default async function NewsPage({ params }: {
     const { data } = await client.query<ArticlesData>({
         query: GET_ARTICLES_BY_SLUG,
         variables: {
-            locale,
+            locale: locale === "mm" ? "my-MM" : "en",
             filters: {
                 slug: {
                     eq: slug
@@ -122,7 +122,10 @@ export default async function NewsPage({ params }: {
                                 <span>{Number.isInteger(duration) ? duration : Math.ceil(duration) + 1} min read</span>
                             </div>
                         </div>
-                        <h1 className="pt-[var(--spacing-05)] text-[var(--text-primary)] fluid-display-01">
+                        <h1 className={cn("pt-[var(--spacing-05)] text-[var(--text-primary)]", {
+                            "mm-display-03": locale === 'mm',
+                            "fluid-display-01": locale === 'en'
+                        })}>
                             {article.title}
                         </h1>
                         <figure className="my-[var(--spacing-09)] sm:my-[var(--spacing-10)] space-y-[var(--spacing-03)]">
@@ -134,7 +137,10 @@ export default async function NewsPage({ params }: {
                                 src={'http://localhost:1337' + article.cover.url} />
                             <figcaption className="text-[var(--text-secondary)] body-01">{article.cover.caption}</figcaption>
                         </figure>
-                        <div className="[&_a]:text-[var(--link-primary)] [&_a]:underline text-[var(--text-primary)] fluid-heading-03">
+                        <div className={cn("[&_a]:text-[var(--link-primary)] [&_a]:underline text-[var(--text-primary)]", {
+                            "mm-body-03": locale === 'mm',
+                            "fluid-heading-03": locale === 'mm'
+                        })}>
                             <BlocksRenderer
                                 content={article.body as any} />
                         </div>

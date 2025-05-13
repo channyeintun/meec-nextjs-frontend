@@ -26,7 +26,7 @@ export const PublicationsSection = async () => {
     const { data } = await client.query<BooksData>({
         query: GET_BOOKS,
         variables: {
-            locale,
+            locale: locale === "mm" ? "my-MM" : "en",
             pagination: {
                 limit: 8
             }
