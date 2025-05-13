@@ -658,7 +658,11 @@
     font-size: 0.875rem;
     line-height: 1.5rem;
     font-weight: 400;
-    letter-spacing: 24;
+    letter-spacing: 0;
+}
+
+.mm-body-01 p {
+    margin-bottom: 24px;
 }
 
 .mm-body-02 {
@@ -666,7 +670,11 @@
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 400;
-    letter-spacing: 24;
+    letter-spacing: 0;
+}
+
+.mm-body-02 p {
+    margin-bottom: 24px;
 }
 
 .mm-body-03 {
@@ -674,7 +682,11 @@
     font-size: 1.125rem;
     line-height: 2.25rem;
     font-weight: 400;
-    letter-spacing: 32;
+    letter-spacing: 0;
+}
+
+.mm-body-03 p {
+    margin-bottom: 32px;
 }
 
 .mm-body-card {
@@ -690,5 +702,5 @@
     font-size: 0.813rem;
     line-height: 1.25rem;
     font-weight: 400;
-    letter-spacing: 0.16;
+    letter-spacing: 0;
 }
