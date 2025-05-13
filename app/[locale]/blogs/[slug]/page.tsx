@@ -9,8 +9,9 @@ import { createApolloClient } from "@/graphql";
 import { GET_ARTICLES_BY_SLUG } from "@/graphql/queries/articles";
 import { Link } from "@/i18n/navigation";
 import { cn, dateFormatter } from "@/lib/utils";
-import { ArticlesData } from "@/types/article";
+import { Article, ArticlesData } from "@/types/article";
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 import { headers } from "next/headers";
 import Image from "next/image";
@@ -18,6 +19,41 @@ import { notFound } from "next/navigation";
 import readingTime from "reading-time";
 
 const client = createApolloClient();
+
+export async function generateMetadata(
+    { params }: {
+        params: {
+            locale: string;
+            slug: string;
+        }
+    }
+): Promise<Metadata> {
+    const { slug, locale } = await params
+
+    const { data } = await client.query<{
+        articles: Partial<Article>[]
+    }>({
+        query: GET_ARTICLES_BY_SLUG,
+        variables: {
+            locale: locale === "mm" ? "my-MM" : "en",
+            filters: {
+                slug: {
+                    eq: slug
+                },
+            },
+            pagination: {
+                limit: 1
+            },
+        }
+    });
+
+    const article = data.articles && data.articles.length > 0 ? data.articles[0] : null;
+
+    return {
+        title: article?.title,
+        description: article?.description,
+    }
+}
 
 export default async function NewsPage({ params }: {
     params: Promise<{
