@@ -22,10 +22,10 @@ const client = createApolloClient();
 
 export async function generateMetadata(
     { params }: {
-        params: {
+        params: Promise<{
             locale: string;
             slug: string;
-        }
+        }>
     }
 ): Promise<Metadata> {
     const { slug, locale } = await params
