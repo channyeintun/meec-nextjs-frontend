@@ -4,10 +4,7 @@ import { SubscribeYoutube } from "@/components/Blog/SubscribeYoutube";
 import { Topic } from "@/components/common/Topic";
 import Calendar from "@/components/icons/Calendar";
 import Clock from "@/components/icons/Clock";
-import Facebook from "@/components/icons/Facebook";
-import LinkedIn from "@/components/icons/LinkedIn";
 import News from "@/components/icons/News";
-import X from "@/components/icons/X";
 import { createApolloClient } from "@/graphql";
 import { GET_ARTICLES_BY_SLUG, GET_ARTICLES_SLUGS } from "@/graphql/queries/articles";
 import { Link } from "@/i18n/navigation";
@@ -135,7 +132,9 @@ export default async function NewsPage({ params }: {
                                 alt={article.cover.alternativeText ?? "Cover photo"}
                                 width={article.cover.width}
                                 height={article.cover.height}
-                                src={'http://localhost:1337' + article.cover.url} />
+                                // src={'http://localhost:1337' + article.cover.url} 
+                                src={article.cover.url}
+                            />
                             <figcaption className="text-[var(--text-secondary)] body-01">{article.cover.caption}</figcaption>
                         </figure>
                         <div className={cn("[&_a]:text-[var(--link-primary)] [&_a]:underline text-[var(--text-primary)] lg:max-w-[616px]", {
@@ -146,7 +145,7 @@ export default async function NewsPage({ params }: {
                                 content={article.body as any} />
                         </div>
                         <SubscribeYoutube />
-                        <Share url={link_to_article} className="lg:hidden flex-row justify-between"/>
+                        <Share url={link_to_article} className="lg:hidden flex-row justify-between" />
                     </article>
                 </div>) : null}
             <LatestArticles />
