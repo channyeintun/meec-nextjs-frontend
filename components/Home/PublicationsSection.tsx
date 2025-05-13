@@ -42,9 +42,9 @@ export const PublicationsSection = async () => {
                     <Link href="/about" className="body-01 text-[var(--link-primary)] flex items-center gap-[var(--spacing-03)] hover:text-[var(--link-primary-hover)]">Learn more about us <ArrowRight className="w-5 h-5" /></Link>
                 </div>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 border border-[var(--border-subtle-01)]">
                 {data?.books?.map((book, idx) => (
-                    <article key={idx} className="group text-[var(--text-primary)] flex flex-col border-[var(--border-subtle-01)] bg-[var(--layer-01)] hover:bg-[var(--layer-02)] first:border-t first:border-s border-e border-b lg:nth-5:border-s sm:max-lg:nth-3:border-s max-sm:border-s">
+                    <article key={idx} className="group text-[var(--text-primary)] flex flex-col border-[var(--border-subtle-01)] bg-[var(--layer-01)] hover:bg-[var(--layer-02)] sm:not-first:border-s border-b last:border-b-0 sm:nth-last-[-n+2]:border-b-0 lg:nth-last-[-n+4]:border-b-0 sm:max-lg:nth-of-type-[2n+1]:border-s-0 lg:nth-of-type-[4n+1]:border-s-0">
                         <Image width={312} height={240} alt="book cover photo" className="w-full aspect-3/2" src={book.cover.url} />
                         <div className="p-[var(--spacing-05)] min-h-[288px] flex flex-col">
                             <h1 className="fluid-heading-03 text-[var(--text-primary)] line-clamp-3 group-hover:text-[var(--link-primary)]">{book.title}</h1>

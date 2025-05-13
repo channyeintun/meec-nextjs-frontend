@@ -12,6 +12,7 @@ import { dateFormatter } from "@/lib/utils";
 import { Article, ArticlesData } from "@/types/article";
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import { getLocale } from "next-intl/server";
+import { headers } from "next/headers";
 import Image from "next/image";
 import readingTime from "reading-time";
 
@@ -47,6 +48,10 @@ export default async function NewsPage({ params }: {
         slug: string;
     }>
 }) {
+    const headersList = await headers();
+    const domain = headersList.get('host');
+    const protocol = headersList.get('x-forwarded-proto');
+
     const locale = await getLocale();
     const { slug } = await params;
 
@@ -69,6 +74,8 @@ export default async function NewsPage({ params }: {
 
     const duration = article ? readingTime(article.body.map(it => it.children).join(" ")).minutes : 0;
 
+    const link_to_article = encodeURI(protocol + '://' + domain! + '/blogs/' + slug);
+
     return (
         <div className="flex flex-col pt-[var(--spacing-08)] lg:pt-0">
             <div className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
@@ -83,10 +90,10 @@ export default async function NewsPage({ params }: {
                             <span>Date</span>
                             <span>{dateFormatter.format(Date.parse(article.publishedAt))}</span>
                         </div>
-                        <div className="border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
+                        {article.author && (<div className="border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
                             <span>Authors</span>
-                            <span className="text-[var(--link-primary)]">Author Name</span>
-                        </div>
+                            <span className="text-[var(--link-primary)]">{article.author.name}</span>
+                        </div>)}
                         <div className="border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
                             <span>Topics</span>
                             <div className="flex gap-2 flex-wrap items-center">{article.topics.map(it => <Topic key={it.slug}>{it.name}</Topic>)}</div>
@@ -94,9 +101,9 @@ export default async function NewsPage({ params }: {
                         <div className="border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
                             <span>Share</span>
                             <div className="flex gap-[var(--spacing-05)]">
-                                <Facebook />
-                                <LinkedIn />
-                                <X />
+                                <Link target="_blank" href={`https://www.facebook.com/share_channel/?type=reshare&link=${link_to_article}&app_id=966242223397117&source_surface=external_reshare&display&hashtag#`}><Facebook /></Link>
+                                <Link target="_blank" href={`https://www.linkedin.com/shareArticle?mini=true&url=${link_to_article}`}><LinkedIn /></Link>
+                                <Link target="_blank" href={`https://twitter.com/intent/tweet?url=${link_to_article}`}><X /></Link>
                             </div>
                         </div>
                     </div>
@@ -127,7 +134,7 @@ export default async function NewsPage({ params }: {
                                 src={'http://localhost:1337' + article.cover.url} />
                             <figcaption className="text-[var(--text-secondary)] body-01">{article.cover.caption}</figcaption>
                         </figure>
-                        <div>
+                        <div className="[&_a]:text-[var(--link-primary)] [&_a]:underline text-[var(--text-primary)] fluid-heading-03">
                             <BlocksRenderer
                                 content={article.body as any} />
                         </div>
