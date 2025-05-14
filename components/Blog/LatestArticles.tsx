@@ -11,7 +11,7 @@ export const LatestArticles = async () => {
     const { data } = await client.query<ArticlesData>({
         query: GET_ARTICLES,
         variables: {
-            locale: locale === "mm" ? "my-MM" : "en",
+            locale: locale === "mm" ? "my" : "en",
             pagination: {
                 limit: 4
             }

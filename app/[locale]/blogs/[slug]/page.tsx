@@ -35,7 +35,7 @@ export async function generateMetadata(
     }>({
         query: GET_ARTICLES_BY_SLUG,
         variables: {
-            locale: locale === "mm" ? "my-MM" : "en",
+            locale: locale === "mm" ? "my" : "en",
             filters: {
                 slug: {
                     eq: slug
@@ -70,7 +70,7 @@ export default async function NewsPage({ params }: {
     const { data } = await client.query<ArticlesData>({
         query: GET_ARTICLES_BY_SLUG,
         variables: {
-            locale: locale === "mm" ? "my-MM" : "en",
+            locale: locale === "mm" ? "my" : "en",
             filters: {
                 slug: {
                     eq: slug
