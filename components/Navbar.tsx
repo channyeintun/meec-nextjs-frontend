@@ -76,7 +76,15 @@ export const Navbar = () => {
                                 }
                             )}>About</Link>
                         </li>
-                        <li className="relative">
+                        <li>
+                            <Link onNavigate={menuHandlers.close} href="/blogs" className={cn(
+                                "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
+                                {
+                                    "active": pathname === "/blogs"
+                                }
+                            )}>News & Blogs</Link>
+                        </li>
+                        {/* <li className="relative">
                             <button
                                 className="flex items-center cursor-pointer max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button lg:hover:bg-[var(--layer-01)] w-full text-left"
                                 onClick={handlers.toggle}
@@ -110,7 +118,7 @@ export const Navbar = () => {
                                     <Link onNavigate={menuHandlers.close} href="/podcast" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Podcast</Link>
                                 </li>
                             </ul>
-                        </li>
+                        </li> */}
                         <li>
                             <Link onNavigate={menuHandlers.close} href="/publications" className={cn(
                                 "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
