@@ -137,6 +137,16 @@ export default async function NewsPage({ params }: {
                         })}>
                             {article.title}
                         </h1>
+                        <div className="grid lg:hidden grid-cols-1 sm:grid-cols-2 gap-[var(--spacing-03)] sm:gap-[var(--spacing-08)] my-[var(--spacing-08)]">
+                            {article.author && (<div className="border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
+                                <span className="text-[var(--text-primary)] label-01">Authors</span>
+                                <span className="text-[var(--link-primary)] body-01">{article.author.name}</span>
+                            </div>)}
+                            <div className="border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
+                                <span className="text-[var(--text-primary)] label-01">Topics</span>
+                                <div className="flex gap-2 flex-wrap items-center">{article.topics.map(it => <Topic key={it.slug}>{it.name}</Topic>)}</div>
+                            </div>
+                        </div>
                         <figure className="my-[var(--spacing-09)] sm:my-[var(--spacing-10)] space-y-[var(--spacing-03)]">
                             <Image
                                 className="w-full aspect-video"

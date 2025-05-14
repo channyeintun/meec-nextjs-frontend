@@ -23,7 +23,15 @@ export const GET_ARTICLES = gql`
         caption
       }
     }
+  articles_connection {
+    pageInfo {
+      total
+      page
+      pageSize
+      pageCount
+    }
   }
+}
 `;
 
 export const GET_ARTICLES_BY_SLUG = gql`
