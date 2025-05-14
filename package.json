@@ -12,6 +12,7 @@
     "@apollo/client": "^3.13.8",
     "@mantine/hooks": "^7.17.4",
     "@strapi/blocks-react-renderer": "^1.0.2",
+    "@strapi/client": "^1.4.0",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "^0.7.1",
