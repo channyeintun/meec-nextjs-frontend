@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from "@/i18n/navigation";
-import { Category } from "@/types/article"
+import { Category } from "@/types/article";
 import { useSearchParams } from "next/navigation";
 import { FC } from "react";
 import Checked from "../icons/Checked";
@@ -97,7 +97,6 @@ const Checkbox: FC<{
 
     const currentFilters = searchParams.getAll(filterKey);
     const isChecked = currentFilters.includes(value.slug);
-    console.log('isChecked',isChecked)
 
     const toggleFilter = () => {
         const params = new URLSearchParams(searchParams.toString());

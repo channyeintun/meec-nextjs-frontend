@@ -2,12 +2,18 @@
 
 import { GET_ARTICLES } from "@/graphql/queries/articles";
 import { ArticlesData } from "@/types/article";
-import { useQuery } from "@apollo/client"
+import { useQuery } from "@apollo/client";
 import { useLocale } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { Article } from "../common/Article";
 
 export const Blogs = () => {
     const locale = useLocale();
+
+    const searchParams = useSearchParams();
+    const categorySlugs = searchParams.getAll("category").filter(Boolean);
+    const topicSlugs = searchParams.getAll("topic").filter(Boolean);
+
     const { data, loading } = useQuery<ArticlesData>(GET_ARTICLES, {
         variables: {
             locale: locale === "mm" ? "my" : "en",
@@ -15,8 +21,8 @@ export const Blogs = () => {
                 limit: 10
             },
             filters: {
-                category: null,
-                topics: null
+                category: categorySlugs?.length > 0 ? { slug: { in: categorySlugs } } : null,
+                topics: topicSlugs?.length > 0 ? { slug: { in: topicSlugs } } : null
             }
         },
     });
