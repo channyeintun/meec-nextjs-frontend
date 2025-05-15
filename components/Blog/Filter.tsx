@@ -110,7 +110,9 @@ const Checkbox: FC<{
             params.append(filterKey, filter);
         });
 
-        router.push(`?${params.toString()}`);
+        router.push(`?${params.toString()}`,{
+            scroll:false
+        });
     };
 
     return (

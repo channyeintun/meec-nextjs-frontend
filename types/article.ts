@@ -13,6 +13,7 @@ export interface Article {
 }
 
 export interface Author {
+    documentId: string;
     name: string;
 }
 
@@ -55,4 +56,13 @@ export interface PageInfo {
     page: number;
     pageSize: number;
     pageCount: number;
+}
+
+export interface ArticleConnection {
+    nodes: Article[];
+    pageInfo: PageInfo;
+}
+
+export interface ArticleConnectionData {
+    articles_connection: ArticleConnection
 }

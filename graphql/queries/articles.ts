@@ -75,3 +75,49 @@ export const GET_ARTICLES_SLUGS = gql`
     }
   }
 `
+
+export const GET_ARTICLES_RELAY_STYLE = gql`
+query Articles_connection($pagination: PaginationArg, $filters: ArticleFiltersInput) {
+  articles_connection(pagination: $pagination, filters: $filters) {
+    nodes {
+      title
+      slug
+      description
+      cover {
+        alternativeText
+        caption
+        width
+        height
+        size
+        url
+        previewUrl
+      }
+      author {
+        name
+        documentId
+      }
+      category {
+        documentId
+        name
+        slug
+      }
+      topics {
+        documentId
+        name
+        slug
+      }
+      body
+      publishedAt
+      locale
+      documentId
+      createdAt
+    }
+    pageInfo {
+      total
+      page
+      pageSize
+      pageCount
+    }
+  }
+}
+`
