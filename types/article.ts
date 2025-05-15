@@ -27,8 +27,10 @@ export interface BodyToken {
 }
 
 export interface Category {
+    documentId: string;
     name: string;
     slug: string;
+    articles?: Article[];
 }
 
 export interface Cover {
@@ -43,4 +45,14 @@ export interface Cover {
 
 export interface ArticlesData {
     articles: Article[];
+    articles_connection: {
+        pageInfo: PageInfo;
+    }
+}
+
+export interface PageInfo {
+    total: number;
+    page: number;
+    pageSize: number;
+    pageCount: number;
 }

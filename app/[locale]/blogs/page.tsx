@@ -1,9 +1,14 @@
+'use client';
 
+import { Blogs } from "@/components/Blog/Blogs";
+import { CategoryFilter, FilterDropdown, TopicFilter } from "@/components/Blog/Filter";
 import { Link } from "@/i18n/navigation";
 import { strapi_client } from "@/lib/strapi";
+import { Category } from "@/types/article";
+import { useEffect, useState } from "react";
 
-export default async function Page() {
-    const categoryPromise = strapi_client.collection("categories").find({
+async function fetchCategories() {
+    return strapi_client.collection("categories").find({
         fields: ["name", "slug"],
         populate: {
             "articles": {
@@ -11,8 +16,10 @@ export default async function Page() {
             }
         }
     });
+}
 
-    const topicPromise = strapi_client.collection("topics").find({
+async function fetchTopics() {
+    return strapi_client.collection("topics").find({
         fields: ["name", "slug"],
         populate: {
             "articles": {
@@ -20,8 +27,17 @@ export default async function Page() {
             }
         }
     });
+}
 
-    const [categoryReponse, topicResponse] = await Promise.all([categoryPromise, topicPromise])
+export default function Page() {
+    const [categories, setCategories] = useState<Category[]>([]);
+    const [topics, setTopics] = useState<Category[]>([]);
+
+    useEffect(() => {
+        fetchCategories().then(res => setCategories(res.data as unknown as Category[]));
+        fetchTopics().then(res => setTopics(res.data as unknown as Category[]));
+    }, [])
+
     return (
         <div className="">
             <div className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
@@ -30,24 +46,15 @@ export default async function Page() {
                 <Link href="/news">News & Blogs</Link>
             </div>
             <h1 className="px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pt-[var(--spacing-08)] pb-[var(--spacing-10)] fluid-display-01 text-[var(--text-primary)] text-balance">Explore the insightful news and blogs from our community</h1>
+            <FilterDropdown
+                topics={topics}
+                categories={categories} />
             <div className="grid grid-cols-1 lg:grid-cols-[208px_1fr] sm:px-[var(--spacing-07)] pb-[var(--spacing-11)] lg:pb-[var(--spacing-13)] gap-[var(--spacing-11)]">
                 <div className="hidden lg:block">
-                    <div className="border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
-                        <span className="text-[var(--text-primary)] label-01">Explore by category</span>
-                        {
-                            categoryReponse.data.map(category => <span key={category.documentId} className="text-[var(--text-primary)] body-01">{category.name} ({category.articles?.length})</span>)
-                        }
-                    </div>
-                    <div className="border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
-                        <span className="text-[var(--text-primary)] label-01">Explore by topic</span>
-                        {
-                            topicResponse.data.map(topic => <span key={topic.documentId} className="text-[var(--text-primary)] body-01">{topic.name} ({topic.articles?.length})</span>)
-                        }
-                    </div>
+                    <CategoryFilter data={topics} />
+                    <TopicFilter data={categories} />
                 </div>
-                <div>
-
-                </div>
+                <Blogs />
             </div>
         </div>
     )

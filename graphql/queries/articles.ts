@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const GET_ARTICLES = gql`
-  query Articles($locale: I18NLocaleCode, $pagination: PaginationArg) {
-    articles(locale: $locale, pagination: $pagination) {
+  query Articles($locale: I18NLocaleCode, $pagination: PaginationArg, $filters: ArticleFiltersInput) {
+    articles(locale: $locale, pagination: $pagination, filters: $filters) {
       slug
       createdAt
       title

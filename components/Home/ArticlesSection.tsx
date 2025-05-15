@@ -7,9 +7,9 @@ import { getLocale } from "next-intl/server";
 import { Article } from "../common/Article";
 import { ReadMoreLink } from "./ReadMoreLink";
 
-const client = createApolloClient();
-
 export const ArticlesSection = async () => {
+
+    const client = createApolloClient();
 
     const locale = await getLocale();
 

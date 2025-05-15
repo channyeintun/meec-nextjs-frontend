@@ -18,8 +18,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import readingTime from "reading-time";
 
-const client = createApolloClient();
-
 export async function generateMetadata(
     { params }: {
         params: Promise<{
@@ -28,6 +26,9 @@ export async function generateMetadata(
         }>
     }
 ): Promise<Metadata> {
+
+    const client = createApolloClient();
+
     const { slug, locale } = await params
 
     const { data } = await client.query<{
@@ -60,6 +61,9 @@ export default async function NewsPage({ params }: {
         slug: string;
     }>
 }) {
+
+    const client = createApolloClient();
+    
     const headersList = await headers();
     const domain = headersList.get('host');
     const protocol = headersList.get('x-forwarded-proto');
@@ -153,7 +157,6 @@ export default async function NewsPage({ params }: {
                                 alt={article.cover.alternativeText ?? "Cover photo"}
                                 width={article.cover.width}
                                 height={article.cover.height}
-                                // src={'http://localhost:1337' + article.cover.url} 
                                 src={article.cover.url}
                             />
                             <figcaption className="text-[var(--text-secondary)] body-01">{article.cover.caption}</figcaption>

@@ -18,9 +18,9 @@ interface BooksData {
     books: Book[]
 }
 
-const client = createApolloClient();
-
 export const PublicationsSection = async () => {
+    const client = createApolloClient();
+    
     const locale = await getLocale();
 
     const { data } = await client.query<BooksData>({

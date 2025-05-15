@@ -4,9 +4,9 @@ import { ArticlesData } from "@/types/article";
 import { getLocale } from "next-intl/server";
 import { Article } from "../common/Article";
 
-const client = createApolloClient();
-
 export const LatestArticles = async () => {
+
+    const client = createApolloClient();
     const locale = await getLocale();
     const { data } = await client.query<ArticlesData>({
         query: GET_ARTICLES,
