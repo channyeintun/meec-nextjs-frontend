@@ -97,6 +97,7 @@ const Checkbox: FC<{
 
     const currentFilters = searchParams.getAll(filterKey);
     const isChecked = currentFilters.includes(value.slug);
+    console.log('isChecked',isChecked)
 
     const toggleFilter = () => {
         const params = new URLSearchParams(searchParams.toString());

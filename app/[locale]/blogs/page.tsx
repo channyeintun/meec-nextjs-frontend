@@ -51,8 +51,8 @@ export default function Page() {
                 categories={categories} />
             <div className="grid grid-cols-1 lg:grid-cols-[208px_1fr] sm:px-[var(--spacing-07)] pb-[var(--spacing-11)] lg:pb-[var(--spacing-13)] gap-[var(--spacing-11)]">
                 <div className="hidden lg:block">
-                    <CategoryFilter data={topics} />
-                    <TopicFilter data={categories} />
+                    <CategoryFilter data={categories} />
+                    <TopicFilter data={topics} />
                 </div>
                 <Blogs />
             </div>
