@@ -1,6 +1,27 @@
-import { Link } from "@/i18n/navigation";
 
-export default function Page() {
+import { Link } from "@/i18n/navigation";
+import { strapi_client } from "@/lib/strapi";
+
+export default async function Page() {
+    const categoryPromise = strapi_client.collection("categories").find({
+        fields: ["name", "slug"],
+        populate: {
+            "articles": {
+                fields: ["documentId"]
+            }
+        }
+    });
+
+    const topicPromise = strapi_client.collection("topics").find({
+        fields: ["name", "slug"],
+        populate: {
+            "articles": {
+                fields: ["documentId"]
+            }
+        }
+    });
+
+    const [categoryReponse, topicResponse] = await Promise.all([categoryPromise, topicPromise])
     return (
         <div className="">
             <div className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
@@ -13,11 +34,15 @@ export default function Page() {
                 <div className="hidden lg:block">
                     <div className="border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
                         <span className="text-[var(--text-primary)] label-01">Explore by category</span>
-                        <span className="text-[var(--text-primary)] body-01">test</span>
+                        {
+                            categoryReponse.data.map(category => <span key={category.documentId} className="text-[var(--text-primary)] body-01">{category.name} ({category.articles?.length})</span>)
+                        }
                     </div>
                     <div className="border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
                         <span className="text-[var(--text-primary)] label-01">Explore by topic</span>
-                        <span className="text-[var(--text-primary)] body-01">test</span>
+                        {
+                            topicResponse.data.map(topic => <span key={topic.documentId} className="text-[var(--text-primary)] body-01">{topic.name} ({topic.articles?.length})</span>)
+                        }
                     </div>
                 </div>
                 <div>
