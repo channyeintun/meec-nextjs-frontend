@@ -425,6 +425,22 @@
     letter-spacing: var(--body-02-letter-spacing);
 }
 
+.body-01-sm-02 {
+    font-family: var(--body-01-font);
+    font-size: var(--body-01-size);
+    line-height: var(--body-01-line-height);
+    font-weight: var(--body-01-weight);
+    letter-spacing: var(--body-01-letter-spacing);
+
+    @media screen and (min-width:640px) {
+        font-family: var(--body-02-font);
+        font-size: var(--body-02-size);
+        line-height: var(--body-02-line-height);
+        font-weight: var(--body-02-weight);
+        letter-spacing: var(--body-02-letter-spacing);
+    }
+}
+
 /* Heading Styles */
 .heading-compact-01 {
     font-family: var(--heading-compact-01-font);
@@ -581,7 +597,7 @@
     letter-spacing: var(--legal-02-letter-spacing);
 }
 
-.who_we_are_heading {
+.fluid-heading-03-sm-04 {
     font-family: var(--fluid-heading-03-font);
     font-size: var(--fluid-heading-03-size);
     line-height: var(--fluid-heading-03-line-height);
