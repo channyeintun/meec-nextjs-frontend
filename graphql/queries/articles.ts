@@ -68,14 +68,6 @@ export const GET_ARTICLES_BY_SLUG = gql`
   }
 `
 
-export const GET_ARTICLES_SLUGS = gql`
-  query Articles($locale: I18NLocaleCode) {
-    articles(locale: $locale) {
-      slug
-    }
-  }
-`
-
 export const GET_ARTICLES_RELAY_STYLE = gql`
 query Articles_connection($pagination: PaginationArg, $filters: ArticleFiltersInput) {
   articles_connection(pagination: $pagination, filters: $filters) {
