@@ -1,3 +1,5 @@
+import { Publication } from "./publication";
+
 export interface Article {
     title: string;
     description: string;
@@ -15,6 +17,9 @@ export interface Article {
 export interface Author {
     documentId: string;
     name: string;
+    slug: string;
+    articles?: Article[];
+    publications?: Publication[];
 }
 
 export interface Body {
