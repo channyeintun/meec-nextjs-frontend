@@ -1,15 +1,16 @@
+import { ApolloClientProvider } from "@/components/ApolloClientProvider";
+import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import ScrollToTopButton from "@/components/ScrollToTop";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
 import { IBM_Plex_Sans, Noto_Sans_Myanmar } from "next/font/google";
-import "../globals.css";
 import "../colors.css";
+import "../globals.css";
 import "../spacing.css";
 import "../typography.css";
-import { ApolloClientProvider } from "@/components/ApolloClientProvider";
-import { Footer } from "@/components/Footer";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/react";
 
 const sans = IBM_Plex_Sans({
   weight: ['400'],
@@ -55,6 +56,7 @@ export default async function RootLayout({
             <main className="flex flex-col min-h-dvh w-full">
               {children}
               <Footer />
+              <ScrollToTopButton />
             </main>
           </ApolloClientProvider>
         </NextIntlClientProvider>

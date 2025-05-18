@@ -12,7 +12,7 @@ const Top = ({ className }: IconProps) => (
     >
         <path fill="#fff" fillOpacity="0.01" d="M0 0h16v16H0z"></path>
         <path
-            fill="#161616"
+            fill="var(--icon-on-color)"
             d="m8 7-5 5 .7.7L8 8.4l4.3 4.3.7-.7zM14 4H2v1h12z"
         ></path>
     </svg>
