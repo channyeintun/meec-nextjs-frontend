@@ -18,7 +18,7 @@ export const PublicationsSection = async () => {
     });
 
     return (
-        <section className="px-[var(--spacing-05)] sm:px-[var(--spacing-07)] py-[var(--spacing-10)] space-y-[var(--spacing-10)]">
+        <section className="px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pt-[var(--spacing-10)] pb-[var(--spacing-12)] sm:pb-[var(--spacing-13)] space-y-[var(--spacing-10)]">
             <div className="grid lg:grid-cols-[290px_1fr] gap-[var(--spacing-07)]">
                 <h1 className="heading-01 text-[var(--text-primary)]">Publications</h1>
                 <div className="space-y-[var(--spacing-06)]">
