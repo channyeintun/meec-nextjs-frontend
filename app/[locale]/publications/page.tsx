@@ -30,7 +30,7 @@ export default function Page() {
             <div className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
                 <Link href="/" className="text-[var(--link-primary)]">Home</Link>
                 <span>/</span>
-                <Link href="/news">News & Blogs</Link>
+                <Link href="/news">Publications</Link>
             </div>
             <h1 className="px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pt-[var(--spacing-08)] pb-[var(--spacing-10)] fluid-display-01 text-[var(--text-primary)] text-balance">Explore the insightful news and blogs from our community</h1>
             <FilterDropdown

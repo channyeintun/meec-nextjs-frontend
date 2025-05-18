@@ -23,7 +23,7 @@ export default function Page() {
                         <img src="/our-history.webp" style={{
                             width: 368,
                             height: 207
-                        }} className="aspect-video absolute bottom-0 start-0 scale-50 opacity-0 group-has-[.show-image:hover]:opacity-100 group-has-[.show-image:hover]:scale-100 transition-all ease-in" />
+                        }} className="aspect-video absolute bottom-0 start-0 scale-50 opacity-0 group-has-[.show-image:hover]:opacity-100 group-has-[.show-image:hover]:scale-100 transition-all duration-200 ease-[cubic-bezier(0.47,0,0.23,1.38)" />
                     </div>
                     <p className="lg:flex-1 text-[var(--text-primary)] body-02-sm-fluid-heading-03">
                         Established by civil engineers and seismic experts, MEEC serves as a hub for <span className="text-[var(--link-primary)] cursor-pointer show-image">sharing knowledge</span>, promoting safe <span className="text-[var(--link-primary)] cursor-pointer show-image">construction practices</span>, and supporting disaster risk reduction efforts.
