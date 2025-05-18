@@ -80,7 +80,7 @@ export const Navbar = () => {
                             <Link onNavigate={menuHandlers.close} href="/blogs" className={cn(
                                 "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
-                                    "active": pathname === "/blogs"
+                                    "active": pathname.includes("/blogs")
                                 }
                             )}>News & Blogs</Link>
                         </li>
