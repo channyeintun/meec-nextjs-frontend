@@ -1,4 +1,5 @@
 import { Link } from "@/i18n/navigation"
+import { Copyright } from "./Copyright"
 
 export const Footer = () => {
     return (
@@ -31,7 +32,7 @@ export const Footer = () => {
             </div>
             <ul className="flex flex-col sm:grid sm:grid-cols-4 sm:gap-[var(--spacing-07)]">
                 <div className="hidden lg:block"></div>
-                <li className="body-01 text-[var(--text-helper)] max-sm:order-3 max-lg:col-span-2">Copyright © 2025 MEEC</li>
+                <li className="body-01 text-[var(--text-helper)] max-sm:order-3 max-lg:col-span-2"><Copyright /></li>
                 <li className="mb-[var(--spacing-03)] sm:mb-0 max-sm:order-1"><Link href="/" className="body-01 text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100">Privacy</Link></li>
                 <li className="mb-[var(--spacing-06)] sm:mb-0 max-sm:order-2"><Link href="/" className="body-01 text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100">Terms of use</Link></li>
             </ul>
