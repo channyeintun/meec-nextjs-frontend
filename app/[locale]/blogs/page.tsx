@@ -39,7 +39,7 @@ export default function Page() {
     }, [])
 
     return (
-        <div className="">
+        <div>
             <div className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
                 <Link href="/" className="text-[var(--link-primary)]">Home</Link>
                 <span>/</span>
