@@ -162,8 +162,8 @@ export default async function NewsPage({ params }: {
                             <figcaption className="text-[var(--text-secondary)] body-01">{article.cover.caption}</figcaption>
                         </figure>
                         <div className={cn("[&_a]:text-[var(--link-primary)] [&_a]:underline text-[var(--text-primary)] lg:max-w-[616px]", {
-                            "mm-body-03": locale === 'mm',
-                            "fluid-heading-03": locale === 'mm'
+                            "mm-body-01-sm-03": locale === 'mm',
+                            "body-02-sm-fluid-heading-03": locale === 'en'
                         })}>
                             <BlocksRenderer
                                 content={article.body as any} />

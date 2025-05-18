@@ -653,6 +653,30 @@
     margin-bottom: 32px;
 }
 
+.mm-body-01-sm-03 {
+    font-family: var(--font-noto-sans-myanmar);
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0;
+
+    p {
+        margin-bottom: 24px;
+    }
+
+    @media screen and (min-width:640px) {
+        font-family: var(--font-noto-sans-myanmar);
+        font-size: 1.125rem;
+        line-height: 2.25rem;
+        font-weight: 400;
+        letter-spacing: 0;
+
+        p {
+            margin-bottom: 32px;
+        }
+    }
+}
+
 .mm-body-card {
     font-family: var(--font-noto-sans-myanmar);
     font-size: 0.813rem;
