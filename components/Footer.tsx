@@ -7,53 +7,34 @@ export const Footer = () => {
             ["--text-primary" as string]: "light-dark(hsla(0, 0%, 96%, 1),hsla(0, 0%, 9%, 1))",
             ["--text-secondary" as string]: "light-dark(hsla(0, 0%, 78%, 1),hsla(0, 0%, 32%, 1))",
             ["--icon-primary" as string]: "light-dark(hsla(0, 0%, 96%, 1),hsla(0, 0%, 9%, 1))"
-        }} className="mt-auto bg-[var(--background)] text-[var(--text-secondary)] px-[var(--spacing-07)] pt-[var(--spacing-11)] pb-[var(--spacing-06)] flex flex-col gap-[var(--spacing-12)]">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[var(--spacing-07)]">
-                <svg
-                    className="sm:max-lg:col-span-2"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="48"
-                    height="48"
-                    fill="none"
-                    viewBox="0 0 48 48"
-                >
-                    <path
-                        fill="var(--icon-primary)"
-                        fillRule="evenodd"
-                        d="M31.28 4 24 7.394 16.72 4l-4.045 8.675L4 16.721 7.395 24 4 31.278l8.675 4.046L16.721 44 24 40.605 31.28 44l4.045-8.675L44 31.279 40.606 24 44 16.72l-8.675-4.045zM19 30.667h10V17.333H19z"
-                        clipRule="evenodd"
-                    ></path>
-                </svg>
+        }} className="mt-auto bg-[var(--background)] px-[var(--spacing-07)] pt-[var(--spacing-11)] pb-[var(--spacing-06)] flex flex-col">
+            <h1 className="text-[32px] text-[var(--text-primary)] font-bold leading-[32px] tracking-[0] lg:hidden mb-[var(--spacing-08)]">MEEC</h1>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[var(--spacing-07)] mb-[var(--spacing-11)]">
+                <h1 className="text-[32px] text-[var(--text-primary)] font-bold leading-[32px] tracking-[0] hidden lg:block">MEEC</h1>
                 <ul className="space-y-[var(--spacing-03)]">
-                    <li><h1 className="text-[var(--text-primary)] heading-02">Quick links</h1></li>
-                    <li><Link href="about" className="body-02">About us</Link></li>
-                    <li><Link href="/" className="body-02">Our mission</Link></li>
-                    <li><Link href="/" className="body-02">Our vission</Link></li>
-                    <li><Link href="https://facebook.com" target="_blank" className="body-02">Become a member</Link></li>
+                    <li><h2 className="text-[var(--text-on-color)] heading-02">Contact info</h2></li>
+                    <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="mailto:example@gmail.com">meec@gmail.com</Link></li>
+                    <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="tel:+959123456789">+959123456789</Link></li>
                 </ul>
                 <ul className="space-y-[var(--spacing-03)]">
-                    <li><h1 className="text-[var(--text-primary)] heading-02">Resources</h1></li>
-                    <li><Link href="/news">News</Link></li>
-                    <li><Link href="/insight">Insights</Link></li>
-                    <li><Link href="/case-study">Case study</Link></li>
-                    <li><Link href="/podcast">Podcast</Link></li>
-                    <li><Link href="/publications">Publications</Link></li>
+                    <li><h2 className="text-[var(--text-on-color)] heading-02">Quick links</h2></li>
+                    <li><Link href="/about" className="body-02 text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100">About</Link></li>
+                    <li><Link href="/blogs" className="body-02 text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100">News & Blogs</Link></li>
+                    <li><Link href="/publications" className="body-02 text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100">Publications</Link></li>
                 </ul>
                 <ul className="space-y-[var(--spacing-03)]">
-                    <li><h1 className="text-[var(--text-primary)] heading-02">Engage with MEEC</h1></li>
-                    <li><Link href="https://facebook.com" target="_blank">Facebook</Link></li>
-                    <li><Link href="https://twitter.com" target="_blank">Twitter</Link></li>
-                    <li><Link href="https://linkedin.com" target="_blank">LinkedIn</Link></li>
-                    <li><Link href="https://youtube.com" target="_blank">Youtube</Link></li>
-                    <li><Link href="https://instagram.com" target="_blank">Instagram</Link></li>
+                    <li><h2 className="text-[var(--text-on-color)] heading-02">Follow us</h2></li>
+                    <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="https://facebook.com" target="_blank">Facebook</Link></li>
+                    <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="https://youtube.com" target="_blank">Youtube</Link></li>
+                    <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="https://x.com" target="_blank">X</Link></li>
                 </ul>
             </div>
-            <div className="grid lg:grid-cols-4 gap-[var(--spacing-03)] lg:gap-[var(--spacing-07)]">
+            <ul className="flex flex-col sm:grid sm:grid-cols-4 sm:gap-[var(--spacing-07)]">
                 <div className="hidden lg:block"></div>
-                <Link href="/" className="body-01">Contact MEEC</Link>
-                <Link href="/" className="body-01">Privacy</Link>
-                <Link href="/" className="body-01">Terms of use</Link>
-            </div>
+                <li className="body-01 text-[var(--text-helper)] max-sm:order-3 max-lg:col-span-2">Copyright © 2025 MEEC</li>
+                <li className="mb-[var(--spacing-03)] sm:mb-0 max-sm:order-1"><Link href="/" className="body-01 text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100">Privacy</Link></li>
+                <li className="mb-[var(--spacing-06)] sm:mb-0 max-sm:order-2"><Link href="/" className="body-01 text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100">Terms of use</Link></li>
+            </ul>
         </footer>
     )
 }
