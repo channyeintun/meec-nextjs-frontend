@@ -28,7 +28,10 @@ export const PublicationsSection = async () => {
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 sm:border-x border-y border-[var(--border-subtle-01)]">
                 {data?.publications?.map((publication) => (
-                    <Publication key={publication.documentId} publication={publication} />
+                    <Publication
+                        key={publication.documentId}
+                        className="border-[var(--border-subtle-01)] sm:not-first:border-s border-b last:border-b-0 sm:nth-last-[-n+2]:border-b-0 lg:nth-last-[-n+4]:border-b-0 sm:max-lg:nth-of-type-[2n+1]:border-s-0 lg:nth-of-type-[4n+1]:border-s-0"
+                        publication={publication} />
                 ))}
             </div>
         </section>
