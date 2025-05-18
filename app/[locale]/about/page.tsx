@@ -20,13 +20,17 @@ export default function Page() {
                 <h2 className="text-[var(--text-primary)] our-history text-balance lg:max-w-[65vw]">We are a professional network dedicated to advancing earthquake resilience across Myanmar. </h2>
                 <div className="flex justify-between group">
                     <div className="lg:flex-1 hidden lg:block relative">
-                        <img src="/our-history.webp" style={{
+                        <img src="/sharing-knowledge.webp" style={{
                             width: 368,
                             height: 207
-                        }} className="aspect-video absolute bottom-0 start-0 scale-50 opacity-0 group-has-[.show-image:hover]:opacity-100 group-has-[.show-image:hover]:scale-100 transition-all duration-200 ease-[cubic-bezier(0.47,0,0.23,1.38)" />
+                        }} className="aspect-video absolute bottom-0 start-0 scale-50 opacity-0 group-has-[.show-sharing-knowledge:hover]:opacity-100 group-has-[.show-sharing-knowledge:hover]:scale-100 transition-all duration-200 ease-[cubic-bezier(0.47,0,0.23,1.38)" />
+                        <img src="/construction-practice.webp" style={{
+                            width: 368,
+                            height: 207
+                        }} className="aspect-video absolute bottom-0 start-0 scale-50 opacity-0 group-has-[.show-construction-practice:hover]:opacity-100 group-has-[.show-construction-practice:hover]:scale-100 transition-all duration-200 ease-[cubic-bezier(0.47,0,0.23,1.38)" />
                     </div>
                     <p className="lg:flex-1 text-[var(--text-primary)] body-02-sm-fluid-heading-03">
-                        Established by civil engineers and seismic experts, MEEC serves as a hub for <span className="text-[var(--link-primary)] cursor-pointer show-image">sharing knowledge</span>, promoting safe <span className="text-[var(--link-primary)] cursor-pointer show-image">construction practices</span>, and supporting disaster risk reduction efforts.
+                        Established by civil engineers and seismic experts, MEEC serves as a hub for <span className="text-[var(--link-primary)] cursor-pointer show-sharing-knowledge">sharing knowledge</span>, promoting safe <span className="text-[var(--link-primary)] cursor-pointer show-construction-practice">construction practices</span>, and supporting disaster risk reduction efforts.
                         <br />
                         <br />
                         We work to make technical information on seismic safety accessible and actionable for professionals, communities, and decision-makers. Through collaboration, research, and public outreach, we aim to strengthen local capacity and promote a culture of preparedness.
