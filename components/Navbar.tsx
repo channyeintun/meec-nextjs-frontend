@@ -83,12 +83,12 @@ export const Navbar = () => {
                                 }
                             )}>About</Link>
                         </li>
-                        <li className={cn("relative flex items-center cursor-pointer max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button lg:hover:bg-[var(--layer-01)] text-left", {
-                            "active": pathname.includes("/blogs")
-                        })}>
+                        <li className={cn("relative flex items-center cursor-pointer max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button lg:hover:bg-[var(--layer-01)] text-left")}>
                             <Link
                                 href="/blogs"
-                                className="w-full">
+                                className={cn("w-full", {
+                                    "active": pathname.includes("/blogs")
+                                })}>
                                 News & Blogs
                             </Link>
                             <button
