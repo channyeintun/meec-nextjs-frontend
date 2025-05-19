@@ -1,13 +1,16 @@
 "use client";
 
-import { LanguageSwitcher } from "./LanguageSwitcher"
-import Menu from "./icons/Menu"
-import Close from "./icons/Close"
-import ChevronDown from "./icons/ChevronDown"
+import { GET_CATEGORIES } from "@/graphql/queries/categories";
+import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { usePathname, Link } from "@/i18n/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { Category } from "@/types/article";
+import { useQuery } from "@apollo/client";
 import { useDisclosure, useViewportSize, useWindowScroll } from "@mantine/hooks";
+import { AnimatePresence, motion } from "framer-motion";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import ChevronDown from "./icons/ChevronDown";
+import Close from "./icons/Close";
+import Menu from "./icons/Menu";
 
 export const Navbar = () => {
     const pathname = usePathname();
@@ -21,6 +24,10 @@ export const Navbar = () => {
 
     // Only hide top bar when scrolling down on desktop
     const shouldHideTopBar = isDesktop && scroll.y > 50;
+
+    const { data } = useQuery<{
+        categories: Category[]
+    }>(GET_CATEGORIES);
 
     return (
         <>
@@ -76,49 +83,38 @@ export const Navbar = () => {
                                 }
                             )}>About</Link>
                         </li>
-                        <li>
-                            <Link onNavigate={menuHandlers.close} href="/blogs" className={cn(
-                                "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
-                                {
-                                    "active": pathname.includes("/blogs")
-                                }
-                            )}>News & Blogs</Link>
-                        </li>
-                        {/* <li className="relative">
+                        <li className={cn("relative flex items-center cursor-pointer max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button lg:hover:bg-[var(--layer-01)] text-left", {
+                            "active": pathname.includes("/blogs")
+                        })}>
+                            <Link
+                                href="/blogs"
+                                className="w-full">
+                                News & Blogs
+                            </Link>
                             <button
-                                className="flex items-center cursor-pointer max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button lg:hover:bg-[var(--layer-01)] w-full text-left"
+                                className={cn(
+                                    "w-4 h-4 ms-auto lg:ml-1 transition-transform duration-300",
+                                    { "rotate-180": opened }
+                                )}
                                 onClick={handlers.toggle}
                                 aria-expanded={opened}
                                 aria-controls="news-blogs-submenu"
                             >
-                                News & Blogs
-                                <span
-                                    className={cn(
-                                        "w-4 h-4 ms-auto lg:ml-1 transition-transform duration-300",
-                                        { "rotate-180": opened }
-                                    )}
-                                >
-                                    <ChevronDown />
-                                </span>
+                                <ChevronDown />
                             </button>
                             <ul className={cn(
-                                "w-full lg:border-t border-[var(--border-subtle-00)] lg:w-48 bg-[var(--layer-01)] lg:absolute lg:left-0 z-20 lg:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]",
+                                "w-full lg:border-t border-[var(--border-subtle-00)] lg:w-48 bg-[var(--layer-01)] lg:absolute lg:left-0 lg:top-full z-20 lg:shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]",
                                 { "block": opened, "hidden": !opened }
                             )}>
-                                <li>
-                                    <Link onNavigate={menuHandlers.close} href="/news" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">News</Link>
-                                </li>
-                                <li>
-                                    <Link onNavigate={menuHandlers.close} href="/insight" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Insight</Link>
-                                </li>
-                                <li>
-                                    <Link onNavigate={menuHandlers.close} href="/case-study" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Case study</Link>
-                                </li>
-                                <li>
-                                    <Link onNavigate={menuHandlers.close} href="/podcast" className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">Podcast</Link>
-                                </li>
+                                {
+                                    data?.categories?.map(category => (
+                                        <li key={category.slug}>
+                                            <Link onNavigate={menuHandlers.close} href={`/blogs?category=${category.slug}`} className="block text-[var(--text-primary)] px-4 md:px-8 py-[14px] lg:px-4 lg:py-[15px] hover:bg-[var(--layer-hover-01)]">{category.name}</Link>
+                                        </li>
+                                    ))
+                                }
                             </ul>
-                        </li> */}
+                        </li>
                         <li>
                             <Link onNavigate={menuHandlers.close} href="/publications" className={cn(
                                 "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
