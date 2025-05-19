@@ -6,7 +6,7 @@ const Privacy = () => {
             <div className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
                 <Link href="/" className="text-[var(--link-primary)]">Home</Link>
                 <span>/</span>
-                <Link href="/news">News & Blogs</Link>
+                <Link href="/news">Privacy</Link>
             </div>
             <h1 className="px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pb-[var(--spacing-10)] pt-[var(--spacing-06)] lg:pt-0 text-[var(--text-primary)] fluid-display-01">Privacy</h1>
             <div className="text-[var(--text-primary)] grid grid-cols-1 lg:grid-cols-[208px_1fr] px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pt-[var(--spacing-05)] pb-[var(--spacing-11)] gap-[var(--spacing-07)]">
@@ -59,8 +59,10 @@ const Privacy = () => {
                     </div>
                     <div>
                         <h2 className="mb-4 fluid-heading-04">Contact Us</h2>
-                        <p className="body-02">If you have questions or concerns about this Privacy Policy, please contact us at:
-                            Email: meec@gmail.comAddress: +95 9 123 456 789</p>
+                        <p className="body-02">
+                            If you have questions or concerns about this Privacy Policy, please contact us at:<br />
+                            Email: meec@gmail.com<br />
+                            Phone: +95 9 123 456 789</p>
                     </div>
                 </div>
             </div>
