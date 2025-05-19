@@ -17,7 +17,7 @@ function ScrollToTopButton() {
     return (
         <button
             onClick={scrollToTop}
-            className={`fixed bottom-8 end-8 w-12 h-12 rounded-full bg-[var(--button-secondary)] text-white flex items-center justify-center shadow-lg z-[1000] transition-opacity duration-200 ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            className={`cursor-pointer fixed bottom-8 end-8 w-12 h-12 rounded-full bg-[var(--button-secondary)] text-white flex items-center justify-center shadow-lg z-[1000] transition-opacity duration-200 ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
                 }`}
             aria-label="Scroll to top"
         >
