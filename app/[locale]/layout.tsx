@@ -11,6 +11,7 @@ import "../colors.css";
 import "../globals.css";
 import "../spacing.css";
 import "../typography.css";
+import { QueryProvider } from "@/components/QueryProvider";
 
 const sans = IBM_Plex_Sans({
   weight: ['400'],
@@ -51,14 +52,16 @@ export default async function RootLayout({
         className={`${sans.variable} ${sansMyanmar.variable} antialiased content-auto`}
       >
         <NextIntlClientProvider>
-          <ApolloClientProvider>
-            <Navbar />
-            <main className="flex flex-col min-h-dvh w-full">
-              {children}
-              <Footer />
-              <ScrollToTopButton />
-            </main>
-          </ApolloClientProvider>
+          <QueryProvider>
+            <ApolloClientProvider>
+              <Navbar />
+              <main className="flex flex-col min-h-dvh w-full">
+                {children}
+                <Footer />
+                <ScrollToTopButton />
+              </main>
+            </ApolloClientProvider>
+          </QueryProvider>
         </NextIntlClientProvider>
         <SpeedInsights />
         <Analytics />

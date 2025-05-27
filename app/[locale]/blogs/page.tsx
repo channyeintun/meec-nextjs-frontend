@@ -5,7 +5,7 @@ import { CategoryFilter, FilterDropdown, TopicFilter } from "@/components/Blog/F
 import { Link } from "@/i18n/navigation";
 import { strapi_client } from "@/lib/strapi";
 import { Category } from "@/types/article";
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 async function fetchCategories() {
     return strapi_client.collection("categories").find({
@@ -15,7 +15,7 @@ async function fetchCategories() {
                 fields: ["documentId"]
             }
         }
-    });
+    }).then(res => res.data as unknown as Category[]);
 }
 
 async function fetchTopics() {
@@ -26,17 +26,22 @@ async function fetchTopics() {
                 fields: ["documentId"]
             }
         }
-    });
+    }).then(res => res.data as unknown as Category[]);
 }
 
 export default function Page() {
-    const [categories, setCategories] = useState<Category[]>([]);
-    const [topics, setTopics] = useState<Category[]>([]);
 
-    useEffect(() => {
-        fetchCategories().then(res => setCategories(res.data as unknown as Category[]));
-        fetchTopics().then(res => setTopics(res.data as unknown as Category[]));
-    }, [])
+    const { data: categories } = useQuery<Category[]>({
+        queryKey: ['categories'],
+        queryFn: fetchCategories,
+    });
+
+    const { data: topics } = useQuery<Category[]>({
+        queryKey: ['topics'],
+        queryFn: fetchTopics,
+    });
+
+    console.log(categories, topics);
 
     return (
         <div>
@@ -47,12 +52,12 @@ export default function Page() {
             </div>
             <h1 className="px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pt-[var(--spacing-08)] pb-[var(--spacing-10)] fluid-display-01 text-[var(--text-primary)] text-balance">Explore the insightful news and blogs from our community</h1>
             <FilterDropdown
-                topics={topics}
-                categories={categories} />
+                topics={topics ?? []}
+                categories={categories ?? []} />
             <div className="grid grid-cols-1 lg:grid-cols-[208px_1fr] sm:px-[var(--spacing-07)] pb-[var(--spacing-11)] lg:pb-[var(--spacing-13)] gap-[var(--spacing-11)]">
                 <div className="hidden lg:block">
-                    <CategoryFilter data={categories} />
-                    <TopicFilter data={topics} />
+                    <CategoryFilter data={categories ?? []} />
+                    <TopicFilter data={topics ?? []} />
                 </div>
                 <Blogs />
             </div>
