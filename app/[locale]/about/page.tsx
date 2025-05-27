@@ -99,7 +99,7 @@ export default function Page() {
                         <br />
                         Through collaboration, research, and public outreach, we aim to strengthen local capacity and promote a culture of preparedness.
                     </p>
-                    <Link className="absolute bottom-0 end-0 w-full sm:w-fit h-fit font-sans text-base tracking-[0] leading-[22px] flex items-center gap-8 px-4 pb-[15px] pt-[29px] bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] hover:text-[--text-inverse] text-[var(--text-on-color)]" href="https://www.facebook.com" target="_blank">
+                    <Link className="absolute bottom-0 end-0 w-full sm:w-fit h-fit font-sans text-base tracking-[0] leading-[22px] flex items-center gap-8 px-4 pb-[15px] pt-[29px] bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] hover:text-[--text-inverse] text-[var(--text-on-color)]" href="https://www.facebook.com/share/g/1DhF1ikWaC/?mibextid=wwXIfr" target="_blank">
                         Join MEEC facebook group
                         <ArrowOutward className="w-5 h-5" />
                     </Link>

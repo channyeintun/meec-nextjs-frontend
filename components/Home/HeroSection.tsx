@@ -21,7 +21,7 @@ export const HeroSection = () => {
                 <p className={cn("fluid-paragraph-01 text-[var(--text-primary)] mt-[var(--spacing-08)] sm:mt-auto", {
                     "mm-paragraph": locale === "mm"
                 })}>{t("description")}</p>
-                <Link style={{ ["--button-tertiary" as string]: "light-dark(hsla(0, 0%, 100%, 1),hsla(219, 99%, 53%, 1))" }} className="mt-[var(--spacing-07)] w-fit font-sans text-base tracking-[0] leading-[22px] flex items-center gap-8 px-4 py-[13px] border hover:border-[var(--button-tertiary-hover)] border-[var(--button-tertiary)] text-[var(--button-tertiary)] hover:bg-[var(--button-tertiary-hover)] hover:text-[--text-inverse]" href="https://www.facebook.com" target="_blank">
+                <Link style={{ ["--button-tertiary" as string]: "light-dark(hsla(0, 0%, 100%, 1),hsla(219, 99%, 53%, 1))" }} className="mt-[var(--spacing-07)] w-fit font-sans text-base tracking-[0] leading-[22px] flex items-center gap-8 px-4 py-[13px] border hover:border-[var(--button-tertiary-hover)] border-[var(--button-tertiary)] text-[var(--button-tertiary)] hover:bg-[var(--button-tertiary-hover)] hover:text-[--text-inverse]" href="https://www.facebook.com/share/g/1DhF1ikWaC/?mibextid=wwXIfr" target="_blank">
                     {t("Join our facebook group")}
                     <ArrowOutward fill="var(--button-tertiary)" />
                 </Link>

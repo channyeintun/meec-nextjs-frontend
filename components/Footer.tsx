@@ -25,7 +25,7 @@ export const Footer = () => {
                 </ul>
                 <ul className="space-y-[var(--spacing-03)]">
                     <li><h2 className="text-[var(--text-on-color)] heading-02">Follow us</h2></li>
-                    <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="https://facebook.com" target="_blank">Facebook</Link></li>
+                    <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="https://www.facebook.com/share/g/1DhF1ikWaC/?mibextid=wwXIfr" target="_blank">Facebook</Link></li>
                     <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="https://youtube.com" target="_blank">Youtube</Link></li>
                     <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="https://x.com" target="_blank">X</Link></li>
                 </ul>
