@@ -36,7 +36,6 @@ export const Publications = () => {
                 }
             },
             updateQuery: (previousResult, { fetchMoreResult }) => {
-                console.log('fetchMore', fetchMoreResult)
                 if (!fetchMoreResult) return previousResult;
 
                 return {

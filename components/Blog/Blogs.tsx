@@ -41,7 +41,6 @@ export const Blogs = () => {
                 }
             },
             updateQuery: (previousResult, { fetchMoreResult }) => {
-                console.log('fetchMore', fetchMoreResult)
                 if (!fetchMoreResult) return previousResult;
 
                 return {

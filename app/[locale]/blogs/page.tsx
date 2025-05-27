@@ -41,8 +41,6 @@ export default function Page() {
         queryFn: fetchTopics,
     });
 
-    console.log(categories, topics);
-
     return (
         <div>
             <div className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
