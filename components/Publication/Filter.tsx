@@ -105,9 +105,9 @@ const Checkbox: FC<{
                 className="absolute sr-only"
             />
             {isChecked ? (
-                <Checked aria-hidden="true" className="w-5 h-5" />
+                <Checked aria-hidden="true" className="min-w-5 min-h-5" />
             ) : (
-                <Unchecked aria-hidden="true" className="w-5 h-5" />
+                <Unchecked aria-hidden="true" className="min-w-5 min-h-5" />
             )}
             <span className="label-01">
                 {value.name} ({value.articles?.length ?? 0})
