@@ -75,7 +75,7 @@ export const Navbar = () => {
                             )}>About</Link>
                         </li>
                         <li>
-                            <Link onNavigate={menuHandlers.close} href="/publications" className={cn(
+                            <Link onNavigate={menuHandlers.close} href="/blogs" className={cn(
                                 "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname.includes("/blogs")
