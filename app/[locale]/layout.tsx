@@ -25,12 +25,7 @@ const sansMyanmar = Noto_Sans_Myanmar({
   variable: '--font-noto-sans-myanmar',
 })
 
-export const metadata: Metadata = {
-  title: "MEEC",
-  description: "Myanmar Earthquake Engineering Community",
-};
-
-export default async function RootLayout({
+export default async function Layout({
   children,
   params,
 }: Readonly<{
