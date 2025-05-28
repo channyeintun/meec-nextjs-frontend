@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
             hostname: '**.media.strapiapp.com',
             port: '',
             pathname: '/**',
+        },{
+            protocol: 'https',
+            hostname: '**.deno.dev',
+            port: '',
+            pathname: '/**',
         }]
     }
 };
