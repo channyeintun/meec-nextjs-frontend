@@ -8,7 +8,7 @@ import News from "@/components/icons/News";
 import { createApolloClient } from "@/graphql";
 import { GET_ARTICLES_BY_SLUG } from "@/graphql/queries/articles";
 import { Link } from "@/i18n/navigation";
-import { cn, dateFormatter } from "@/lib/utils";
+import { cn, dateFormatter, formatImageUrl } from "@/lib/utils";
 import { Article, ArticlesData } from "@/types/article";
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import { Metadata } from "next";
@@ -157,7 +157,7 @@ export default async function NewsPage({ params }: {
                                 alt={article.cover.alternativeText ?? "Cover photo"}
                                 width={article.cover.width}
                                 height={article.cover.height}
-                                src={article.cover.url}
+                                src={formatImageUrl(article.cover.url)}
                             />
                             <figcaption className="text-[var(--text-secondary)] body-01">{article.cover.caption}</figcaption>
                         </figure>

@@ -2,7 +2,7 @@ import { Link } from "@/i18n/navigation"
 import { Article as ArticleInterface } from "@/types/article"
 import { FC } from "react"
 import { Category } from "../Home/Category";
-import { cn } from "@/lib/utils";
+import { cn, formatImageUrl } from "@/lib/utils";
 import Image from "next/image";
 import { Topic } from "./Topic";
 
@@ -19,7 +19,7 @@ export const Article: FC<{
             <Link href={`/blogs/${article.slug}`} className={className}>
                 <article className={cn("flex flex-col py-[var(--spacing-06)] px-[var(--spacing-05)] sm:px-[var(--spacing-06)] min-h-[560px] hover:bg-[var(--background-hover)]")}>
                     <Category name={article.category?.name} />
-                    <Image width={272} height={136} src={article.cover?.url} alt={article.title} className="w-full aspect-3/2 object-cover my-[var(--spacing-06)]" />
+                    <Image width={272} height={136} src={formatImageUrl(article.cover?.url)} alt={article.title} className="w-full aspect-3/2 object-cover my-[var(--spacing-06)]" />
                     <div className="space-y-[var(--spacing-02)]">
                         <p className="text-sm text-[var(--text-secondary)] label-02">{new Date(article.createdAt).toLocaleDateString(locale, {
                             day: '2-digit',

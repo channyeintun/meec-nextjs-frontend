@@ -10,3 +10,11 @@ export const dateFormatter = new Intl.DateTimeFormat('en-GB', {
   month: 'long',
   year: 'numeric'
 });
+
+export const formatImageUrl = (url: string) => {
+  if (!url) return '';
+  if (url.startsWith("http")) {
+    return url;
+  }
+  return `${process.env.NEXT_PUBLIC_API_URL}${url}`;
+}
