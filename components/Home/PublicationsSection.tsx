@@ -30,7 +30,7 @@ export const PublicationsSection = async () => {
                 {data?.publications?.map((publication) => (
                     <Publication
                         key={publication.documentId}
-                        className="border-[var(--border-subtle-01)] sm:not-first:border-s border-b last:border-b-0 sm:nth-last-[-n+2]:border-b-0 lg:nth-last-[-n+4]:border-b-0 sm:max-lg:nth-of-type-[2n+1]:border-s-0 lg:nth-of-type-[4n+1]:border-s-0"
+                        className="border-[var(--border-subtle-01)] max-sm:border-x sm:not-first:border-s border-b last:border-b-0 sm:nth-last-[-n+2]:border-b-0 lg:nth-last-[-n+4]:border-b-0 sm:max-lg:nth-of-type-[2n+1]:border-s-0 lg:nth-of-type-[4n+1]:border-s-0"
                         publication={publication} />
                 ))}
             </div>

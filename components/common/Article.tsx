@@ -16,7 +16,7 @@ export const Article: FC<{
     locale,
 }) => {
         return (
-            <Link href={`/blogs/${article.slug}`} className={className}>
+            <Link href={`/blogs/${article.slug}`} className={cn("inline-block",className)}>
                 <article className={cn("flex flex-col py-[var(--spacing-06)] px-[var(--spacing-05)] sm:px-[var(--spacing-06)] min-h-[560px] hover:bg-[var(--background-hover)]")}>
                     <Category name={article.category?.name} />
                     <Image width={272} height={136} src={formatImageUrl(article.cover?.url)} alt={article.title} className="w-full aspect-3/2 object-cover my-[var(--spacing-06)]" />
