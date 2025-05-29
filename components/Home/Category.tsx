@@ -1,8 +1,9 @@
 import { PropsWithChildren } from "react"
-import News from "../icons/News"
-import Insight from "../icons/Insight"
-import Podcast from "../icons/Podcast"
 import CaseStudy from "../icons/CaseStudy"
+import Insight from "../icons/Insight"
+import News from "../icons/News"
+import Newspaper from "../icons/Newspaper"
+import Podcast from "../icons/Podcast"
 
 export const Category = ({ name }: { name: string }) => {
     switch (name) {
@@ -15,8 +16,17 @@ export const Category = ({ name }: { name: string }) => {
         case "Case study":
             return <CaseStudyCategory>{name}</CaseStudyCategory>
         default:
-            return null
+            return <DefaultCategory>{name}</DefaultCategory>
     }
+}
+
+const DefaultCategory = ({ children }: PropsWithChildren) => {
+    return (
+        <p className="label-01 text-[var(--icon-secondary)] flex items-center gap-[var(--spacing-02)]">
+            <Newspaper />
+            <span>{children}</span>
+        </p>
+    )
 }
 
 const NewsCategory = ({ children }: PropsWithChildren) => {
