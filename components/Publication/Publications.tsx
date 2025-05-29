@@ -6,6 +6,8 @@ import { useQuery } from "@apollo/client";
 import { useSearchParams } from "next/navigation";
 import { Publication } from "../common/Publication";
 
+const LIMIT = 6;
+
 export const Publications = () => {
 
     const searchParams = useSearchParams();
@@ -15,7 +17,7 @@ export const Publications = () => {
         variables: {
             pagination: {
                 start: 0,
-                limit: 3,
+                limit: LIMIT,
             },
             filters: {
                 authors: authorSlugs?.length > 0 ? { slug: { in: authorSlugs } } : null,
@@ -32,7 +34,7 @@ export const Publications = () => {
             variables: {
                 pagination: {
                     start: currentLength,
-                    limit: 3
+                    limit: LIMIT
                 }
             },
             updateQuery: (previousResult, { fetchMoreResult }) => {

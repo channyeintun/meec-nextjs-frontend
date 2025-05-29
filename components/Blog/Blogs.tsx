@@ -7,6 +7,8 @@ import { useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { Article } from "../common/Article";
 
+const LIMIT = 6;
+
 export const Blogs = () => {
     const locale = useLocale();
 
@@ -19,7 +21,7 @@ export const Blogs = () => {
             locale: locale === "mm" ? "my" : "en",
             pagination: {
                 start: 0,
-                limit: 3,
+                limit: LIMIT,
             },
             filters: {
                 category: categorySlugs?.length > 0 ? { slug: { in: categorySlugs } } : null,
@@ -37,7 +39,7 @@ export const Blogs = () => {
             variables: {
                 pagination: {
                     start: currentLength,
-                    limit: 3
+                    limit: LIMIT
                 }
             },
             updateQuery: (previousResult, { fetchMoreResult }) => {
