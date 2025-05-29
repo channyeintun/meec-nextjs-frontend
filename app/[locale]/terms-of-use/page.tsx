@@ -45,7 +45,7 @@ const TermsOfUse = () => {
                         <h2 className="mb-4 fluid-heading-04">Contact Us</h2>
                         <p className="body-02">
                             If you have questions or concerns about this Privacy Policy, please contact us at:<br />
-                            Email: meec@gmail.com<br />
+                            Email: mmengrgp@gmail.com<br />
                             Phone: +95 9 123 456 789</p>
                     </div>
                 </div>

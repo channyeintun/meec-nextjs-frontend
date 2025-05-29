@@ -14,7 +14,7 @@ export const Footer = () => {
                 <h1 className="text-[32px] text-[var(--text-primary)] font-bold leading-[32px] tracking-[0] hidden lg:block">MEEC</h1>
                 <ul className="space-y-[var(--spacing-03)]">
                     <li><h2 className="text-[var(--text-on-color)] heading-02">Contact info</h2></li>
-                    <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="mailto:example@gmail.com">meec@gmail.com</Link></li>
+                    <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="mailto:mmengrgp@gmail.com">mmengrgp@gmail.com</Link></li>
                     <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="tel:+959123456789">+959123456789</Link></li>
                 </ul>
                 <ul className="space-y-[var(--spacing-03)]">
