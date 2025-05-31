@@ -8,9 +8,9 @@ import TriangleWitCircles from "../icons/TriangleWithCircles";
 export const Mission = () => {
     const t = useTranslations("HomePage");
     return (
-        <section role="region" aria-labelledby="who_we_are_ID" className="px-[var(--spacing-05)] sm:px-[var(--spacing-07)] py-[var(--spacing-10)]">
+        <section role="region" aria-labelledby="content" className="px-[var(--spacing-05)] sm:px-[var(--spacing-07)] py-[var(--spacing-10)]">
             <div className="lg:max-w-[608px] w-full mx-auto py-[var(--spacing-10)] flex flex-col gap-[var(--spacing-11)]">
-                <h2 id="who_we_are_ID" className="fluid-heading-03-sm-04 text-[var(--text-primary)]">{t("who_we_are")}</h2>
+                <h2 id="content" className="fluid-heading-03-sm-04 text-[var(--text-primary)]">{t("who_we_are")}</h2>
                 <ul className="flex flex-col gap-[var(--spacing-09)] sm:gap-[var(--spacing-08)]">
                     <li className="flex flex-col sm:flex-row gap-[var(--spacing-05)] sm:gap-[var(--spacing-08)]">
                         <Target className="shrink-0" />

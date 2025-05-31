@@ -15,7 +15,7 @@ const TermsOfUse = () => {
                 <p className="heading-01">Date: May 18, 2025</p>
                 <div className="space-y-[var(--spacing-09)]">
                     <div>
-                        <h2 className="mb-4 fluid-heading-04">Overview</h2>
+                        <h2 id="content" className="mb-4 fluid-heading-04">Overview</h2>
                         <p className="body-02">Welcome to the MEEC website. By accessing or using our website, you agree to be bound by these Terms of Use. If you do not agree with any part of these terms, please do not use our website.</p>
                     </div>
                     <div>

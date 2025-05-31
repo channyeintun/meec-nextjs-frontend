@@ -135,7 +135,7 @@ export default async function NewsPage({ params }: {
                                 <span>{Number.isInteger(duration) ? duration : Math.ceil(duration) + 1} min read</span>
                             </div>
                         </div>
-                        <h1 className={cn("pt-[var(--spacing-05)] text-[var(--text-primary)]", {
+                        <h1 id="content" className={cn("pt-[var(--spacing-05)] text-[var(--text-primary)]", {
                             "mm-display-03": locale === 'mm',
                             "fluid-display-01": locale === 'en'
                         })}>

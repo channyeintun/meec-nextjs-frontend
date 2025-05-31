@@ -22,6 +22,38 @@ export const Navbar = () => {
 
     return (
         <>
+            {/* Skip to content link - only visible on focus for accessibility */}
+            <div
+                className="skip-links"
+                role="region"
+                aria-label="Skip Links"
+            >
+                <a
+                    href="#content"
+                    tabIndex={0}
+                    className="
+                        sr-only
+                        body-02
+                        text-[var(--text-primary)]
+                        focus:not-sr-only
+                        focus:absolute
+                        focus:top-2
+                        focus:left-2
+                        focus:z-[1000]
+                        focus:bg-white
+                        focus:text-black
+                        focus:p-2
+                        focus:font-bold
+                        focus:outline-4
+                        focus:outline-[hsla(219, 99%, 53%, 1)]
+                        focus:shadow-lg
+                        transition
+                        underline
+                    "
+                >
+                    Skip to Content
+                </a>
+            </div>
             <header className="bg-[var(--background)] group sticky top-0 z-50">
                 <AnimatePresence>
                     {(!shouldHideTopBar || !isDesktop) && (

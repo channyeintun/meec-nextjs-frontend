@@ -19,7 +19,7 @@ export default function Page() {
                 <h1 className="fluid-display-01 text-[var(--text-primary)] px-[var(--spacing-07)] pb-[var(--spacing-10)] pt-[var(--spacing-11)] lg:pt-[var(--spacing-08)]">About MEEC</h1>
             </div>
             <div className="px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pt-[var(--spacing-10)] pb-[var(--spacing-11)] md:py-[var(--spacing-11)] lg:py-[var(--spacing-12)] space-y-[var(--spacing-09)] md:space-y-[var(--spacing-10)] lg:space-y-[var(--spacing-11)]">
-                <h2 className="text-[var(--text-primary)] our-history text-balance lg:max-w-[65vw]">We are a professional network dedicated to advancing earthquake resilience across Myanmar. </h2>
+                <h2 id="content" className="text-[var(--text-primary)] our-history text-balance lg:max-w-[65vw]">We are a professional network dedicated to advancing earthquake resilience across Myanmar. </h2>
                 <div className="flex justify-between group">
                     <div className="lg:flex-1 hidden lg:block relative">
                         <img src="/sharing-knowledge.webp" style={{
