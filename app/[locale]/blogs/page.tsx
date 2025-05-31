@@ -43,11 +43,13 @@ export default function Page() {
 
     return (
         <div>
-            <div className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
-                <Link href="/" className="text-[var(--link-primary)]">Home</Link>
-                <span>/</span>
-                <Link href="/news">News & Blogs</Link>
-            </div>
+            <nav aria-label="Breadcrumb">
+                <ol className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
+                    <li><Link href="/" className="text-[var(--link-primary)]">Home</Link></li>
+                    <li>/</li>
+                    <li aria-current="page"><Link href="/blogs">News & Blogs</Link></li>
+                </ol>
+            </nav>
             <h1 className="px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pt-[var(--spacing-08)] pb-[var(--spacing-10)] fluid-display-01 text-[var(--text-primary)] text-balance">Explore the insightful news and blogs from our community</h1>
             <FilterDropdown
                 topics={topics ?? []}

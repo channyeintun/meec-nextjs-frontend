@@ -9,11 +9,13 @@ export default function Page() {
     return (
         <div>
             <div className="bg-[var(--layer-01)]">
-                <div className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
-                    <Link href="/" className="text-[var(--link-primary)]">Home</Link>
-                    <span>/</span>
-                    <Link href="/news">About</Link>
-                </div>
+                <nav aria-label="Breadcrumb">
+                    <ol className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
+                        <li><Link href="/" className="text-[var(--link-primary)]">Home</Link></li>
+                        <li>/</li>
+                        <li aria-current="page"><Link href="/about">About</Link></li>
+                    </ol>
+                </nav>
                 <h1 className="fluid-display-01 text-[var(--text-primary)] px-[var(--spacing-07)] pb-[var(--spacing-10)] pt-[var(--spacing-11)] lg:pt-[var(--spacing-08)]">About MEEC</h1>
             </div>
             <div className="px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pt-[var(--spacing-10)] pb-[var(--spacing-11)] md:py-[var(--spacing-11)] lg:py-[var(--spacing-12)] space-y-[var(--spacing-09)] md:space-y-[var(--spacing-10)] lg:space-y-[var(--spacing-11)]">
