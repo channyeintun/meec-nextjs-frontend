@@ -29,9 +29,9 @@ export const ArticlesSection = async () => {
     const articles = [...arr.slice(0, 2), null, ...arr.slice(2, 5), null, ...arr.slice(5)];
 
     return (
-        <section className="sm:px-8 grid lg:grid-cols-[160px_1fr] gap-6 sm:gap-[var(--spacing-08)] lg:gap-[var(--spacing-11)] py-[var(--spacing-11)]">
+        <section role="region" aria-label="Latest articles" className="sm:px-8 grid lg:grid-cols-[160px_1fr] gap-6 sm:gap-[var(--spacing-08)] lg:gap-[var(--spacing-11)] py-[var(--spacing-11)]">
             <div className="pt-[var(--spacing-03)] px-[var(--spacing-05)] sm:px-0 lg:border-t border-[var(--border-strong-01)]">
-                <h1 className="body-01 text-[var(--text-primary)]">Lastest updates</h1>
+                <h2 className="body-01 text-[var(--text-primary)]">Lastest updates</h2>
             </div>
             <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 lg:pe-12">
                 {articles.map((article, idx) => (

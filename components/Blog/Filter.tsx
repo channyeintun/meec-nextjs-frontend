@@ -16,12 +16,13 @@ export const FilterDropdown: FC<{
 }) => {
         const [opened, handlers] = useDisclosure();
         return (
-            <div className="relative lg:hidden mx-[var(--spacing-05)] sm:mx-[var(--spacing-07)] my-[var(--spacing-05)] lg:mx-0">
+            <aside className="relative lg:hidden mx-[var(--spacing-05)] sm:mx-[var(--spacing-07)] my-[var(--spacing-05)] lg:mx-0">
                 <button
                     className="flex items-center cursor-pointer p-[var(--spacing-05)]  border border-[var(--border-subtle-01)] lg:hover:bg-[var(--layer-01)] w-full text-start"
                     onClick={handlers.toggle}
                     aria-expanded={opened}
                     aria-controls="news-blogs-submenu"
+                    aria-haspopup="listbox"
                 >
                     Filter
                     <span
@@ -33,18 +34,22 @@ export const FilterDropdown: FC<{
                         <ChevronDown />
                     </span>
                 </button>
-                <ul className={cn(
-                    "w-full px-[var(--spacing-05)] bg-[var(--layer-01)] absolute left-0 z-20 shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]",
-                    { "block": opened, "hidden": !opened }
-                )}>
-                    <li>
+                <ul
+                    id="news-blogs-submenu"
+                    role="listbox"
+                    className={cn(
+                        "w-full px-[var(--spacing-05)] bg-[var(--layer-01)] absolute left-0 z-20 shadow-[0px_4px_8px_0_rgba(0,0,0,0.2)]",
+                        { "block": opened, "hidden": !opened }
+                    )}
+                >
+                    <li role="option">
                         <CategoryFilter data={categories} />
                     </li>
-                    <li>
+                    <li role="option">
                         <TopicFilter data={topics} />
                     </li>
                 </ul>
-            </div>
+            </aside>
         )
     }
 
@@ -56,7 +61,7 @@ export const CategoryFilter: FC<{
 
         return (
             <div className="lg:border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
-                <span className="text-[var(--text-primary)] label-01">Explore by category</span>
+                <h2 className="text-[var(--text-primary)] label-01">Explore by category</h2>
                 {
                     data.map(category => <Checkbox
                         key={category.documentId}
@@ -74,7 +79,7 @@ export const TopicFilter: FC<{
 }) => {
         return (
             <div className="lg:border-t boder-[var(--border-strong-01)] flex flex-col gap-[var(--spacing-05)] pt-[var(--spacing-05)] pb-[var(--spacing-08)]">
-                <span className="text-[var(--text-primary)] label-01">Explore by topic</span>
+                <h2 className="text-[var(--text-primary)] label-01">Explore by topic</h2>
                 {
                     data.map(topic => <Checkbox
                         key={topic.documentId}

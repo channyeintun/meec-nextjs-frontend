@@ -40,6 +40,7 @@ export const Checkbox: FC<{
 
     return (
         <label
+            aria-labelledby={'label-' + value.slug}
             htmlFor={value.slug}
             className="flex items-center gap-1 text-[var(--text-primary)] cursor-pointer transition-colors  [&:has(input[type=checkbox]:focus-visible)]:ring-2 [&:has(input[type=checkbox]:focus-visible)]:ring-blue-600 [&:has(input[type=checkbox]:focus-visible)]:ring-offset-2"
         >
@@ -49,13 +50,14 @@ export const Checkbox: FC<{
                 checked={isChecked}
                 onChange={toggleFilter}
                 className="absolute sr-only"
+                aria-label={`Filter by ${value.name}`}
             />
             {isChecked ? (
                 <Checked aria-hidden="true" className="min-w-5 min-h-5" />
             ) : (
                 <Unchecked aria-hidden="true" className="min-w-5 min-h-5" />
             )}
-            <span className="label-01">
+            <span id={'label-' + value.slug} className="label-01">
                 {value.name} ({getArrayLength(value)})
             </span>
         </label>

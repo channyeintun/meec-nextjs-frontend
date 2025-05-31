@@ -13,11 +13,11 @@ export const HeroSection = () => {
             ["--text-primary" as string]: "light-dark(hsla(0, 0%, 96%, 1),hsla(0, 0%, 9%, 1))"
         }}>
             <div className="flex flex-col pt-[var(--spacing-07)] pb-[var(--spacing-07)] sm:pb-[var(--spacing-08)]">
-                <p className={cn("whitespace-pre-wrap fluid-display-01 text-[var(--text-primary)]", {
+                <h1 className={cn("whitespace-pre-wrap fluid-display-01 text-[var(--text-primary)]", {
                     "mm-display-01": locale === "mm",
                 })}>
                     {t("Myanmar")} {t("Earthquake")} {t("Engineering")} {t("Community")}
-                </p>
+                </h1>
                 <p className={cn("fluid-paragraph-01 text-[var(--text-primary)] mt-[var(--spacing-08)] sm:mt-auto", {
                     "mm-paragraph": locale === "mm"
                 })}>{t("description")}</p>

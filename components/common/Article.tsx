@@ -16,7 +16,7 @@ export const Article: FC<{
     locale,
 }) => {
         return (
-            <Link href={`/blogs/${article.slug}`} className={cn("inline-block",className)}>
+            <Link href={`/blogs/${article.slug}`} className={cn("inline-block", className)}>
                 <article className={cn("flex flex-col py-[var(--spacing-06)] px-[var(--spacing-05)] sm:px-[var(--spacing-06)] min-h-[560px] hover:bg-[var(--background-hover)]")}>
                     <Category name={article.category?.name} />
                     <Image width={272} height={136} src={formatImageUrl(article.cover?.url)} alt={article.title} className="w-full aspect-3/2 object-cover my-[var(--spacing-06)]" />
@@ -26,7 +26,7 @@ export const Article: FC<{
                             month: 'short',
                             year: 'numeric'
                         }).replace(/ /g, ' ')}</p>
-                        <h2 className="text-[var(--primary)] text-xl font-bold line-clamp-3 fluid-heading-03">{article.title}</h2>
+                        <h3 className="text-[var(--primary)] text-xl font-bold line-clamp-3 fluid-heading-03">{article.title}</h3>
                     </div>
                     <div className="space-y-4 mt-auto">
                         <p className="body-01 mt-auto text-[var(--primary)] line-clamp-3">{article.description}</p>

@@ -94,7 +94,7 @@ export default function Page() {
             </div>
             <div className="w-full px-[var(--spacing-05)] sm:px-[var(--spacing-07)] lg:px-[var(--spacing-11)] py-[var(--spacing-13)] bg-[linear-gradient(0deg,rgba(0,0,0,0.2)_0%,rgba(0,0,0,0.2)_100%),url('/about-bg.webp')] bg-cover bg-no-repeat bg-center">
                 <div className="relative flex flex-col lg:flex-row gap-[var(--spacing-07)] lg:justify-between bg-[var(--layer-01)] px-[var(--spacing-05)] sm:px-[var(--spacing-06)] pt-[var(--spacing-06)] pb-[var(--spacing-13)]">
-                    <h1 className="flex-1 fluid-heading-03-sm-04 text-[var(--text-primary)]">Collaborate with us</h1>
+                    <h2 className="flex-1 fluid-heading-03-sm-04 text-[var(--text-primary)]">Collaborate with us</h2>
                     <p className="flex-1 text-[var(--text-primary)] body-01-sm-02">
                         MEEC is a professional network dedicated to advancing earthquake resilience across Myanmar.
                         <br />

@@ -18,7 +18,7 @@ export const Publication: FC<{
                     <Image width={312} height={240} alt="publication cover photo" className="w-full aspect-3/2 object-cover" src={formatImageUrl(publication.cover?.url)} />
                     <div className="p-[var(--spacing-05)] min-h-[288px] flex flex-col">
                         <p className="text-[var(--text-secondary)] body-01 mb-[var(--spacing-03)]">{publication.authors?.map(it => it.name)?.join(", ")} | {publication.publishedDate.split("-")[0]}</p>
-                        <h1 className="fluid-heading-03 text-[var(--text-primary)] line-clamp-3 group-hover:text-[var(--link-primary)]">{publication.title}</h1>
+                        <h3 className="fluid-heading-03 text-[var(--text-primary)] line-clamp-3 group-hover:text-[var(--link-primary)]">{publication.title}</h3>
                         <p className="body-02 text-[var(--text-primary)] line-clamp-3 mb-6 mt-auto">{publication.description}</p>
                         <Pdf className="w-6 h-6 transition-colors duration-200 ease-in group-hover:text-[var(--icon-interactive)]" />
                     </div>

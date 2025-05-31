@@ -58,7 +58,7 @@ export const Navbar = () => {
                 </AnimatePresence>
 
                 {/* Navigation Links */}
-                <nav className="lg:flex lg:items-center lg:justify-start">
+                <nav aria-label="main navigation bar" className="lg:flex lg:items-center lg:justify-start">
                     <ul className="nav-links lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute z-10 top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0 max-lg:h-[calc(100dvh-58px)]">
                         <li>
                             <Link onNavigate={menuHandlers.close} href="/" className={cn(
