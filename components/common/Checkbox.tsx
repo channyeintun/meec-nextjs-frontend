@@ -8,6 +8,7 @@ interface Value {
     name: string;
     slug: string;
     articles?: any[];
+    publications?: any[];
 }
 
 export const Checkbox: FC<{
@@ -55,8 +56,18 @@ export const Checkbox: FC<{
                 <Unchecked aria-hidden="true" className="min-w-5 min-h-5" />
             )}
             <span className="label-01">
-                {value.name} ({value.articles?.length ?? 0})
+                {value.name} ({getArrayLength(value)})
             </span>
         </label>
     );
 };
+
+function getArrayLength(value: Value) {
+    if (Array.isArray(value.publications)) {
+        return value.publications.length;
+    } else if (Array.isArray(value.articles)) {
+        return value.articles.length;
+    } else {
+        return 0;
+    }
+}
