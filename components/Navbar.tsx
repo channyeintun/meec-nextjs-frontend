@@ -125,7 +125,7 @@ export const Navbar = () => {
                             )}>Publications</Link>
                         </li>
                         <li className="lg:ml-auto">
-                            <Link onNavigate={menuHandlers.close} href="/apply" className="relative block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary after:content-[''] after:absolute after:bottom-[-1px] after:h-[1px] after:w-full after:bg-[var(--button-primary)] after:start-0 hover:after:bg-[var(--button-primary-hover)]">Apply for assistance</Link>
+                            <Link onNavigate={menuHandlers.close} href="/" className="relative block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] carbon-button-primary after:content-[''] after:absolute after:bottom-[-1px] after:h-[1px] after:w-full after:bg-[var(--button-primary)] after:start-0 hover:after:bg-[var(--button-primary-hover)]">Apply for assistance</Link>
                         </li>
                     </ul>
                 </nav>
