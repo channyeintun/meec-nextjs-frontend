@@ -7,7 +7,7 @@ const Privacy = () => {
                 <ol className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
                     <li><Link href="/" className="text-[var(--link-primary)]">Home</Link></li>
                     <li>/</li>
-                    <li aria-current="page"><Link href="/privacy">Privacy</Link></li>
+                    <li><Link href="/privacy" aria-current="page">Privacy</Link></li>
                 </ol>
             </nav>
             <h1 className="px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pb-[var(--spacing-10)] pt-[var(--spacing-06)] lg:pt-0 text-[var(--text-primary)] fluid-display-01">Privacy</h1>

@@ -13,7 +13,7 @@ export default function Page() {
                     <ol className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
                         <li><Link href="/" className="text-[var(--link-primary)]">Home</Link></li>
                         <li>/</li>
-                        <li aria-current="page"><Link href="/about">About</Link></li>
+                        <li><Link href="/about" aria-current="page">About</Link></li>
                     </ol>
                 </nav>
                 <h1 className="fluid-display-01 text-[var(--text-primary)] px-[var(--spacing-07)] pb-[var(--spacing-10)] pt-[var(--spacing-11)] lg:pt-[var(--spacing-08)]">About MEEC</h1>

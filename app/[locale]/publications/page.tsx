@@ -30,7 +30,7 @@ export default function Page() {
                 <ol className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
                     <li><Link href="/" className="text-[var(--link-primary)]">Home</Link></li>
                     <li>/</li>
-                    <li aria-current="page"><Link href="/publications">Publications</Link></li>
+                    <li><Link href="/publications" aria-current="page">Publications</Link></li>
                 </ol>
             </nav>
             <h1 id="content" className="px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pt-[var(--spacing-08)] pb-[var(--spacing-10)] fluid-display-01 text-[var(--text-primary)] text-balance">Publications</h1>

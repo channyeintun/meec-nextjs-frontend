@@ -7,7 +7,7 @@ const TermsOfUse = () => {
                 <ol className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
                     <li><Link href="/" className="text-[var(--link-primary)]">Home</Link></li>
                     <li>/</li>
-                    <li aria-current="page"><Link href="/terms-of-use">Terms of use</Link></li>
+                    <li><Link href="/terms-of-use" aria-current="page">Terms of use</Link></li>
                 </ol>
             </nav>
             <h1 className="px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pb-[var(--spacing-10)] pt-[var(--spacing-06)] lg:pt-0 text-[var(--text-primary)] fluid-display-01">Terms of use</h1>

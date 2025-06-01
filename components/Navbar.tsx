@@ -93,7 +93,7 @@ export const Navbar = () => {
                 <nav aria-label="Site" className="lg:flex lg:items-center lg:justify-start">
                     <ul className="nav-links lg:ps-[var(--spacing-05)] group-has-[:checked]:flex lg:flex lg:flex-row flex-col absolute z-10 top-full left-0 w-full lg:relative border-b border-[var(--border-subtle-00)] bg-[var(--background)] transition-transform duration-300 ease-in-out max-lg:-translate-x-full group-has-[:checked]:translate-x-0 max-lg:h-[calc(100dvh-58px)]">
                         <li>
-                            <Link onNavigate={menuHandlers.close} href="/" className={cn(
+                            <Link aria-current={pathname === "/" ? "page" : "false"} onNavigate={menuHandlers.close} href="/" className={cn(
                                 "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/"
@@ -101,7 +101,7 @@ export const Navbar = () => {
                             )}>Home</Link>
                         </li>
                         <li>
-                            <Link onNavigate={menuHandlers.close} href="/about" className={cn(
+                            <Link aria-current={pathname === "/about" ? "page" : "false"} onNavigate={menuHandlers.close} href="/about" className={cn(
                                 "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/about"
@@ -109,7 +109,7 @@ export const Navbar = () => {
                             )}>About</Link>
                         </li>
                         <li>
-                            <Link onNavigate={menuHandlers.close} href="/blogs" className={cn(
+                            <Link aria-current={pathname === "/blogs" ? "page" : "false"} onNavigate={menuHandlers.close} href="/blogs" className={cn(
                                 "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname.includes("/blogs")
@@ -117,7 +117,7 @@ export const Navbar = () => {
                             )}>News & Blogs</Link>
                         </li>
                         <li>
-                            <Link onNavigate={menuHandlers.close} href="/publications" className={cn(
+                            <Link aria-current={pathname === "/publications" ? "page" : "false"} onNavigate={menuHandlers.close} href="/publications" className={cn(
                                 "block max-sm:!px-4 max-lg:!px-8 max-lg:!py-[14px] max-lg:border-b border-[var(--border-subtle-00)] carbon-button",
                                 {
                                     "active": pathname === "/publications"
