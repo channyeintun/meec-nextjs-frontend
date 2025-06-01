@@ -98,7 +98,6 @@ query Articles_connection($pagination: PaginationArg, $filters: ArticleFiltersIn
         name
         slug
       }
-      body
       publishedAt
       locale
       documentId
