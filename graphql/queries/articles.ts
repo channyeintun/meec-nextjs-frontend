@@ -13,13 +13,11 @@ export const GET_ARTICLES = gql`
       }
       topics {
         slug
-        createdAt
         name
       }
       cover {
         url
         alternativeText
-        caption
       }
     }
   articles_connection {
@@ -49,7 +47,6 @@ export const GET_ARTICLES_BY_SLUG = gql`
         url
       }
       body
-      createdAt
       publishedAt
       locale
       author {
@@ -77,11 +74,7 @@ query Articles_connection($pagination: PaginationArg, $filters: ArticleFiltersIn
       cover {
         alternativeText
         caption
-        width
-        height
-        size
         url
-        previewUrl
       }
       author {
         name

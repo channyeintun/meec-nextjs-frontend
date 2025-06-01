@@ -1,11 +1,9 @@
-'use client';
-
 import { Blogs } from "@/components/Blog/Blogs";
 import { CategoryFilter, FilterDropdown, TopicFilter } from "@/components/Blog/Filter";
 import { Link } from "@/i18n/navigation";
 import { strapi_client } from "@/lib/strapi";
 import { Category } from "@/types/article";
-import { useQuery } from "@tanstack/react-query";
+import { QueryClient } from "@tanstack/react-query";
 
 async function fetchCategories() {
     return strapi_client.collection("categories").find({
@@ -29,17 +27,27 @@ async function fetchTopics() {
     }).then(res => res.data as unknown as Category[]);
 }
 
-export default function Page() {
+export default async function Page() {
 
-    const { data: categories } = useQuery<Category[]>({
-        queryKey: ['categories'],
-        queryFn: fetchCategories,
+    const queryClient = new QueryClient({
+        defaultOptions: {
+            queries: {
+                staleTime: 60 * 1000,
+            },
+        },
     });
 
-    const { data: topics } = useQuery<Category[]>({
+    const getCategoryPromise = queryClient.fetchQuery({
+        queryKey: ['categories'],
+        queryFn: fetchCategories,
+    })
+
+    const getTopicPromise = queryClient.fetchQuery({
         queryKey: ['topics'],
         queryFn: fetchTopics,
     });
+
+    const [categories, topics] = await Promise.all([getCategoryPromise, getTopicPromise])
 
     return (
         <div>

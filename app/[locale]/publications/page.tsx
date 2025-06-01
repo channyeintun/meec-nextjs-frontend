@@ -1,11 +1,9 @@
-'use client';
-
 import { AuthorFilter, FilterDropdown } from "@/components/Publication/Filter";
 import { Publications } from "@/components/Publication/Publications";
 import { Link } from "@/i18n/navigation";
 import { strapi_client } from "@/lib/strapi";
 import { Author } from "@/types/article";
-import { useQuery } from "@tanstack/react-query";
+import { QueryClient } from "@tanstack/react-query";
 
 async function fetchAuthors() {
     return strapi_client.collection("authors").find({
@@ -18,12 +16,23 @@ async function fetchAuthors() {
     }).then(res => res.data as unknown as Author[]);
 }
 
-export default function Page() {
+export default async function Page() {
 
-    const { data: authors } = useQuery<Author[]>({
+    const queryClient = new QueryClient({
+        defaultOptions: {
+            queries: {
+                staleTime: 60 * 1000,
+            },
+        },
+    });
+
+    const getAuthorsPromise = queryClient.fetchQuery({
         queryKey: ['authors'],
         queryFn: fetchAuthors,
-    });
+    })
+
+    const [authors] = await Promise.all([getAuthorsPromise])
+
     return (
         <div>
             <nav aria-label="Breadcrumb">

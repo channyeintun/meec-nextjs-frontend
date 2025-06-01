@@ -47,6 +47,7 @@ export interface Cover {
     ext: string;
     mime: string;
     url: string;
+    previewUrl: string;
 }
 
 export interface ArticlesData {
