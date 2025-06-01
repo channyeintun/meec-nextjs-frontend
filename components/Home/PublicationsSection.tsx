@@ -1,15 +1,15 @@
-import { createApolloClient } from "@/graphql";
+'use client';
+
 import { GET_PUBLICATIONS } from "@/graphql/queries/publications";
 import { Link } from "@/i18n/navigation";
 import { PublicationsData } from "@/types/publication";
+import { useQuery } from "@apollo/client";
 import { Publication } from "../common/Publication";
 import ArrowRight from "../icons/ArrowRight";
 
-export const PublicationsSection = async () => {
-    const client = createApolloClient();
+export const PublicationsSection = () => {
 
-    const { data } = await client.query<PublicationsData>({
-        query: GET_PUBLICATIONS,
+    const { data } = useQuery<PublicationsData>(GET_PUBLICATIONS, {
         variables: {
             pagination: {
                 limit: 8
