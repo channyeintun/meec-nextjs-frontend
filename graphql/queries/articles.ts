@@ -7,7 +7,6 @@ export const GET_ARTICLES = gql`
       createdAt
       title
       description
-      body
       category {
         slug
         name
