@@ -55,7 +55,7 @@ export const Navbar = () => {
                 </a>
             </div>
             <header className="bg-[var(--background)] group sticky top-0 z-50">
-                <div className="max-w-[1312px] mx-auto">
+                <div className="max-w-[96rem] mx-auto">
                     <AnimatePresence>
                     {(!shouldHideTopBar || !isDesktop) && (
                         <motion.div

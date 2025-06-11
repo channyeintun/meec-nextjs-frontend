@@ -9,7 +9,7 @@ export default function Page() {
     return (
         <div>
             <div className="bg-[var(--layer-01)]">
-                <div className="max-w-[1312px] mx-auto">
+                <div className="max-w-[96rem] mx-auto">
                     <nav aria-label="Breadcrumb">
                         <ol className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
                             <li><Link href="/" className="text-[var(--link-primary)]">Home</Link></li>
@@ -20,7 +20,7 @@ export default function Page() {
                     <h1 className="fluid-display-01 text-[var(--text-primary)] px-[var(--spacing-07)] pb-[var(--spacing-10)] pt-[var(--spacing-11)] lg:pt-[var(--spacing-08)]">About MEEC</h1>
                 </div>
             </div>
-            <div className="max-w-[1312px] mx-auto px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pt-[var(--spacing-10)] pb-[var(--spacing-11)] md:py-[var(--spacing-11)] lg:py-[var(--spacing-12)] space-y-[var(--spacing-09)] md:space-y-[var(--spacing-10)] lg:space-y-[var(--spacing-11)]">
+            <div className="max-w-[96rem] mx-auto px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pt-[var(--spacing-10)] pb-[var(--spacing-11)] md:py-[var(--spacing-11)] lg:py-[var(--spacing-12)] space-y-[var(--spacing-09)] md:space-y-[var(--spacing-10)] lg:space-y-[var(--spacing-11)]">
                 <h2 id="content" className="text-[var(--text-primary)] our-history text-balance lg:max-w-[65vw]">We are a professional network dedicated to advancing earthquake resilience across Myanmar. </h2>
                 <div className="flex justify-between group">
                     <div className="lg:flex-1 hidden lg:block relative">
@@ -44,7 +44,7 @@ export default function Page() {
                     </p>
                 </div>
             </div>
-            <div className="max-w-[1312px] mx-auto px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pb-[var(--spacing-11)] pt-[var(--spacing-08)] lg:pt-[var(--spacing-11)] space-y-[var(--spacing-10)]">
+            <div className="max-w-[96rem] mx-auto px-[var(--spacing-05)] sm:px-[var(--spacing-07)] pb-[var(--spacing-11)] pt-[var(--spacing-08)] lg:pt-[var(--spacing-11)] space-y-[var(--spacing-10)]">
                 <h2 className="fluid-heading-04-sm-fluid-display-01">
                     Our commitment to the society
                 </h2>
@@ -79,7 +79,7 @@ export default function Page() {
                     </li>
                 </ul>
             </div>
-            <div className="max-w-[1312px] mx-auto px-[var(--spacing-05)] border-t lg:border-t-0 sm:px-[var(--spacing-07)] pt-[var(--spacing-10)] pb-[var(--spacing-11)] lg:pt-[var(--spacing-08)] lg:pb-[var(--spacing-13)]">
+            <div className="max-w-[96rem] mx-auto px-[var(--spacing-05)] border-t lg:border-t-0 sm:px-[var(--spacing-07)] pt-[var(--spacing-10)] pb-[var(--spacing-11)] lg:pt-[var(--spacing-08)] lg:pb-[var(--spacing-13)]">
                 <div className="relative lg:border-t lg:pt-[var(--spacing-09)] gap-[var(--spacing-08)] flex flex-col lg:flex-row">
                     <h2 className="lg:flex-1 our-history text-[var(--text-primary)]">Our history</h2>
                     <img className="lg:absolute bottom-[-24px] start-0 w-full aspect-video sm:max-w-[367px] lg:max-w-[427px]" src="/our-history.webp" alt="an image in which people are gathering on a hill with the backgound of a sunset." />
@@ -95,7 +95,7 @@ export default function Page() {
                 </div>
             </div>
             <div className="bg-[linear-gradient(0deg,rgba(0,0,0,0.2)_0%,rgba(0,0,0,0.2)_100%),url('/about-bg.webp')] bg-cover bg-no-repeat bg-center">
-                <div className="w-full max-w-[1312px] mx-auto px-[var(--spacing-05)] sm:px-[var(--spacing-07)] lg:px-[var(--spacing-11)] py-[var(--spacing-13)]">
+                <div className="w-full max-w-[96rem] mx-auto px-[var(--spacing-05)] sm:px-[var(--spacing-07)] lg:px-[var(--spacing-11)] py-[var(--spacing-13)]">
                     <div className="relative flex flex-col lg:flex-row gap-[var(--spacing-07)] lg:justify-between bg-[var(--layer-01)] px-[var(--spacing-05)] sm:px-[var(--spacing-06)] pt-[var(--spacing-06)] pb-[var(--spacing-13)]">
                         <h2 className="flex-1 fluid-heading-03-sm-04 text-[var(--text-primary)]">Collaborate with us</h2>
                         <p className="flex-1 text-[var(--text-primary)] body-01-sm-02">

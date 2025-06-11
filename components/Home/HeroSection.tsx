@@ -12,7 +12,7 @@ export const HeroSection = () => {
             ["--background" as string]: "light-dark(#161616,#ffffff)",
             ["--text-primary" as string]: "light-dark(hsla(0, 0%, 96%, 1),hsla(0, 0%, 9%, 1))"
         }}>
-            <section role="banner" className="max-w-[1312px] mx-auto px-4 sm:px-8 grid sm:grid-cols-2 lg:grid-cols-[448px_1fr] gap-[var(--spacing-08)] sm:gap-8 lg:pb-[var(--spacing-08)] sm:min-h-[560px] lg:min-h-[672px]">
+            <section role="banner" className="max-w-[96rem] mx-auto px-4 sm:px-8 grid sm:grid-cols-2 lg:grid-cols-[448px_1fr] gap-[var(--spacing-08)] sm:gap-8 lg:pb-[var(--spacing-08)] sm:min-h-[560px] lg:min-h-[672px]">
                 <div className="flex flex-col pt-[var(--spacing-07)] pb-[var(--spacing-07)] sm:pb-[var(--spacing-08)]">
                     <h1 className={cn("whitespace-pre-wrap fluid-display-01 text-[var(--text-primary)]", {
                         "mm-display-01": locale === "mm",

@@ -34,7 +34,7 @@ export default async function Page() {
     const [authors] = await Promise.all([getAuthorsPromise])
 
     return (
-        <div className="max-w-[1312px] w-full mx-auto">
+        <div className="max-w-[96rem] w-full mx-auto">
             <nav aria-label="Breadcrumb">
                 <ol className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
                     <li><Link href="/" className="text-[var(--link-primary)]">Home</Link></li>

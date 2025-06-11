@@ -12,7 +12,7 @@ export const Footer = () => {
                     ["--text-primary" as string]: "light-dark(hsla(0, 0%, 96%, 1),hsla(0, 0%, 9%, 1))",
                     ["--text-secondary" as string]: "light-dark(hsla(0, 0%, 78%, 1),hsla(0, 0%, 32%, 1))",
                     ["--icon-primary" as string]: "light-dark(hsla(0, 0%, 96%, 1),hsla(0, 0%, 9%, 1))"
-                }} className="max-w-[1312px] mx-auto px-[var(--spacing-07)] pt-[var(--spacing-11)] pb-[var(--spacing-06)] flex flex-col">
+                }} className="max-w-[96rem] mx-auto px-[var(--spacing-07)] pt-[var(--spacing-11)] pb-[var(--spacing-06)] flex flex-col">
                 <div className="text-[32px] text-[var(--text-primary)] font-bold leading-[32px] tracking-[0] lg:hidden mb-[var(--spacing-08)]">MEEC</div>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[var(--spacing-07)] mb-[var(--spacing-11)]">
                     <div className="text-[32px] text-[var(--text-primary)] font-bold leading-[32px] tracking-[0] hidden lg:block">MEEC</div>
