@@ -55,7 +55,8 @@ export const Navbar = () => {
                 </a>
             </div>
             <header className="bg-[var(--background)] group sticky top-0 z-50">
-                <AnimatePresence>
+                <div className="max-w-[1312px] mx-auto">
+                    <AnimatePresence>
                     {(!shouldHideTopBar || !isDesktop) && (
                         <motion.div
                             className="flex items-center justify-between box-border border-y border-[var(--border-subtle-00)]"
@@ -129,6 +130,7 @@ export const Navbar = () => {
                         </li>
                     </ul>
                 </nav>
+                </div>
             </header>
         </>
     )

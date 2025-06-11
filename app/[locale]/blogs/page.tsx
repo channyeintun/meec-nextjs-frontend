@@ -50,7 +50,7 @@ export default async function Page() {
     const [categories, topics] = await Promise.all([getCategoryPromise, getTopicPromise])
 
     return (
-        <div>
+        <div className="max-w-[1312px] w-full mx-auto">
             <nav aria-label="Breadcrumb">
                 <ol className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
                     <li><Link href="/" className="text-[var(--link-primary)]">Home</Link></li>

@@ -97,7 +97,7 @@ export default async function NewsPage({ params }: {
     }
 
     return (
-        <div className="flex flex-col pt-[var(--spacing-08)] lg:pt-0">
+        <div className="max-w-[1312px] mx-auto flex flex-col pt-[var(--spacing-08)] lg:pt-0">
             <div className="hidden lg:flex items-center gap-2 p-[var(--spacing-07)] pb-[var(--spacing-09)]">
                 <Link href="/" className="text-[var(--link-primary)]">Home</Link>
                 <span>/</span>
