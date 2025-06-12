@@ -1,37 +1,23 @@
 import { AuthorFilter, FilterDropdown } from "@/components/Publication/Filter";
 import { Publications } from "@/components/Publication/Publications";
+import { createApolloClient } from "@/graphql";
+import { GET_AUTHORS } from "@/graphql/queries/authors";
 import { Link } from "@/i18n/navigation";
-import { strapi_client } from "@/lib/strapi";
 import { Author } from "@/types/article";
-import { QueryClient } from "@tanstack/react-query";
-
-async function fetchAuthors() {
-    return strapi_client.collection("authors").find({
-        fields: ["name", "slug"],
-        populate: {
-            "publications": {
-                fields: ["documentId"]
-            }
-        }
-    }).then(res => res.data as unknown as Author[]);
-}
 
 export default async function Page() {
 
-    const queryClient = new QueryClient({
-        defaultOptions: {
-            queries: {
-                staleTime: 60 * 1000,
-            },
-        },
+    const client = createApolloClient();
+
+    const getAuthorsPromise = client.query<{
+        authors: Author[];
+    }>({
+        query: GET_AUTHORS
     });
 
-    const getAuthorsPromise = queryClient.fetchQuery({
-        queryKey: ['authors'],
-        queryFn: fetchAuthors,
-    })
+    const [authorsResponse] = await Promise.all([getAuthorsPromise]);
 
-    const [authors] = await Promise.all([getAuthorsPromise])
+    const authors = authorsResponse.data.authors;
 
     return (
         <div className="max-w-[96rem] w-full mx-auto">

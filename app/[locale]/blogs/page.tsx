@@ -1,53 +1,31 @@
 import { Blogs } from "@/components/Blog/Blogs";
 import { CategoryFilter, FilterDropdown, TopicFilter } from "@/components/Blog/Filter";
+import { createApolloClient } from "@/graphql";
+import { GET_CATEGORIES } from "@/graphql/queries/categories";
+import { GET_TOPICS } from "@/graphql/queries/topics";
 import { Link } from "@/i18n/navigation";
-import { strapi_client } from "@/lib/strapi";
 import { Category } from "@/types/article";
-import { QueryClient } from "@tanstack/react-query";
-
-async function fetchCategories() {
-    return strapi_client.collection("categories").find({
-        fields: ["name", "slug"],
-        populate: {
-            "articles": {
-                fields: ["documentId"]
-            }
-        }
-    }).then(res => res.data as unknown as Category[]);
-}
-
-async function fetchTopics() {
-    return strapi_client.collection("topics").find({
-        fields: ["name", "slug"],
-        populate: {
-            "articles": {
-                fields: ["documentId"]
-            }
-        }
-    }).then(res => res.data as unknown as Category[]);
-}
 
 export default async function Page() {
 
-    const queryClient = new QueryClient({
-        defaultOptions: {
-            queries: {
-                staleTime: 60 * 1000,
-            },
-        },
-    });
+    const client = createApolloClient();
 
-    const getCategoryPromise = queryClient.fetchQuery({
-        queryKey: ['categories'],
-        queryFn: fetchCategories,
+    const categoryPromise = client.query<{
+        categories: Category[];
+    }>({
+        query: GET_CATEGORIES
     })
 
-    const getTopicPromise = queryClient.fetchQuery({
-        queryKey: ['topics'],
-        queryFn: fetchTopics,
-    });
+    const topicsPromise = client.query<{
+        topics: Category[];
+    }>({
+        query: GET_TOPICS,
+    })
 
-    const [categories, topics] = await Promise.all([getCategoryPromise, getTopicPromise])
+    const [categoriesData, topicsData] = await Promise.all([categoryPromise, topicsPromise]);
+
+    const categories = categoriesData.data.categories;
+    const topics = topicsData.data.topics;
 
     return (
         <div className="max-w-[96rem] w-full mx-auto">

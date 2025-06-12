@@ -59,7 +59,7 @@ export const AuthorFilter: FC<{
                 <h2 className="text-[var(--text-primary)] label-01">Explore by author</h2>
                 {
                     data.map(author => <Checkbox
-                        key={author.documentId}
+                        key={author.slug}
                         filterKey="author"
                         value={author} />)
                 }

@@ -64,7 +64,7 @@ export const CategoryFilter: FC<{
                 <h2 className="text-[var(--text-primary)] label-01">Explore by category</h2>
                 {
                     data.map(category => <Checkbox
-                        key={category.documentId}
+                        key={category.slug}
                         filterKey="category"
                         value={category} />)
                 }
@@ -82,7 +82,7 @@ export const TopicFilter: FC<{
                 <h2 className="text-[var(--text-primary)] label-01">Explore by topic</h2>
                 {
                     data.map(topic => <Checkbox
-                        key={topic.documentId}
+                        key={topic.slug}
                         filterKey="topic"
                         value={topic} />)
                 }
