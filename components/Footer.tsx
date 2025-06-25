@@ -17,13 +17,13 @@ export const Footer = () => {
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[var(--spacing-07)] mb-[var(--spacing-11)]">
                     <div className="text-[32px] text-[var(--text-primary)] font-bold leading-[32px] tracking-[0] hidden lg:block">MEEC</div>
                     <address className="not-italic">
-                        <ul className="space-y-[var(--spacing-03)]" aria-describedby="contact-info">
+                        <ul className="space-y-[var(--spacing-03)]" aria-labelledby="contact-info">
                             <li><h2 className="text-[var(--text-on-color)] heading-02" id="contact-info">Contact info</h2></li>
                             <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="mailto:mmengrgp@gmail.com">mmengrgp@gmail.com</Link></li>
                             <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="tel:+959123456789">+959123456789</Link></li>
                         </ul>
                     </address>
-                    <nav aria-describedby="quick-links">
+                    <nav aria-labelledby="quick-links">
                         <ul className="space-y-[var(--spacing-03)]">
                             <li><h2 id="quick-links" className="text-[var(--text-on-color)] heading-02">Quick links</h2></li>
                             <li><Link href="/about" className="body-02 text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100">About</Link></li>
@@ -31,7 +31,7 @@ export const Footer = () => {
                             <li><Link href="/publications" className="body-02 text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100">Publications</Link></li>
                         </ul>
                     </nav>
-                    <nav aria-describedby="follow-us">
+                    <nav aria-labelledby="follow-us">
                         <ul className="space-y-[var(--spacing-03)]">
                             <li><h2 id="follow-us" className="text-[var(--text-on-color)] heading-02">Follow us</h2></li>
                             <li><Link className="text-[var(--text-secondary)] hover:underline hover:text-[var(--text-primary)] transition-all ease-in duration-100" href="https://www.facebook.com/share/g/1DhF1ikWaC/?mibextid=wwXIfr" target="_blank">Facebook</Link></li>
